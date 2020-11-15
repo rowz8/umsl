@@ -1,0 +1,30 @@
+.caption {
+    height: 180px;
+}
+
+.navbar-inverse {
+   background-color:#9a1e35
+; 
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ebab04
+}
+
+.navbar-inverse .navbar-nav>li>a{
+color: #ebab04
+
+}
+
+a {
+    color: #9a1e35;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #9a1e35;
+}
+
+.caption {
+    height: 350px;
+}
+

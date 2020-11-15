@@ -1,0 +1,46 @@
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+
+    
+        <li class="active">
+            <a  href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+        </li>
+        <li class="">
+            <a href="index.php?orders"><i class="fa fas fa-bars"></i> Orders</a>
+        </li>
+        <li class="">
+            <a href="index.php?approvals"><i class="fa fas fa-bars"></i> Approvals</a>
+        </li>
+        <li>
+            <a href="index.php?reports"><i class="fa fa-fw fa-wrench"></i>Reports</a>
+        </li>
+        <li>
+            <a href="index.php?products"><i class="fa fa-fw fa-bar-chart-o"></i> View Products</a>
+        </li>
+        <li>
+            <a href="index.php?in_stock"><i class="fa fa-fw fa-bar-chart-o"></i> In Stock </a>
+        </li>
+         <li>
+            <a href="index.php?out_of_stock"><i class="fa fa-fw fa-bar-chart-o"></i> Out of Stock </a>
+        </li>
+        <li>
+            <a href="index.php?add_product"><i class="fa fa-fw fa-table"></i> Add Product</a>
+        </li>
+                    
+        <li>
+            <a href="index.php?categories"><i class="fa fa-fw fa-desktop"></i> Categories</a>
+        </li>
+        <li>
+            <a href="index.php?users"><i class="fa fa-fw fa-users"></i> Users</a>
+        </li>
+        <li>
+            <a href="index.php?slides"><i class="fa fa-fw fa-bar-chart-o"></i> Slides</a> 
+        </li>
+        <li>
+            <a href="index.php?buildings"><i class="fa fa-fw fa-bar-chart-o"></i> Buildings</a>
+        </li>
+        <li>
+            <a href="index.php?add_announcements"><i class="fa fa-fw fa-table"></i> Meetings</a>
+        </li>
+    </ul>
+</div>
