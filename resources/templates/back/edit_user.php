@@ -76,7 +76,7 @@ if(isset($_GET['id'])) {
 
     <!-- Delete  -->
             <div class="form-group">
-                <?php show_buttons(); ?>
+                <?php show_buttons2(); ?>
                 <input type="submit" name="submit" class="btn btn-primary" value="Update">
                 
             </div>
@@ -89,7 +89,7 @@ if(isset($_GET['id'])) {
   </div>
 </form>
 
-<?php function show_buttons(){ 
+<?php function show_buttons2(){ 
   if(isset($_GET['id'])){
    
   $show = <<<DELIMETER

@@ -98,7 +98,7 @@
 
 
 <!-- STATUS PROCESSING -->
-
+<div class="row">
 <div class="col-lg-4">
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -132,7 +132,7 @@
     </div>
 </div>
 </div>
-
+<div>
 <!-- STATUS APPROVED -->
 <div class="row">
 <div class="col-lg-4">

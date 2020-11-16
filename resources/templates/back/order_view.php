@@ -14,7 +14,7 @@ if(isset($_GET['order_id'])) {
   $product_quantity       = escape_string($row['product_quantity']);
   $product_number         = escape_string($row['product_number']);
   $order_building         = escape_string($row['order_building']);
-  
+
   }
 
 }
@@ -23,7 +23,7 @@ if(isset($_GET['order_id'])) {
   <div class="col-md-12">
     <div class="row">
         <h1 class="page-header">
-            Order Details
+            Order View
         </h1>
     </div>
 
@@ -69,23 +69,7 @@ if(isset($_GET['order_id'])) {
   </form>
 
 <?php
-function show_buttons(){
-    if(isset($_GET['order_id'])) {
-        
-        $show_buttons= <<<DELIMETER
-
-        <input type="button" class="btn btn-warning btn-lg" value="Print this page" onClick="window.print()">
-          
-        <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['order_id']}">Delete <span class = "glyphicon glyphicon-remove"></span></a></td>
-          
-        </aside><!--SIDEBAR-->
-        
 
 
-DELIMETER;
-        
-    echo $show_buttons;
-    }
-}
 
 ?>

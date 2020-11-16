@@ -40,7 +40,7 @@
             <a href="index.php?buildings"><i class="fa fa-fw fa-bar-chart-o"></i> Buildings</a>
         </li>
         <li>
-            <a href="index.php?add_announcements"><i class="fa fa-fw fa-table"></i> Meetings</a>
+            <a href="index.php?meetings"><i class="fa fa-fw fa-table"></i> Meetings</a>
         </li>
     </ul>
 </div>

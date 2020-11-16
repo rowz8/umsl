@@ -70,9 +70,23 @@ if(!isset($_SESSION['username'])) {
             if(isset($_GET['add_user'])) {
                 include(TEMPLATE_BACK . "/add_user.php");  
             }
+
+            if(isset($_GET['meetings'])) {
+                include(TEMPLATE_BACK . "/meetings.php");  
+            }
+
             if(isset($_GET['add_announcements'])) {
                 include(TEMPLATE_BACK . "/add_announcements.php");  
             }
+
+            if(isset($_GET['edit_meeting'])) {
+                include(TEMPLATE_BACK . "/edit_meeting.php");  
+            }
+
+            if(isset($_GET['delete_meeting_id'])) {
+                include(TEMPLATE_BACK . "/delete_meeting.php");  
+            }
+
             if(isset($_GET['delete_order_id'])) {
                 include(TEMPLATE_BACK . "/delete_order.php");  
             }

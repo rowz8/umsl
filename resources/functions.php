@@ -28,12 +28,10 @@ function display_message(){
     }
 }
 
-
 function redirect($location){
  
     return header("Location: {$location}");
 }
-
 
 function adminGuard(){
     if($_COOKIE['role']!== "admin"){
@@ -47,7 +45,6 @@ function query($sql){
     return mysqli_query($connection, $sql);
 }
 
-
 function confirm($result){
     global $connection;
     if(!$result){
@@ -55,18 +52,15 @@ function confirm($result){
     }
 }
 
-
 // prevents sql injections.
 function escape_string($string){
     global $connection;
     return mysqli_real_escape_string($connection, $string);
 }
 
-
 function fetch_array($result){
     return mysqli_fetch_array($result);
 }
-
 
 /* *********************************************                             FRONT END                                 ********************************************* */
 
@@ -382,7 +376,35 @@ function send_message(){
     }    
 }
 
+// displays all the meetings in the front
+function display_meetings(){
+    $query = query("SELECT * FROM meetings WHERE MONTH(month) = MONTH(NOW()) ORDER BY meeting_date asc");
+    confirm($query);
 
+    while($row = fetch_array($query)) {
+        
+        $meetings = <<<DELIMETER
+ 
+             <div class="col-2 text-right">
+				<h1 class="display-4"><span class="badge badge-secondary">{$row['meeting_date']}</span></h1>
+				<h2>{$row['meeting_month']}</h2>
+			</div>
+			<div class="col-10">
+				<h3 class="text-uppercase"><strong>{$row['meeting_title']}</strong></h3>
+				<ul class="list-inline">
+				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {$row['meeting_day']}</li>
+					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {$row['meeting_time']}</li>
+					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> {$row['meeting_location']}</li>
+				</ul>
+				<p>{$row['meeting_description']}</p>
+              
+			</div>
+            <hr>  
+            
+DELIMETER;
+    echo $meetings;
+    }
+}
 /* *********************************************                             BACKEND                                 ********************************************* */
 
 // displays all orders regarding status a month 
@@ -391,7 +413,7 @@ function display_orders(){
     confirm($query);
 
     while($row = fetch_array($query)) {
-
+        
         $orders = <<<DELIMETER
             <tr>
             <td><a class="btn btn-info" href="index.php?order_id={$row['order_id']}">{$row['order_id']}</td>
@@ -402,13 +424,13 @@ function display_orders(){
            <!--  <td>{$row['order_currency']}</td>  -->
             <td>{$row['order_name']}</td>
             <td>{$row['order_building']}</a></td>
+           
             
             </tr>
 DELIMETER;
     echo $orders;
     } 
 }
-
 
 
 // deletes orders in admin
@@ -465,6 +487,25 @@ DELIMETER;
     
     }
   
+    
+}
+
+// shows buttons in order view
+function show_buttons(){
+    if(isset($_GET['order_id']) && $_SESSION['order_status'] = "Cancelled") {
+        
+        $show_buttons= <<<DELIMETER
+
+        <input type="button" class="btn btn-warning btn-lg" value="Print this page" onClick="window.print()">
+          
+        <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['order_id']}">Delete <span class = "glyphicon glyphicon-remove"></span></a></td>
+          
+        </aside><!--SIDEBAR-->
+
+DELIMETER;
+
+    echo $show_buttons;
+    }
     
 }
 
@@ -1189,7 +1230,6 @@ DELIMETER;
     }
 }
 
-
  //adds building
 function add_building(){
 
@@ -1320,33 +1360,43 @@ DELIMETER;
     }
 }
 
-// displays all the meetings
-function display_meetings(){
-    $query = query("SELECT * FROM meetings WHERE MONTH(month) = MONTH(NOW()) ORDER BY meeting_date asc");
-    confirm($query);
+// displays meetings in the back
+function meetings(){
+    $meetings_query = query(" SELECT * FROM meetings ");
+    confirm($meetings_query);
 
-    while($row = fetch_array($query)) {
+    while($row = fetch_array($meetings_query)) {
+
+        $meeting_id             = $row['meeting_id'];
+        $meeting_title          = $row['meeting_title'];
+        $meeting_description    = $row['meeting_description'];
+        $meeting_location       = $row['meeting_location'];
+        $meeting_date           = $row['meeting_date'];
+        $meeting_time           = $row['meeting_time'];
+        $meeting_month          = $row['meeting_month'];
+        $meeting_day            = $row['meeting_day'];
         
-        $meetings = <<<DELIMETER
- 
-             <div class="col-2 text-right">
-				<h1 class="display-4"><span class="badge badge-secondary">{$row['meeting_date']}</span></h1>
-				<h2>{$row['meeting_month']}</h2>
-			</div>
-			<div class="col-10">
-				<h3 class="text-uppercase"><strong>{$row['meeting_title']}</strong></h3>
-				<ul class="list-inline">
-				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {$row['meeting_day']}</li>
-					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {$row['meeting_time']}</li>
-					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> {$row['meeting_location']}</li>
-				</ul>
-				<p>{$row['meeting_description']}</p>
-              
-			</div>
-            <hr>  
-            
+
+        $meeting = <<<DELIMETER
+
+        <tr>
+            <td><a class="btn btn-warning" href= "index.php?edit_meeting&id={$row['meeting_id']}"><span class="glyphicon glyphicon-pencil"> {$meeting_id}</span></a></td>
+            <td>{$meeting_title}
+            </td>
+            <td>{$meeting_description}</td>
+            <td>{$meeting_location}</td>
+            <td>{$meeting_date}</td>
+            <td>{$meeting_time}</td>
+            <td>{$meeting_day}</td>
+            <td>{$meeting_month}</td>
+           
+                    <td></a></td>
+        </tr>
+
 DELIMETER;
-    echo $meetings;
+
+    echo $meeting;
+
     }
 }
 
@@ -1367,10 +1417,60 @@ function add_meeting(){
     $last_id = last_id();
     confirm($query);
     set_message("Meeting {$meeting_title} was Added");
-    redirect("index.php?add_announcements");
+    redirect("index.php?meetings");
     }
 }
 
 
+// update meetings in Admin   
+function update_meeting(){
+    if(isset($_POST['update'])){
 
+    $meeting_title          = escape_string($_POST['meeting_title']);
+    $meeting_description    = escape_string($_POST['meeting_description']);
+    $meeting_location       = escape_string($_POST['meeting_location']);
+    $meeting_date           = escape_string($_POST['meeting_date']);
+    $meeting_time           = escape_string($_POST['meeting_time']); 
+    $meeting_month          = escape_string($_POST['meeting_month']);
+    $meeting_day            = escape_string($_POST['meeting_day']);
+        
+    //  make sure there is a space after the word SET so the database can be updated 
+    $query ="UPDATE meetings SET ";
+    $query.="meeting_title                        = '{$meeting_title }',";
+    $query.="meeting_description                  = '{$meeting_description }',";
+    $query.="meeting_location                     = '{$meeting_location }',";
+    $query.="meeting_date                         = '{$meeting_date }',";
+    $query.="meeting_time                         = '{$meeting_time }',";
+    $query.="meeting_month                        = '{$meeting_month }',";
+    $query.="meeting_day                          = '{$meeting_day }' ";
+    $query.="WHERE meeting_id                     = ".escape_string($_GET['id']);
+
+        
+        
+        
+    $update_query = query($query);
+    confirm($update_query);
+    set_message("Meeting {$meeting_title} has been Updated");
+    redirect("index.php?meetings");
+    }
+}
+
+// deletes meetings in Admin
+function delete_meeting(){
+    if(isset($_GET['delete_meeting_id'])){
+
+
+    $query = query("DELETE FROM meetings WHERE meeting_id = ".escape_string($_GET['delete_meeting_id'])." ");
+    confirm($query);
+    set_message("Meeting Deleted");
+    // old path ("../../../public/admin/index.php?users") live server path ("../../../admin/index.php?users")
+    redirect("index.php?meetings");
+    
+
+    } else {
+
+        redirect("index.php?meetings");
+
+    }
+}
 ?>

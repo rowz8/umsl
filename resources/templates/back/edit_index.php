@@ -22,7 +22,7 @@ function show(){
    
   $show = <<<DELIMETER
 
-    <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['id']}">Delete<span class = "glyphicon glyphicon-remove"></span></a></td>
+    <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['id']}">Delete</a></td>
 
 DELIMETER;
     } echo $show;
