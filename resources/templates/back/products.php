@@ -18,7 +18,7 @@
             <th>Quantity</th>
             <th>Location</th>
             <th>MFG Number</th>
-            <!-- <th>Delete</th> -->
+           
         </tr>
         </thead>
         <tbody>

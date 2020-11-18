@@ -518,7 +518,7 @@ function display_reports(){
         
         $reports = <<<DELIMETER
              <tr>
-            <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}">{$row['order_id']}</td>            
+            <td><a class="btn btn-info" href="index.php?report_id={$row['order_id']}">{$row['report_id']}</td>            
             <td>{$row['product_id']}</td>
             <td>{$row['order_id']}</td>
            <!--  <td>{$row['product_title']}</td> -->
@@ -575,7 +575,7 @@ DELIMETER;
 // displays all the products in admin
 function get_products_in_admin(){
    
-    $query = query("SELECT * FROM products WHERE product_quantity >=1");
+    $query = query("SELECT * FROM products WHERE product_quantity >=1 ORDER BY product_id desc");
     confirm($query);
     while($row = fetch_array($query))
    {
@@ -657,6 +657,19 @@ function add_product(){
     confirm($query);
     set_message("Product {$product_title} was Added");
     redirect("index.php?products");
+    }
+}
+
+// shows the next product location number available.
+function show_last_product_number(){
+
+  $query = query("SELECT * from products ORDER BY product_id DESC LIMIT 1");
+  confirm($query);
+    
+    while($row = fetch_array($query)){
+      $product_location = $row['product_id'];
+      $product_location = $product_location + 1;
+      return $product_location;
     }
 }
 

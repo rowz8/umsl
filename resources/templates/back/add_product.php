@@ -69,7 +69,7 @@
 
     <div class="form-group">
           <label for="product-title">Product Location</label>
-        <input type="text" name="product_location" class="form-control" required>
+        <input type="text" name="product_location" class="form-control" required placeholder="CUST<?php echo show_last_product_number();?>" >
     </div>
 
     <div class="form-group">
@@ -94,3 +94,8 @@
 
     
 </form>
+
+<?php 
+
+
+?>
