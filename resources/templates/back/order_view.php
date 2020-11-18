@@ -24,6 +24,7 @@ if(isset($_GET['order_id'])) {
     <div class="row">
         <h1 class="page-header">
             Order View
+            <?php order_date() ?>
         </h1>
     </div>
 

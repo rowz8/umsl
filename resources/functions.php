@@ -490,6 +490,31 @@ DELIMETER;
     
 }
 
+// shows the date of the order
+function order_date(){
+    
+    if(isset($_GET['order_id'])) {
+        $query = query("SELECT * from orders WHERE order_id = " .escape_string($_GET['order_id']). "");
+        confirm($query);
+        while ($row = fetch_array($query)) {
+            $order_date = escape_string($row['order_date']);
+
+            $view_date = <<<DELIMETER
+
+            <h2 class="small">
+            $order_date
+            
+            </h2>
+
+DELIMETER;
+        echo $view_date;
+        }
+
+    }
+
+    
+}
+
 // shows buttons in order view
 function show_buttons(){
     if(isset($_GET['order_id']) && $_SESSION['order_status'] = "Cancelled") {
