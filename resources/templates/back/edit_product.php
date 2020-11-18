@@ -58,7 +58,7 @@ if(isset($_GET['id'])) {
       <!-- Product Price -->
       <div class="col-xs-3">
         <label for="product-price">Product Price</label>
-        <input type="text" name="product_price" class="form-control" size="60" value="<?php echo $product_price; ?>">
+        <input type="number" step="0.01" name="product_price" class="form-control" size="60" value="<?php echo $product_price; ?>">
       </div>
     </div>
 

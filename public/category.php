@@ -18,9 +18,15 @@
             <div class="col-lg-12">
                 <h3>Latest Products</h3>
             </div>
+             <div class="row">
+
+    <?php include(TEMPLATE_FRONT . DS . "side_nav.php")  ?>
+    </div>
         </div>
         <!-- /.row -->
 
+     
+           <!-- Categories go here side_nav -->
         <!-- Page Features -->
         <div class="row text-center">
 
