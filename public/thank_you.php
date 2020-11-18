@@ -66,5 +66,6 @@ DELIMITER;
 <!--  ***********CART TOTALS*************-->
            
 <!-- session_destroy(); -->
+<?php header( "refresh:3;url=../public/index.php" ); ?>
     
 <?php include(TEMPLATE_FRONT . DS . "footer.php"); session_destroy();?>

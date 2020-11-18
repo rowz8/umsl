@@ -39,6 +39,15 @@ function adminGuard(){
     }
 }
 
+// function Guard(){
+//     if($_COOKIE['username']!== "$username"){
+//         redirect("index.php");
+//     }
+//     if ($_COOKIE['username'] == $username){
+//         redirect("checkout.php");
+//     }
+// }
+
 function query($sql){
 
     global $connection;
@@ -320,7 +329,7 @@ function login_user(){
 
                 $row = fetch_array($query);
                 $user_role = $row['user_role'];
-       
+                setcookie('username', $username, time() + 86400);
                 setcookie('role', $user_role, time() + 86400);
         
         if(mysqli_num_rows($query)==0){
@@ -334,13 +343,14 @@ function login_user(){
             
             if($user_role==="admin"){
             redirect("admin");
-                
+             $_SESSION['username'] = $username;   
             }
+            
             else{
                redirect("index2.php");
                 }
             
-            } $_SESSION['username'] = $username;
+            } 
         
 
         }
