@@ -348,6 +348,7 @@ function login_user(){
             
             else{
                redirect("index2.php");
+               $_SESSION['username'] = $username; 
                 }
             
             } 

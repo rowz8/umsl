@@ -41,7 +41,7 @@
               <li class="dropdown">
                     <a style="color:#ebab04" "href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                     <?php
-                    if(isset($_COOKIE['username'])){
+                    if(isset($_SESSION['username'])){
                         echo $_COOKIE['username'];
                     }else {
                         echo " unregistered user";
