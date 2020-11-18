@@ -518,7 +518,7 @@ function display_reports(){
         
         $reports = <<<DELIMETER
              <tr>
-            <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}">{$row['report_id']}</td>            
+            <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}">{$row['order_id']}</td>            
             <td>{$row['product_id']}</td>
             <td>{$row['order_id']}</td>
            <!--  <td>{$row['product_title']}</td> -->
@@ -584,18 +584,18 @@ function get_products_in_admin(){
 
         $product = <<<DELIMETER
        
-                <div class="col-md-3 col-lg-4">
-             <div class="thumbnail">
-                <a href = index.php?edit_product&id={$row['product_id']}><img width='90' src="../../resources/{$product_image}" alt=""></a> 
-                <div class="caption" style ="height: 145px">
-                    <h4><a href="index.php?edit_product&id={$row['product_id']}">{$row['product_title']}</a></h5>
-                    <h4 class="small">{$category} </h4>
-                    <h5 class="small">&#36; {$row['product_price']} </h5>
-                    <!-- <h6>{$row['product_number']}</h6> -->
-                    <h6 class="small">{$row['product_location']}</h6>
-                </div>
-            </div>
-        </div>
+              <tr>
+                <td><a class = "btn btn-danger" href = "index.php?edit_product&id={$row['product_id']}">{$row['product_id']}<a></td>
+                <td>{$row['product_title']}<br>
+                <img width='50' src="../../resources/{$product_image}" alt="">
+                </td>
+                <td>{$category}</td>
+                <td>&#36; {$row['product_price']}</td>
+                <td>{$row['product_quantity']}</td>
+                <td>{$row['product_location']}</td>
+                <td>{$row['product_number']}</td>
+                
+            </tr>
                 
            
 DELIMETER;

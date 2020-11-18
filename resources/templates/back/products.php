@@ -9,7 +9,7 @@
     
     <table class="table table-hover">
 
-        <!-- <thead>
+        <thead>
         <tr>
             <th>ID</th>
             <th>Title</th>
@@ -18,9 +18,9 @@
             <th>Quantity</th>
             <th>Location</th>
             <th>MFG Number</th>
-            <th>Delete</th>
+            <!-- <th>Delete</th> -->
         </tr>
-        </thead> -->
+        </thead>
         <tbody>
               <div class="row">
         <?php get_products_in_admin(); ?>
