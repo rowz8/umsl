@@ -260,7 +260,7 @@ function get_products_in_cat_page(){
              <div class="thumbnail">
                 <a href ="item.php?id={$row['product_id']}"><img style="width:90px" src="../resources/{$product_image}" alt=""></a>   
                 <div class="caption" style ="height: 220px">
-                    <h4><a href="item.php?id={$row ['product_id']}">{$row['product_title']}</a></h4>
+                    <h5><a href="item.php?id={$row ['product_id']}">{$row['product_title']}</a></h4>
                     <h6>{$row['product_number']}</h6>
                     <h6>{$row['product_location']}</h6>
                     <p>{$row['short_desc']}.</p>
@@ -274,6 +274,15 @@ function get_products_in_cat_page(){
 DELIMETER;
     echo $product;
     }
+}
+
+// display name of the category in cat page
+function cat_title(){
+    $category_query = query("SELECT * FROM categories WHERE cat_id = ." {$product_category_id}. " ");
+    confirm($category_query);
+    while($category_row = fetch_array($category_query)){
+        return $category_row['cat_title'];
+}
 }
 
 // gets products in shop page

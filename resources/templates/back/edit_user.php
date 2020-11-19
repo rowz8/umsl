@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['id'])) {
-  // gives me an error on  WHERE user_id 
+  
   $query = query("SELECT * FROM users WHERE user_id = " . escape_string($_GET['id']) . " ");
   confirm($query);
 
