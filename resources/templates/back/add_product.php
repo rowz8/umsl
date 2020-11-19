@@ -69,7 +69,8 @@
 
     <div class="form-group">
           <label for="product-title">Product Location</label>
-        <input type="text" name="product_location" class="form-control" required placeholder="CUST<?php echo show_last_product_number();?>" >
+          <h6><cite>Next Available Location:</cite></h6>
+        <input type="number" name="product_location" class="form-control" required placeholder="<?php echo show_last_product_number();?>" >
     </div>
 
     <div class="form-group">

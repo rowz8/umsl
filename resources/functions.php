@@ -257,15 +257,15 @@ function get_products_in_cat_page(){
         $product = <<<DELIMETER
 
         <div class="col-sm-4 col-lg-4">
-             <div class="thumbnail">
-                <a href ="item.php?id={$row['product_id']}"><img style="width:90px" src="../resources/{$product_image}" alt=""></a>   
-                <div class="caption" style ="height: 220px">
-                    <h5><a href="item.php?id={$row ['product_id']}">{$row['product_title']}</a></h4>
+             <div class="thumbnail" >
+                <a href="item.php?id={$row['product_id']}"> <img style="width:90px" src="../resources/{$product_image}" alt=""> </a>   
+                <div class="caption"  style="height: 215px">
+                    <h5><a href="item.php?id={$row ['product_id']}">{$row['product_title']}</a></h5>
                     <h6>{$row['product_number']}</h6>
-                    <h6>{$row['product_location']}</h6>
                     <p>{$row['short_desc']}.</p>
                     <h6>{$row['product_uom']}</h6>
-                    <a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a> <a href=item.php?id={$row['product_id']} class = "btn btn-default">More Info </a><h4 class="pull-right">&#36; {$row['product_price']}</h4>
+                    
+                    <a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a><h4 class="pull-right">&#36; {$row['product_price']}</h4>
                     
                 </div>
             </div>
@@ -299,7 +299,7 @@ function get_products_in_shop_page(){
                 <div class="caption" style ="height: 200px">
                     <h4><a href="item.php?id={$row ['product_id']}">{$row['product_title']}</a></h4>
                     <h6>{$row['product_number']}</h6>
-                    <h6>{$row['product_location']}</h6>
+                    <h6>CUST{$row['product_location']}</h6>
                     <p>{$row['short_desc']}.</p>
                     
                     <a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a> <a href=item.php?id={$row['product_id']} class = "btn btn-default">More Info </a><h4 class="pull-right">&#36; {$row['product_price']}</h4>
@@ -495,7 +495,7 @@ function show_order_details(){
             <td>{$row['order_building']}</td>
             <td>{$row['order_name']}</td>
             <td>{$row['product_title']}</td>
-            <td>{$row['product_location']}</td>
+            <td>CUST{$row['product_location']}</td>
             <td>{$row['product_number']}</td>
             <td>{$row['product_quantity']}</td>
             
@@ -537,13 +537,13 @@ DELIMETER;
 
 // shows buttons in order view
 function show_buttons(){
-    if(isset($_GET['order_id']) && $_SESSION['order_status'] = "Cancelled") {
+    if(isset($_GET['order_id'])) {
         
         $show_buttons= <<<DELIMETER
 
         <input type="button" class="btn btn-warning btn-lg" value="Print this page" onClick="window.print()">
           
-        <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['order_id']}">Delete <span class = "glyphicon glyphicon-remove"></span></a></td>
+        <td><a class = "btn btn-danger btn-lg" href ="index.php?delete_order_id={$_GET['order_id']}">Delete</a></td>
           
         </aside><!--SIDEBAR-->
 
@@ -602,7 +602,7 @@ function show_report_details(){
             <td>{$row['order_building']}</td>
             <td>{$row['order_name']}</td>
             <td>{$row['product_title']}</td>
-            <td>{$row['product_location']}</td>
+            <td>CUST{$row['product_location']}</td>
             <td>{$row['product_number']}</td>
             <td>{$row['product_quantity']}</td>
             
@@ -637,7 +637,7 @@ function get_products_in_admin(){
                 <td>{$category}</td>
                 <td>&#36; {$row['product_price']}</td>
                 <td>{$row['product_quantity']}</td>
-                <td>{$row['product_location']}</td>
+                <td>CUST{$row['product_location']}</td>
                 <td>{$row['product_number']}</td>
                 
             </tr>
@@ -708,11 +708,11 @@ function add_product(){
 // shows the next product location number available.
 function show_last_product_number(){
 
-  $query = query("SELECT * from products ORDER BY product_id DESC LIMIT 1");
+  $query = query("SELECT * from products ORDER BY product_location DESC LIMIT 1");
   confirm($query);
     
     while($row = fetch_array($query)){
-      $product_location = $row['product_id'];
+      $product_location = $row['product_location'];
       $product_location = $product_location + 1;
       return $product_location;
     }

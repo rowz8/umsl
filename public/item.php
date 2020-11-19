@@ -39,7 +39,7 @@
         <h6> <?php echo $row['product_uom'];?> </h6>
         <hr>
         
-        <h6><?php echo $row['product_location']; ?></h6>
+        <h6>CUST<?php echo $row['product_location']; ?></h6>
 
     <div class="ratings">
      
