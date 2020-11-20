@@ -896,6 +896,7 @@ function add_user(){
             $user_firstname         = escape_string($_POST['user_firstname']);
             $user_lastname          = escape_string($_POST['user_lastname']); 
             $user_photo             = escape_string($_FILES['file']['name']);
+            $user_team              = escape_string($_POST['user_team']); 
             $photo_temp             = escape_string($_FILES['file']['tmp_name']);
 
             move_uploaded_file($photo_temp, UPLOAD_DIRECTORY . DS . $user_photo);
@@ -909,7 +910,7 @@ function add_user(){
             // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
                 $password = crypt($password,$hashF_and_salt); 
         
-            $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}' )");
+            $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}' )");
             $last_id = last_id();
             confirm($query);
             set_message("User {$username} was created");
@@ -949,6 +950,7 @@ function update_user(){
     $user_lastname          = escape_string($_POST['user_lastname']); 
     $user_photo             = escape_string($_FILES['file']['name']);
     $image_temp_location    = escape_string($_FILES['file']['tmp_name']);
+    $user_team              = escape_string($_POST['user_team']);
 
      if(empty($user_photo)){
          $get_pic = query("SELECT user_photo FROM users WHERE user_id = " .escape_string($_GET['id'])."");
@@ -978,7 +980,9 @@ function update_user(){
     $query.="user_firstname            = '{$user_firstname }',";
     $query.="user_lastname             = '{$user_lastname }',";
     $query.="user_role                 = '{$user_role }',";
-    $query.="user_photo                = '{$user_photo }' ";
+    $query.="user_photo                = '{$user_photo }', ";
+    $query.="user_role                 = '{$user_role }', ";
+    $query.="user_team                 = '{$user_team }' ";
     $query.="WHERE user_id             = ".escape_string($_GET['id']);
 
         

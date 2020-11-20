@@ -37,7 +37,10 @@
             <li>
                 <a href="announcements.php">Announcements</a>
             </li>
-            
+            <li>
+                <a class="font-weight-bold " href="team.php">Team</a>
+            </li>
+
             <li>
                 <a href="search.php">Search</a>
             </li>

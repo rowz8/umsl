@@ -15,6 +15,7 @@ if(isset($_GET['id'])) {
     $role                   = escape_string($row['user_role']);
     $user_photo             = escape_string($row['user_photo']);
     $user_photo             = display_image($row['user_photo']);
+    $user_team              = escape_string($row['user_team']);
   
   }
   update_user();
@@ -67,6 +68,13 @@ if(isset($_GET['id'])) {
                  <input type="radio" name="user_role" class="custom-radio" value="Team Lead" required>&nbsp; Team Lead |
                  <input type="radio" name="user_role" class="custom-radio" value="admin" required>&nbsp; Admin 
             </div> 
+
+            <!-- User Meet Team Display -->
+                <div class="form-group">
+                 <label for="userType">Do you want to display the user at the team Page?</label>
+                 <input type="radio" name="user_team" class="custom-radio" value="1" required>&nbsp; Yes |
+                 <input type="radio" name="user_team" class="custom-radio" value="0" required>&nbsp; No 
+                </div>
 
     <!-- Password -->
             <div class="form-group">

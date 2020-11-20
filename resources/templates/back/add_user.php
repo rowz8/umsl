@@ -50,12 +50,18 @@
             </div>
 
               <!-- User Role -->
-         <div class="form-group lead">
+                <div class="form-group lead">
                  <label for="userType">I'm a :</label>
                  <input type="radio" name="user_role" class="custom-radio" value="Team Lead" required>&nbsp; Team Lead |
                  <input type="radio" name="user_role" class="custom-radio" value="admin" required>&nbsp; Admin 
                 </div>
-  </div>
+
+                 <!-- User Meet Team Display -->
+                <div class="form-group">
+                 <label for="userType">Do you want to display the user at the team Page?</label>
+                 <input type="radio" name="user_team" class="custom-radio" value="1" required>&nbsp; Yes |
+                 <input type="radio" name="user_team" class="custom-radio" value="0" required>&nbsp; No 
+                </div>
 
     <!-- Delete  -->
             <div class="form-group">
@@ -69,6 +75,6 @@
             <input type="file" name="file" required >
         </div>
 
-      
+  </div>    
 </form>
 
