@@ -10,8 +10,6 @@
 <?php include(TEMPLATE_FRONT . DS . "side_nav.php")  ?>
            <!-- Categories go here side_nav -->
 
-
- <?php display_message();?> 
  
 <div class="col-md-9">
 

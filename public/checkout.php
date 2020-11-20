@@ -12,7 +12,7 @@
 <div class="row">
 
       <h1>Checkout</h1>
-    <h4 class = "text-center"> <?php display_message();?></h4>
+    <h4 class = "text-center" style = "color: #9a1e35"> <?php display_message();?></h4>
     <!-- PayPal form & inputs -->
     <form action="">
         

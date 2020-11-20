@@ -27,7 +27,8 @@
             <li>
                 <a href="admin">Admin</a>
             </li>
-                <li class="<?php echo $_SESSION['userType'] == "admin" ? 'show' : 'hidden'?>">
+            <!-- class="<?php echo $_SESSION['userType'] == "admin" ? 'show' : 'hidden'?>" -->
+                <li >
                 <a href="checkout.php">Checkout</a>
             </li>
             <li>

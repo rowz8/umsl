@@ -334,7 +334,7 @@ function login_user(){
         
         if(mysqli_num_rows($query)==0){
             set_message("Your Password or Username are incorrect");
-            $username = "unregistered user";
+            // $username = "unregistered user";
             redirect("../public/index.php");
             
             } 

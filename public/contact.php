@@ -17,7 +17,7 @@
                     <br>
                     <h3 class="section-subheading text-muted"></h3>
                     
-                    <h4><?php display_message(); ?></h4>
+                    
                 </div>
             </div>
             <div class="row">

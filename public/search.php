@@ -15,6 +15,7 @@
 </div>
 </div>
 <hr>
+<h4 class="text-center"style = "color: #9a1e35"><?php display_message(); ?> </h4>
 <br>
 <div class="container">
 <div class="row">
@@ -54,7 +55,13 @@ if(isset($_GET['search'])){
 
     $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' AND product_quantity >=1");
     confirm($query);
-    while($row =fetch_array($query)){
+    
+    if(mysqli_num_rows($query) == 0){
+        set_message("Product not found");
+        redirect("search.php");
+        
+    } else{
+            while($row = fetch_array($query)) {
             $orders = <<<DELIMETER
             
             <tr>
@@ -69,9 +76,9 @@ if(isset($_GET['search'])){
             </tr>
 DELIMETER;
     echo $orders;
-        
-    }
-}
+            }          
+        }
+    } 
 }
 
 
@@ -81,3 +88,6 @@ DELIMETER;
 
 
 <?php include(TEMPLATE_FRONT .  "/footer.php");  ?>
+
+
+   
