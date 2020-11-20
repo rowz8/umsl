@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 19, 2020 at 09:25 PM
+-- Generation Time: Nov 21, 2020 at 12:54 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -118,7 +118,8 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (9, 'Labels'),
 (10, 'PPE'),
 (11, 'Equipment'),
-(12, 'Dispensers');
+(12, 'Dispensers'),
+(13, 'joe rottman');
 
 -- --------------------------------------------------------
 
@@ -180,9 +181,11 @@ INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_st
 (15, 22.88, '737645590', 'Processing', 'USD', '2020-11-18', 'rowz', 'Education Administration Building'),
 (16, 45.76, '443131571', 'Processing', 'USD', '2020-11-18', 'rowz', 'Fine Arts Building'),
 (17, 62.38, '1108335655', 'Processing', 'USD', '2020-11-18', 'rowz', 'Chancellors Residence'),
-(18, 52.12, '533233444', 'Processing', 'USD', '2020-11-18', 'rowz', 'KWMU Grand Center'),
 (19, 16.62, '150545688', 'Processing', 'USD', '2020-11-18', 'joe', 'La Gras'),
-(20, 20.88, '1287691836', 'Processing', 'USD', '2020-11-19', 'rowz', 'Clark Hall');
+(20, 20.88, '1287691836', 'Processing', 'USD', '2020-11-19', 'rowz', 'Clark Hall'),
+(21, 0.00, '700895007', 'Processing', 'USD', '2020-11-19', 'rowz', 'Alumni House'),
+(22, 243.81, '1523463024', 'Approved', 'USD', '2020-11-20', 'rowz', 'Social Sciences & Business Building'),
+(23, 7432.50, '1645772906', 'Completed', 'USD', '2020-11-20', 'rowz', 'Anheuser-Busch Hall');
 
 -- --------------------------------------------------------
 
@@ -280,7 +283,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (69, 68, 'Soap Dispenser Automatic', 'Auto Bulk Fill 1200 Ml Soap Or Sanitizer Foam Dispenser Dispenser In White', 313, 'Each', 7.92, 'FSD1FM', 'Suitable For Liquid: Foaming Sanitizer/Soap (Bulk Pour In Refill). Refillable Bottle (1200Ml). Lockable With Window Design. Supports Dc(6V,1A) And Battery (The Standard Packing Does Not Include Dc Or Batteries). Light Indicator For Low Power. Includes Optional Drip Tray.', 12, 'soap-container.png'),
 (70, 69, 'Chalk Anti-Dust', 'Crayola Nontoxic Anti-Dust Chalk, White, 12 Sticks/Box (50-1402)', 106, 'Cases', 21.05, 'BIN501402', 'Blackboard Chalk: Features 12 Sticks Of White Crayola Chalk For Use On Traditional Blackboards And Chalkboard Paint. Anti Dust Art Tools: Chalk Sticks Are Specially Formulated To Resist Breaking And Produce Less Dust Than Traditional Classroom Chalk. Classroom Supplies: Crayola Chalkboard Chalk Is Ideal For School Blackboards And Can Be An Essential Addition To School Supplies Lists. Safe & Nontoxic: Crayola Chalk Is Safe And Nontoxic, Ideal For Ages 3 & Up. Anti Dust. 12 Sticks. White Chalk. Great For The Classroom. 12Ct Anti Dust White Chalk Sticks Erases Easily. Low-Dust Chalk For Use On Most Chalkboards. Makes Clean, Smooth Lines.', 7, 'Misc_128.png'),
 (71, 70, 'Universal Towel Dispenser - Manual', 'Dispenser Universal Hwrt Black.', 101, 'Each', 51.00, 'PAP306489', '7 7/8 In. Wide With A 1.9 In. Universal Core', 12, 'dispenser.png'),
-(72, 71, 'Disposable Face Coverings\n', 'Disposable Ear Loop Nuisance Masks Conforming Nose Clip, Pleated, Latex Free, For General Purpose Use, Not For Medical Purposes', 411, 'Cases', 40.00, '96620687', 'Nuisance Masks Are Disposable And Good For General Purpose Applications. They Offer Basic Protection To Help Reduce Irritants Including Dust, Pollen And Other Small Particles. Not Intended For Use By Healthcare Professionals Or For Any Medical Purpose', 10, 'PPE_128.png'),
+(72, 71, 'Disposable Face Coverings', 'Disposable Ear Loop Nuisance Masks', 411, 'Cases', 40.00, '96620687', 'Nuisance Masks Are Disposable And Good For General Purpose Applications. They Offer Basic Protection To Help Reduce Irritants Including Dust, Pollen And Other Small Particles. Not Intended For Use By Healthcare Professionals Or For Any Medical Purpose', 10, 'PPE_128.png'),
 (73, 72, 'Ostrich Feather Duster', 'Duster 23In. African Feather Duster - Brown Ostrich Feathers.', 4, 'Each', 12.18, 'IMP4603', 'Economy Ostrich Feather Duster Is Perfect For Dusting Irregular Surfaces, Small Spaces And Around Delicate Items. Fine, Soft Ostrich Feathers Have More Surface Area To Effectively Grab And Hold Dust Particles. Smooth Handle Is Durable And Lightweight To Provide Excellent Maneuverability. Convenient Hang Hole Allows Fast, Simple Storage. Length 23 Inches', 7, 'Misc_128.png'),
 (74, 73, 'Starduster Lambswool Duster', 'Unger Starduster Lambswool Duster, 15\" Plastic Handle', 0, 'Each', 6.56, 'UNGLWDU0', 'Perfect For Dusting Shelves And Other Surfaces Superior Cleaning And Dust Removal Duster Can Be Used With Hiflo Nlite Poles By Attaching The Hiflo Nlite Locking Cone Adapter (Hfnlc) Or Telescopic Poles By Attaching The Ergotec Locking Cone (Ncan0). Bristle Material: Lambswool; Bristle Color: White; Handle Material: Plastic; Handle Color: Black. Unger Starduster Lambswool Duster, 15\" Handle, Sold As Each.', 7, 'Misc_128.png'),
 (75, 74, 'Lambswool Duster', '33In. To 60In. Extended Twist-And-Lock Lambswool Duster', 18, 'Each', 7.97, 'IMP3106', 'Genuine 100% Lambswool Duster. Attracts Dust Like A Magnet; Will Not Streak Or Scratch. Ideal For Cleaning Ceiling Fans And Other Hard-To-Reach Areas; Washable', 7, 'Misc_128.png'),
@@ -448,7 +451,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (236, 235, 'Dust Mop - Blue', 'Mop 5In. X 48In. Infinity Twist Cotton Dust Mop - Blue.', 5, 'Each', 13.82, 'HIL53408', 'Twisted Loop Yarn Provides Maximum Durability For Laundering And Heavy Use. No Cut Ends To Lint And Fray. Twisted Yarn Provides An Effective Dust Trap For Better Collection And Retention. Yarn Is Dyed Blue And Laundered.', 5, 'Broom_128.png'),
 (237, 236, 'Instant Hand Sanitizer Gel', 'Instant Hand Sanitizer Gel -   Affinity Touch-Free Refill.\n', 8, 'Cases', 44.83, 'HIL0040202', 'Hillyard Instant Hand Sanitizer Gel Is An Alcohol-Based Hand Sanitizer Formulated To Be Used Without Water For Maximum Convenience. It Is Designed To Help Prevent The Spread Of Infection And Cross-Contamination. Hillyard Instant Hand Sanitizer Gel Is Formulated W Ith Aloe And Conditioners To Keep Hands Conditioned During Repeated Use.', 10, 'PPE_128.png'),
 (238, 237, 'Touch-Free Dispenser', 'Touch-Free Dispenser 1 L - Black - Hand Sanitizer.\n', 0, 'Each', 5.00, 'HIL22283', 'One Reliable, Robust Dispenser Delivering Foam, Liquid Or Gel. Space-Saving Dispenser Design Utilizes 25% Less Plastic By Weight Than Other 1,000 Ml Dispensers Without Compromising Reliability Or Durability. (Ea)', 12, 'soap-container.png'),
-(239, 238, 'Affinity Expressions Manual Dispenser', 'Affinity Expressions Manual Dispenser.\n', 32, 'Each', 0.00, 'HIL22304', 'Affinity Expressions By Hillyard Combines One Dispenser With 4 Output Options. Maximum Flexibility, Maximum Performance. Implement A Hand Hygiene And Skincare Program That Utilizes The Same Dispenser For Foam And Liquid Hand Soap, Gel Or Spray Hand Sanitizer, And Foam Or Gel Body Wash.', 12, 'soap-container.png'),
+(239, 238, 'Affinity Expressions Manual Dispenser', 'Affinity Expressions Manual Dispenser.\n', 31, 'Each', 0.00, 'HIL22304', 'Affinity Expressions By Hillyard Combines One Dispenser With 4 Output Options. Maximum Flexibility, Maximum Performance. Implement A Hand Hygiene And Skincare Program That Utilizes The Same Dispenser For Foam And Liquid Hand Soap, Gel Or Spray Hand Sanitizer, And Foam Or Gel Body Wash.', 12, 'soap-container.png'),
 (240, 239, 'Deep Action Bonnet', '17\" Deep Action Bonnet - 6 Per Case.\n', 0, 'Each', 0.00, 'HIL49917', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
 (241, 240, 'Deep Action Bonnet ', '19\" Deep Action Bonnet - 6 Per Case.\n\n', 0, 'Each', 0.00, 'HIL49919', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
 (242, 241, 'Deep Action Bonnet', '21\" Deep Action Bonnet - 6 Per Case.\n\n\n', 0, 'Each', 0.00, 'HIL49921', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
@@ -457,7 +460,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (245, 244, 'Quick Dry Bonnet', '21\" Quick Dry Bonnet - 6 Per Case.\n\n', 0, 'Each', 0.00, 'HIL49938', 'Quick Dry Bonnets Are Made Of Absorbent Terry Cloth Material, So It Absorbs More Dirt And Moisture. Its Thin Profile Allows The Bonnet To Get In Full Contact With The Carpet, Resulting In Faster Dry Time And Better Dirt Pick Up. For Use With Hillyard Deep Action Carpet Bonnet Cleaner.', 8, 'floor_tech_128.png'),
 (246, 245, 'Individual Roll Towels Covid19.', 'Individual Roll Towels Covid19.', 204, 'Each', 3.96, 'GP89420', 'Specifically Designed To Be Used With Our Enmotion[R] 8\" Recessed Automated Towel Dispenser And Enmotion Impulse 8 Towel Dispenser. Usda Certified Biobased Product', 10, 'PPE_128.png'),
 (247, 246, 'Face Shields', 'Clear Uncoated Polycarbonate Anti-Fog Disposable Face Shield', 25, 'Each', 9.00, '15022544', 'Face Shield (Anti-Fog). Clear. Uncoated. Polycarbonate. Adjustable Head Strap.', 11, 'Equipment_128.png'),
-(248, 247, 'Light Duty Scraper', '4 Foot Light Duty Scraper On Aluminum Pole.', 9, 'Each', 27.09, 'UNGLH12C', 'Light Duty Scraper With 4\" Blade For Gum, Stickers, Wax Build-Up And Caked-On Dirt. Scraper Heads Are Angled For Better Performance, Greater Control And Strength. Razor-Sharp Blade Eliminates The Need For Strenuous Scraping On All Hard Surface Floors Including Vinyl And Resilient Tile, Flat And Smooth Surfaces. Blunt Blade For Delicate, Uneven Floors. Lightweight, Aluminum. 48\" Long, .83\" Diameter Handle With Ergonomic Grip And Hanging Hole.', 11, 'Equipment_128.png'),
+(248, 247, 'Light Duty Scraper', '4 Foot Light Duty Scraper On Aluminum Pole.', 10, 'Each', 27.09, 'UNGLH12C', 'Light Duty Scraper With 4\\\" Blade For Gum, Stickers, Wax Build-Up And Caked-On Dirt. Scraper Heads Are Angled For Better Performance, Greater Control And Strength. Razor-Sharp Blade Eliminates The Need For Strenuous Scraping On All Hard Surface Floors Including Vinyl And Resilient Tile, Flat And Smooth Surfaces. Blunt Blade For Delicate, Uneven Floors. Lightweight, Aluminum. 48\\\" Long, .83\\\" Diameter Handle With Ergonomic Grip And Hanging Hole.', 11, 'Equipment_128.png'),
 (249, 248, '4In. Replacement Blades', '4In. Replacement Blades - Ergotec Brute Maxi And Light Duty Scrapers.', 10, 'Packs', 10.03, 'UNGRB10C', 'For Ergotec, Brute, Maxi And Light Duty Scrapers. 10 Carbon Steel Blades Per Dispenser. Reversible: 1/2 Sharp, 1/2 Blunt Blades.', 11, 'Equipment_128.png'),
 (250, 249, 'Microfiber Cloth - Blue', 'Trident General Purpose Microfiber Cloth - Blue 12\" X 12\".\n', 0, 'Dozen', 8.70, 'HIL20028', '250 Gram Weight Cloth For General Purpose Cleaning Tasks. 12\" X 12\" 12 Pack', 7, 'Misc_128.png'),
 (251, 250, 'Microfiber Cloth - Red', 'Trident General Purpose Microfiber Cloth - Red 12\" X 12\".\n', 0, 'Dozen', 8.70, 'HIL20029', '250 Gram Weight Cloth For General Purpose Cleaning Tasks. 12\" X 12\" 12 Pack', 7, 'Misc_128.png'),
@@ -517,7 +520,10 @@ INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_title`, `
 (23, 5, 18, 'Mop Handle', 'CUST04', 'HIL22652', 9.96, 1, 'KWMU Grand Center', 'rowz'),
 (24, 9, 18, 'Broom Lobby', 'CUST08', 'RUB6374BK', 8.92, 1, 'KWMU Grand Center', 'rowz'),
 (25, 4, 19, 'Duo-Sweep Warehouse Broom', 'CUST03', 'CSM3688314', 16.62, 1, 'La Gras', 'joe'),
-(26, 1, 20, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'Clark Hall', 'rowz');
+(26, 1, 20, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'Clark Hall', 'rowz'),
+(27, 239, 21, 'Affinity Expressions Manual Dispenser', '238', 'HIL22304', 0.00, 1, 'Alumni House', 'rowz'),
+(28, 248, 22, 'Light Duty Scraper', '247', 'UNGLH12C', 27.09, 9, 'Social Sciences & Business Building', 'rowz'),
+(29, 263, 23, 'joe rottman', '262', 'RUB617388BK', 148.65, 50, 'Anheuser-Busch Hall', 'rowz');
 
 -- --------------------------------------------------------
 
@@ -553,17 +559,21 @@ CREATE TABLE `users` (
   `user_firstname` text NOT NULL,
   `user_lastname` text NOT NULL,
   `user_role` text NOT NULL,
-  `user_photo` text NOT NULL
+  `user_photo` text NOT NULL,
+  `user_team` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`) VALUES
-(1, 'rowz', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'rowz@testing.com', 'ROSEMARY', 'ROMERO', 'admin', 'user.png'),
-(2, 'becky', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'user.png'),
-(3, 'joe', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'user.png');
+INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`, `user_team`) VALUES
+(1, 'rowz', '$2y$10$iusesomecrazystrings2udMKBnriVkJj0sWcluGLpSm4uIao14h6', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1),
+(2, 'becky', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1),
+(3, 'joe', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 1),
+(5, 'test', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 1),
+(6, 'admin', '$2y$10$iusesomecrazystrings2upG.qZ1GY57wWwdAjpSXdWfbhIw9kune', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 0),
+(7, 'test', '$2y$10$iusesomecrazystrings2udMKBnriVkJj0sWcluGLpSm4uIao14h6', 'pedro@mail.com', 'Pedro', 'Garcia', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0);
 
 --
 -- Indexes for dumped tables
@@ -631,7 +641,7 @@ ALTER TABLE `buildings`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `meetings`
@@ -643,19 +653,19 @@ ALTER TABLE `meetings`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
 
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `slides`
@@ -667,7 +677,7 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
