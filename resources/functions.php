@@ -547,14 +547,14 @@ DELIMETER;
 
 // displays the reports in admin  
 function display_reports(){
-    $query = query("SELECT * FROM reports");
+    $query = query("SELECT * FROM reports WHERE order_id = order_id");
     confirm($query);
 
     while($row = fetch_array($query)) {
         
         $reports = <<<DELIMETER
              <tr>
-            <td><a class="btn btn-info" href="index.php?report_id={$row['order_id']}">{$row['report_id']}</td>            
+            <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}&order_id={$row['order_id']}">{$row['report_id']}</td>            
             <td>{$row['product_id']}</td>
             <td>{$row['order_id']}</td>
            <!--  <td>{$row['product_title']}</td> -->
@@ -571,47 +571,47 @@ DELIMETER;
 }
 
 // function that displays report details
-function show_report_details(){
+// function show_report_details(){
     
 
-    $query = query("SELECT * FROM reports WHERE report_id = " . escape_string($_GET['report_id']) . " ");
-    confirm($query);
+//     $query = query("SELECT * FROM reports WHERE report_id = " . escape_string($_GET['report_id']) . " ");
+//     confirm($query);
 
-    while($row = fetch_array($query)) {
+//     while($row = fetch_array($query)) {
 
-    $product_title          = escape_string($row['product_title']);
-    $product_location       = escape_string($row['product_location']);
-    $product_quantity       = escape_string($row['product_quantity']);
-    $product_number         = escape_string($row['product_number']); 
-    $order_building         = escape_string($row['order_building']); 
-    $order_name             = escape_string($row['order_name']); 
+//     $product_title          = escape_string($row['product_title']);
+//     $product_location       = escape_string($row['product_location']);
+//     $product_quantity       = escape_string($row['product_quantity']);
+//     $product_number         = escape_string($row['product_number']); 
+//     $order_building         = escape_string($row['order_building']); 
+//     $order_name             = escape_string($row['order_name']); 
         
-        $view_order = <<<DELIMETER
-             <tr>
+//         $view_order = <<<DELIMETER
+//              <tr>
             
-            <td>{$row['order_id']}</td>
-            <td>{$row['order_building']}</td>
-            <td>{$row['order_name']}</td>
-            <td>{$row['product_title']}</td>
-            <td>CUST{$row['product_location']}</td>
-            <td>{$row['product_number']}</td>
-            <td>{$row['product_quantity']}</td>
+//             <td>{$row['order_id']}</td>
+//             <td>{$row['order_building']}</td>
+//             <td>{$row['order_name']}</td>
+//             <td>{$row['product_title']}</td>
+//             <td>CUST{$row['product_location']}</td>
+//             <td>{$row['product_number']}</td>
+//             <td>{$row['product_quantity']}</td>
             
-            </tr>
+//             </tr>
              
         
-DELIMETER;
-    echo $view_order;
+// DELIMETER;
+//     echo $view_order;
     
-    }
+//     }
   
     
-}
+// }
 
 // displays all the products in admin
 function get_products_in_admin(){
    
-    $query = query("SELECT * FROM products WHERE product_quantity >=1 ORDER BY product_id desc");
+    $query = query("SELECT * FROM products ORDER BY product_id desc");
     confirm($query);
     while($row = fetch_array($query))
    {
@@ -1337,7 +1337,7 @@ function get_in_stock_products(){
                 <div class="caption" style ="height: 125px">
                     <h4><a href="index.php?edit_product&id={$row['product_id']}">{$row['product_title']}</a></h4>
                     <h6 class="small">{$row['product_number']}</h6>
-                    <h6 class="small">{$row['product_location']}</h6>
+                    <h6 class="small">CUST{$row['product_location']}</h6>
                     
                     
                 </div>
@@ -1383,7 +1383,7 @@ function get_out_of_stock_products(){
                 <div class="caption" style ="height: 125px">
                     <h4><a href="index.php?edit_product&id={$row['product_id']}">{$row['product_title']}</a></h4>
                     <h6 class="small">{$row['product_number']}</h6>
-                    <h6 class="small">{$row['product_location']}</h6>
+                    <h6 class="small">CUST{$row['product_location']}</h6>
                     
                     
                 </div>

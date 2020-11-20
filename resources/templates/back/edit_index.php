@@ -42,9 +42,36 @@ DELIMETER;
   </div>
 
 
+
+          <table class="table table-hover">
+            <thead>
+
+              <tr>
+
+                   <th>Order ID</th>
+                   <th>Building</th>
+                   <th>Name</th>
+                   <th>Product Title</th>
+                   <th>Location</th>           
+                   <th>MFG Number</th>
+                   <th>Product Quantity</th>
+
+              </tr>
+                
+            </thead>
+            <tbody>
+       
+              <?php show_order(); ?>
+        
+              </tbody>
+          </table>
+      
+
+
 <form action="" method="post" enctype="multipart/form-data">
 
   <div class="col-md-8">
+
 
 
   <!-- SIDEBAR-->
@@ -63,14 +90,9 @@ DELIMETER;
 
 <br>
 
-    <div class="form-group">
-      <label for="order_status">Order # </label>
-        <input type="text" name="order_id" class="form-control" value="<?php echo $_GET['id'] ?>">
-    </div>
-
     <br>
 
-
+   
 <!--
  <div class="form-group">
       <label for="order_status">Order Status</label>
@@ -104,4 +126,42 @@ DELIMETER;
     
 </form>
     
- 
+ <?php
+// function that displays order details
+function show_order(){
+    
+
+    $query = query("SELECT * FROM reports WHERE order_id = " . escape_string($_GET['id']) . " ");
+    confirm($query);
+
+    while($row = fetch_array($query)) {
+
+    $product_title          = escape_string($row['product_title']);
+    $product_location       = escape_string($row['product_location']);
+    $product_quantity       = escape_string($row['product_quantity']);
+    $product_number         = escape_string($row['product_number']); 
+    $order_building         = escape_string($row['order_building']); 
+    $order_name             = escape_string($row['order_name']); 
+        
+        $view_order = <<<DELIMETER
+             <tr>
+            
+            <td>{$row['order_id']}</td>
+            <td>{$row['order_building']}</td>
+            <td>{$row['order_name']}</td>
+            <td>{$row['product_title']}</td>
+            <td>CUST{$row['product_location']}</td>
+            <td>{$row['product_number']}</td>
+            <td>{$row['product_quantity']}</td>
+            
+            </tr>
+             
+        
+DELIMETER;
+    echo $view_order;
+    
+    }
+  
+    
+}
+?>
