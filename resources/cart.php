@@ -89,7 +89,7 @@ DELIMETER;
 // PayPal button
 function show_paypal(){
     if (!isset($_SESSION['username'])){   
-       set_message("You must login to be able place an order");
+       set_message("You must login to be able to place an order");
     }
     if(isset($_SESSION['username'])){
     if(isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >=1  ) {
