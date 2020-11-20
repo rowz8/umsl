@@ -36,8 +36,12 @@
             <li>
                 <a href="announcements.php">Announcements</a>
             </li>
+            
+            <li>
+                <a href="search.php">Search</a>
+            </li>
        
-         <ul  class="nav navbar-right top-nav">
+                <ul  class="nav navbar-right top-nav">
               <li class="dropdown">
                     <a style="color:#ebab04" "href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                     <?php
@@ -59,8 +63,15 @@
                 </li>
                                                                                                                
             </ul>
-            </ul>                                                                                                    
+               
+            </ul>  
+
+        
+
+                                                                                                          
     </div>
     <!-- /.navbar-collapse -->
    
 </div>
+
+

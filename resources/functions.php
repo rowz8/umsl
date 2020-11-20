@@ -39,15 +39,6 @@ function adminGuard(){
     }
 }
 
-// function Guard(){
-//     if($_COOKIE['username']!== "$username"){
-//         redirect("index.php");
-//     }
-//     if ($_COOKIE['username'] == $username){
-//         redirect("checkout.php");
-//     }
-// }
-
 function query($sql){
 
     global $connection;
@@ -756,6 +747,8 @@ function update_product(){
     $product_number         = escape_string($_POST['product_number']); 
     $product_image          = escape_string($_FILES['file']['name']);
     $image_temp_location    = escape_string($_FILES['file']['tmp_name']);
+
+    // $value = $product_quantity + $_POST['product_quantity'];
 
     if(empty($product_image)){
         $get_pic = query("SELECT product_image FROM products WHERE product_id=" .escape_string($_GET['id'])."");
