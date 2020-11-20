@@ -52,7 +52,7 @@ if(isset($_GET['search'])){
     
     $search = escape_string($_GET['search']);
 
-    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' ");
+    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' AND product_quantity >=1");
     confirm($query);
     while($row =fetch_array($query)){
             $orders = <<<DELIMETER
