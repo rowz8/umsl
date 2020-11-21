@@ -14,6 +14,7 @@ if(isset($_GET['order_id'])) {
   $product_quantity       = escape_string($row['product_quantity']);
   $product_number         = escape_string($row['product_number']);
   $order_building         = escape_string($row['order_building']);
+  $product_price          = escape_string($row['product_price']);
 
   }
 
@@ -68,9 +69,3 @@ if(isset($_GET['order_id'])) {
     </div>
     
   </form>
-
-<?php
-
-
-
-?>

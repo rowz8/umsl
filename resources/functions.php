@@ -323,7 +323,7 @@ function login_user(){
             $password = crypt($password,$hashF_and_salt); 
        
 
-            $query = query("SELECT * FROM users where username = '{$username}' AND password = '{$password}'");
+            $query = query("SELECT * FROM users where username = '{$username}' AND password = '{$password}' ");
             confirm($query);
             
 
@@ -468,6 +468,44 @@ function show_order_details(){
     
 
     $query = query("SELECT * FROM reports WHERE order_id = " . escape_string($_GET['order_id']) . " ");
+    confirm($query);
+
+    while($row = fetch_array($query)) {
+
+    $product_title          = escape_string($row['product_title']);
+    $product_location       = escape_string($row['product_location']);
+    $product_quantity       = escape_string($row['product_quantity']);
+    $product_number         = escape_string($row['product_number']); 
+    $order_building         = escape_string($row['order_building']); 
+    $order_name             = escape_string($row['order_name']); 
+        
+        $view_order = <<<DELIMETER
+             <tr>
+            
+            <td>{$row['order_id']}</td>
+            <td>{$row['order_building']}</td>
+            <td>{$row['order_name']}</td>
+            <td>{$row['product_title']}</td>
+            <td>CUST{$row['product_location']}</td>
+            <td>{$row['product_number']}</td>
+            <td>{$row['product_quantity']}</td>
+            
+            </tr>
+             
+        
+DELIMETER;
+    echo $view_order;
+    
+    }
+  
+    
+}
+
+// function that displays order details
+function show_order(){
+    
+
+    $query = query("SELECT * FROM reports WHERE order_id = " . escape_string($_GET['id']) . " ");
     confirm($query);
 
     while($row = fetch_array($query)) {
@@ -1097,7 +1135,7 @@ DELIMETER;
 
 // updated order status 
 function update_order(){
-    if(isset($_POST['update'])){
+     if(isset($_POST['update'])){
 
     $order_status           = escape_string($_POST['order_status']);
     $order_id               = escape_string($_POST['order_id']);
@@ -1112,7 +1150,7 @@ function update_order(){
     $send_update_query = query($query);
     confirm($send_update_query);
     set_message("Order {$order_id} has been Updated");
-    redirect("index.php");
+    redirect("index.php?orders");
     }
 }
 
