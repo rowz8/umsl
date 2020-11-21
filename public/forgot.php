@@ -16,13 +16,13 @@
             <form class="" action="" method="post" enctype="multipart/form-data">
 
                 <div class="form-group"><label for="">
-                    Username<input type="text" name="username" class="form-control" placeholder="username"></label>
+                    Username<input type="text" name="username" class="form-control" placeholder="username" required></label>
                 </div>
                 <div class="form-group"><label for="email">
-                    Email<input type="email" name="email" placeholder="email" class="form-control"></label>
+                    Email<input type="email" name="email" placeholder="email" class="form-control"required></label>
                 </div>
                  <div class="form-group"><label for="password">
-                   New Password<input type="password" name="password" placeholder="password" class="form-control"></label>
+                   New Password<input type="password" name="password" placeholder="password" class="form-control" required></label>
                 </div>
                     <?php forgot_psw(); ?>
                 
