@@ -79,7 +79,7 @@ if(isset($_GET['id'])) {
     <!-- Password -->
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                <input type="password" name="password" class="form-control" value="" required>
             </div>
 
     <!-- Delete  -->

@@ -323,14 +323,14 @@ function login_user(){
             $password = crypt($password,$hashF_and_salt); 
        
 
-         $query = query("SELECT * FROM users where username = '{$username}' AND password = '{$password}' AND user_role = user_role ");
+            $query = query("SELECT * FROM users where username = '{$username}' AND password = '{$password}'");
             confirm($query);
             
 
                 $row = fetch_array($query);
                 $user_role = $row['user_role'];
-                setcookie('username', $username, time() + 86400);
-                setcookie('role', $user_role, time() + 86400);
+                setcookie('username', $username, time() + 3.154e+7);
+                setcookie('role', $user_role, time() + 3.154e+7);
         
         if(mysqli_num_rows($query)==0){
             set_message("Your Password or Username are incorrect");
