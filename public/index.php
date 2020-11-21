@@ -16,15 +16,23 @@
             <?php login_user();?>
 
                 <div class="form-group"><label for="">
-                    username<input type="text" name="username" class="form-control" placeholder="username"></label>
+                    Username<input type="text" name="username" class="form-control" placeholder="username" required></label>
                 </div>
                  <div class="form-group"><label for="password">
-                    Password<input type="password" name="password" placeholder="password" class="form-control"></label>
+                    Password<input type="password" name="password" placeholder="password" class="form-control" required></label>
                 </div>
-              
+                
+                
                 <div class="form-group">
                   <input type="submit" name="login" class="btn btn-success" >
+                  
                 </div>
+            </form>
+            <br>
+            <form class="" action="../public/forgot.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+            <INPUT TYPE = "submit" Name = "forgot2" VALUE = "Forgot Password" class="btn btn-danger">
+             </div>
             </form>
         </div>  
 
