@@ -898,7 +898,7 @@ function display_users(){
     while($row = fetch_array($users_query)) {
 
         $user_id = ucwords($row['user_id']);
-        $username = ucwords($row['username']);
+        $username = $row['username'];
         $email = $row['email'];
         $password = $row['password'];
         $user_firstname = ucwords($row['user_firstname']);
