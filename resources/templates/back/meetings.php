@@ -1,7 +1,7 @@
 
 <div class="col-lg-12">
 
-    <h1 style = "color: #9a1e35" class="page-header"> Users</h1>
+    <h1 style = "color: #9a1e35" class="page-header"> Meetings</h1>
     <h4 class ="text-center" style = "color: #ebab04" ><?php display_message(); ?></h4>
 
     <a href="index.php?add_announcements" class="btn btn-primary">Add a Meeting</a>

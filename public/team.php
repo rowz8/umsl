@@ -107,6 +107,7 @@ function team(){
         $user_firstname = $row['user_firstname'];
         $user_lastname = $row['user_lastname'];
         $user_role   = $row['user_role'];
+        $user_brief  = $row['user_brief'];
         
         $user_photo = display_image($row['user_photo']);
 
@@ -118,7 +119,7 @@ function team(){
             <div class="container">
         <h2>$user_firstname $user_lastname</h2>
         <p class="title">$user_role</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>$user_brief</p>
         <p>$email</p>
         <br>
        <!-- <form name="" id="contactForm" method ="post" action="mailto:$email"> -->
