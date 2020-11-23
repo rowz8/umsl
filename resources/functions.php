@@ -424,11 +424,14 @@ function display_orders(){
     confirm($query);
 
     while($row = fetch_array($query)) {
-        
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'd/m/Y G:i');
+
         $orders = <<<DELIMETER
             <tr>
             <td><a class="btn btn-info" href="index.php?order_id={$row['order_id']}">{$row['order_id']}</td>
-            <td>{$row['order_date']}</td>
+            <td>$order_date</td>
             <td>&#36; {$row['order_amount']}</td>
            <!-- <td>{$row['order_transaction']}</td> -->
            <td>{$row['order_status']}</td>
@@ -547,7 +550,9 @@ function order_date(){
         confirm($query);
         while ($row = fetch_array($query)) {
             $order_date = escape_string($row['order_date']);
-
+            $date = date_create($order_date);
+            $order_date = date_format($date, 'd/m/y');
+             
             $view_date = <<<DELIMETER
 
             <h2 class="small">
@@ -1040,12 +1045,17 @@ function get_orders_in_panel_approved(){
     confirm($query);
 
     while($row = fetch_array($query)) {
+
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'd/m/y');
+
     $orders_panel = <<<DELIMETER
     
       <tr>
          <td><a class="btn btn-warning" href = "index.php?edit_index&id={$row['order_id']}">{$row['order_id']}</td>
         <!-- <td>{$row['order_transaction']}</td> -->
-         <td>{$row['order_date']}</td>
+         <td>$order_date</td>
          <td> &#36; {$row['order_amount']}</td>
           <td> {$row['order_name']} </td>
          <td>{$row['order_building']}</a></td>
@@ -1069,12 +1079,17 @@ function get_orders_in_panel_processing(){
     confirm($query);
 
     while($row = fetch_array($query)) {
+
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'd/m/y');
+
     $orders_panel = <<<DELIMETER
     
       <tr>
          <td><a class="btn btn-danger" href = "index.php?edit_index&id={$row['order_id']}">{$row['order_id']}</td>
         <!-- <td>{$row['order_transaction']}</td> -->
-         <td>{$row['order_date']}</td>
+         <td>{$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
          <td> {$row['order_name']} </td>
          <td>{$row['order_building']}</a></td>
@@ -1093,12 +1108,17 @@ function get_orders_in_panel_completed(){
     confirm($query);
 
     while($row = fetch_array($query)) {
+
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'd/m/y');
+
     $orders_panel = <<<DELIMETER
     
       <tr>
          <td> <a class="btn btn-success" href = "index.php?edit_index&id={$row['order_id']}">{$row['order_id']}</td>
         <!-- <td>{$row['order_transaction']}</td> -->
-         <td>{$row['order_date']}</td>
+         <td>{$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
          <td>{$row['order_name']}</td>
          <td>{$row['order_building']}  </a></td>
@@ -1116,12 +1136,17 @@ function get_orders_approvals(){
     confirm($query);
 
     while($row = fetch_array($query)) {
+
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'd/m/y');
+
     $orders_panel = <<<DELIMETER
     
       <tr>
          <td><a class="btn btn-danger" href = "index.php?edit_index&id={$row['order_id']}">{$row['order_id']}</td>
          <!-- <td>{$row['order_transaction']}</td> -->
-         <td>{$row['order_date']}</td>
+         <td> {$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
          <td>  {$row['order_name']}</td>
          <td>  {$row['order_building']}</a></td>
