@@ -101,35 +101,34 @@ function team(){
     while($row = fetch_array($users_query)) {
 
         $user_id = $row['user_id'];
-        $username = $row['username'];
+        $username = ucwords($row['username']);
         $email = $row['email'];
-        $password = $row['password'];
-        $user_firstname = $row['user_firstname'];
-        $user_lastname = $row['user_lastname'];
-        $user_role   = $row['user_role'];
-        $user_brief  = $row['user_brief'];
+        $user_firstname = ucwords($row['user_firstname']);
+        $user_lastname = ucwords($row['user_lastname']);
+        $user_role   = ucwords($row['user_role']);
+        $user_brief  = ucwords($row['user_brief']);
         
         $user_photo = display_image($row['user_photo']);
 
         $users = <<<DELIMETER
             
-            <div class="column">
+          <div class="col-sm-4 col-lg-4">
             <div class="card">
-        <img class="center" src="../resources/$user_photo" alt="$username" >
-            <div class="container">
-        <h2>$user_firstname $user_lastname</h2>
-        <p class="title">$user_role</p>
-        <p>$user_brief</p>
-        <p>$email</p>
-        <br>
-       <!-- <form name="" id="contactForm" method ="post" action="mailto:$email"> -->
-       <!-- <p><button type="submit" value="Send" class="button">Contact</button></p> -->
-        </div>
-        </div>
-        </div>
+              <img  class="center" src="../resources/$user_photo" alt="$username" >
+                <div class="caption" style="height: 180px">
+                  <h2>$user_firstname $user_lastname</h2>
+                  <p class="title">$user_role</p>
+                  <p>$user_brief</p>
+                  <p>$email</p>
+                  <br>
+            <!-- <form name="" id="contactForm" method ="post" action="mailto:$email"> -->
+            <!-- <p><button type="submit" value="Send" class="button">Contact</button></p> -->
+              </div>
+           </div>
+          </div>
         
 DELIMETER;
-echo $users;
+        echo $users;
 
 }
 }

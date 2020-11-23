@@ -16,6 +16,7 @@ if(isset($_GET['id'])) {
     $user_photo             = escape_string($row['user_photo']);
     $user_photo             = display_image($row['user_photo']);
     $user_team              = escape_string($row['user_team']);
+    $user_brief              = escape_string($row['user_brief']);
   
   }
   update_user();
@@ -80,6 +81,12 @@ if(isset($_GET['id'])) {
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control" value="" required>
+            </div>
+
+    <!-- User Brief -->
+            <div class="form-group">
+                <label for="user brief">Brief Description: </label>
+                <input type="text" name="user_brief" class="form-control" value="<?php echo $user_brief; ?>" >
             </div>
 
     <!-- Delete  -->

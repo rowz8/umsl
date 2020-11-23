@@ -427,6 +427,7 @@ function display_orders(){
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
         $order_date = date_format($date, 'd/m/Y G:i');
+        $order_name = ucwords($row['order_name']);
 
         $orders = <<<DELIMETER
             <tr>
@@ -436,7 +437,7 @@ function display_orders(){
            <!-- <td>{$row['order_transaction']}</td> -->
            <td>{$row['order_status']}</td>
            <!--  <td>{$row['order_currency']}</td>  -->
-            <td>{$row['order_name']}</td>
+            <td>{$order_name}</td>
             <td>{$row['order_building']}</a></td>
            
             
@@ -896,14 +897,15 @@ function display_users(){
 
     while($row = fetch_array($users_query)) {
 
-        $user_id = $row['user_id'];
-        $username = $row['username'];
+        $user_id = ucwords($row['user_id']);
+        $username = ucwords($row['username']);
         $email = $row['email'];
         $password = $row['password'];
-        $user_firstname = $row['user_firstname'];
-        $user_lastname = $row['user_lastname'];
-        $user_role   = $row['user_role'];
+        $user_firstname = ucwords($row['user_firstname']);
+        $user_lastname = ucwords($row['user_lastname']);
+        $user_role   = ucwords($row['user_role']);
         
+
         $user_photo = display_image($row['user_photo']);
 
         $user = <<<DELIMETER
@@ -941,6 +943,7 @@ function add_user(){
             $user_photo             = escape_string($_FILES['file']['name']);
             $user_team              = escape_string($_POST['user_team']); 
             $photo_temp             = escape_string($_FILES['file']['tmp_name']);
+            $user_brief             = escape_string($_POST['user_brief']);
 
             move_uploaded_file($photo_temp, UPLOAD_DIRECTORY . DS . $user_photo);
 
@@ -953,7 +956,7 @@ function add_user(){
             // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
                 $password = crypt($password,$hashF_and_salt); 
         
-            $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}' )");
+            $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team, user_brief) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}', '{$user_brief}' )");
             $last_id = last_id();
             confirm($query);
             set_message("User {$username} was created");
@@ -994,6 +997,7 @@ function update_user(){
     $user_photo             = escape_string($_FILES['file']['name']);
     $image_temp_location    = escape_string($_FILES['file']['tmp_name']);
     $user_team              = escape_string($_POST['user_team']);
+    $user_brief             = escape_string($_POST['user_brief']);
 
      if(empty($user_photo)){
          $get_pic = query("SELECT user_photo FROM users WHERE user_id = " .escape_string($_GET['id'])."");
@@ -1025,7 +1029,8 @@ function update_user(){
     $query.="user_role                 = '{$user_role }',";
     $query.="user_photo                = '{$user_photo }', ";
     $query.="user_role                 = '{$user_role }', ";
-    $query.="user_team                 = '{$user_team }' ";
+    $query.="user_team                 = '{$user_team }', ";
+    $query.="user_brief                = '{$user_brief }' ";
     $query.="WHERE user_id             = ".escape_string($_GET['id']);
 
         
@@ -1049,7 +1054,8 @@ function get_orders_in_panel_approved(){
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
         $order_date = date_format($date, 'd/m/y');
-
+        $order_name = ucwords($row['order_name']);
+        
     $orders_panel = <<<DELIMETER
     
       <tr>
@@ -1057,7 +1063,7 @@ function get_orders_in_panel_approved(){
         <!-- <td>{$row['order_transaction']}</td> -->
          <td>$order_date</td>
          <td> &#36; {$row['order_amount']}</td>
-          <td> {$row['order_name']} </td>
+          <td> $order_name </td>
          <td>{$row['order_building']}</a></td>
         
          
@@ -1083,6 +1089,7 @@ function get_orders_in_panel_processing(){
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
         $order_date = date_format($date, 'd/m/y');
+        $order_name = ucwords($row['order_name']);
 
     $orders_panel = <<<DELIMETER
     
@@ -1091,7 +1098,7 @@ function get_orders_in_panel_processing(){
         <!-- <td>{$row['order_transaction']}</td> -->
          <td>{$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
-         <td> {$row['order_name']} </td>
+         <td> {$order_name} </td>
          <td>{$row['order_building']}</a></td>
       </tr>
 
@@ -1112,6 +1119,7 @@ function get_orders_in_panel_completed(){
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
         $order_date = date_format($date, 'd/m/y');
+        $order_name = ucwords($row['order_name']);
 
     $orders_panel = <<<DELIMETER
     
@@ -1120,7 +1128,7 @@ function get_orders_in_panel_completed(){
         <!-- <td>{$row['order_transaction']}</td> -->
          <td>{$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
-         <td>{$row['order_name']}</td>
+         <td>{$order_name}</td>
          <td>{$row['order_building']}  </a></td>
       </tr>
 
@@ -1140,6 +1148,7 @@ function get_orders_approvals(){
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
         $order_date = date_format($date, 'd/m/y');
+        $order_name = ucwords($row['order_name']);
 
     $orders_panel = <<<DELIMETER
     
@@ -1148,7 +1157,7 @@ function get_orders_approvals(){
          <!-- <td>{$row['order_transaction']}</td> -->
          <td> {$order_date}</td>
          <td> &#36; {$row['order_amount']}</td>
-         <td>  {$row['order_name']}</td>
+         <td>  {$order_name}</td>
          <td>  {$row['order_building']}</a></td>
          
       </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2020 at 12:54 AM
+-- Generation Time: Nov 23, 2020 at 11:45 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -163,7 +163,7 @@ CREATE TABLE `orders` (
   `order_transaction` text NOT NULL,
   `order_status` text NOT NULL,
   `order_currency` text NOT NULL,
-  `order_date` date NOT NULL,
+  `order_date` datetime NOT NULL,
   `order_name` text NOT NULL,
   `order_building` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -173,19 +173,20 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_status`, `order_currency`, `order_date`, `order_name`, `order_building`) VALUES
-(10, 38.50, '1004896507', 'Completed', 'USD', '2020-11-17', 'rowz', 'Lucas Hall'),
-(11, 43.76, '1217368098', 'Approved', 'USD', '2020-11-17', 'rowz', 'Music Building'),
-(12, 43.76, '1322489877', 'Processing', 'USD', '2020-11-18', 'rowz', 'Clark Hall'),
-(13, 22.88, '1062362904', 'Processing', 'USD', '2020-11-18', 'rowz', 'Benton Hall'),
-(14, 22.88, '452855177', 'Processing', 'USD', '2020-11-18', 'rowz', 'Campus Police Building'),
-(15, 22.88, '737645590', 'Processing', 'USD', '2020-11-18', 'rowz', 'Education Administration Building'),
-(16, 45.76, '443131571', 'Processing', 'USD', '2020-11-18', 'rowz', 'Fine Arts Building'),
-(17, 62.38, '1108335655', 'Processing', 'USD', '2020-11-18', 'rowz', 'Chancellors Residence'),
-(19, 16.62, '150545688', 'Processing', 'USD', '2020-11-18', 'joe', 'La Gras'),
-(20, 20.88, '1287691836', 'Processing', 'USD', '2020-11-19', 'rowz', 'Clark Hall'),
-(21, 0.00, '700895007', 'Processing', 'USD', '2020-11-19', 'rowz', 'Alumni House'),
-(22, 243.81, '1523463024', 'Approved', 'USD', '2020-11-20', 'rowz', 'Social Sciences & Business Building'),
-(23, 7432.50, '1645772906', 'Completed', 'USD', '2020-11-20', 'rowz', 'Anheuser-Busch Hall');
+(10, 38.50, '1004896507', 'Approved', 'USD', '2020-11-17 00:00:00', 'rowz', 'Lucas Hall'),
+(11, 43.76, '1217368098', 'Cancelled', 'USD', '2020-11-17 00:00:00', 'rowz', 'Music Building'),
+(12, 43.76, '1322489877', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Clark Hall'),
+(13, 22.88, '1062362904', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Benton Hall'),
+(14, 22.88, '452855177', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Campus Police Building'),
+(15, 22.88, '737645590', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Education Administration Building'),
+(16, 45.76, '443131571', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Fine Arts Building'),
+(17, 62.38, '1108335655', 'Processing', 'USD', '2020-11-18 00:00:00', 'rowz', 'Chancellors Residence'),
+(19, 16.62, '150545688', 'Completed', 'USD', '2020-11-18 00:00:00', 'joe', 'La Gras'),
+(20, 20.88, '1287691836', 'Cancelled', 'USD', '2020-11-19 00:00:00', 'rowz', 'Clark Hall'),
+(21, 0.00, '700895007', 'Completed', 'USD', '2020-11-19 00:00:00', 'rowz', 'Alumni House'),
+(22, 243.81, '1523463024', 'Cancelled', 'USD', '2020-11-20 00:00:00', 'rowz', 'Social Sciences & Business Building'),
+(23, 7432.50, '1645772906', 'Completed', 'USD', '2020-11-20 00:00:00', 'rowz', 'Anheuser-Busch Hall'),
+(24, 22.88, '1247017671', 'Processing', 'USD', '2020-11-23 15:22:32', 'rowz', 'Marillac Hall');
 
 -- --------------------------------------------------------
 
@@ -214,7 +215,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `short_desc`, `product_quantity`, `product_uom`, `product_price`, `product_number`, `product_description`, `product_category_id`, `product_image`) VALUES
 (1, 0, 'Foam Block Fine Floor Sweep', '24In. Plastic Foam Block Fine Floor Sweep Flagged Polypropylene Fill.', 5, 'Each', 20.88, 'RUB9B02GY', 'Designed To Pick Up The Finest Debris. Available In Flagged Polypropylene Or Blended Horsehair Tampico For Removing Even Fine Dirt And Dust. Ideal For Highly Polished Or Waxed Floors. Two-Threaded Handle Holes On Either Side Of Block For Even Wear. Angle Brace Sku9B71 Adds Support And Stability. Handles Sold Separately.', 5, 'Broom_128.png'),
 (2, 1, 'Fine Floor Sweep', '36 in. Broom Fine Gray Flagged Polypropylene Sweep', 7, 'Each', 21.88, 'CSM4501623', 'Industrial floor fine sweep with 2 threaded handle holes and 3in bristle trim. Satin-Tip flagged polypropylene for sweeping smooth high- gloss floors.', 5, 'Broom_128.png'),
-(3, 2, 'Corn Broom Warehouse', 'Corn Broom Warehouse 1 1/8 in. dia 2.9 cm Stained/Lacquered Handle', 8, 'Each', 22.88, 'RUB6383BL', 'Designed for rugged indoor/outdoor cleaning. 100% natural broom corn fibers for long life and effective pick up. Remove fine dirt from even or rough surfaces. Hand-selected, heavy-duty lacquered pine handles.', 5, 'Broom_128.png'),
+(3, 2, 'Corn Broom Warehouse', 'Corn Broom Warehouse 1 1/8 in. dia 2.9 cm Stained/Lacquered Handle', 7, 'Each', 22.88, 'RUB6383BL', 'Designed for rugged indoor/outdoor cleaning. 100% natural broom corn fibers for long life and effective pick up. Remove fine dirt from even or rough surfaces. Hand-selected, heavy-duty lacquered pine handles.', 5, 'Broom_128.png'),
 (4, 3, 'Duo-Sweep Warehouse Broom', 'Duo-Sweep 13 In. Warehouse Broom W/ 48 In. Metal Handle.', 15, 'Each', 16.62, 'CSM3688314', 'Two Handle Holes; One Angled, One Upright. Flagged Blue Filament Sweeps Fine Debris; Use Black Stiff Filament For Heavier Sweeping. Use Lobby Brooms With Dust Pans (Sold Separately) For Continuous Cleaning Of Convention Centers, Malls, And Theme Parks. 7\" Bristle Trim.', 5, 'Broom_128.png'),
 (5, 4, 'Mop Handle', 'Mop Handle Quick Change Wood 60In.', 4, 'Each', 9.96, 'HIL22652', '60\" Hardwood Handle Constructed Of Heavy Duty Plated Metal That Resists Rust And Features A Release Bar For Fast Changing Of Mop Heads.', 5, 'Broom_128.png'),
 (6, 5, 'Handle Clencher', 'Handle Clencher Fiberglass 60In.', 0, 'Each', 16.42, 'HIL22711', 'Extra Durable Nylon Construction Assures Long Life For This Jaw Style Handle. Ideal For Wide Headbands. 60\" Fiberglass Handle. Head Also Sold Separately.', 5, 'Broom_128.png'),
@@ -523,7 +524,8 @@ INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_title`, `
 (26, 1, 20, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'Clark Hall', 'rowz'),
 (27, 239, 21, 'Affinity Expressions Manual Dispenser', '238', 'HIL22304', 0.00, 1, 'Alumni House', 'rowz'),
 (28, 248, 22, 'Light Duty Scraper', '247', 'UNGLH12C', 27.09, 9, 'Social Sciences & Business Building', 'rowz'),
-(29, 263, 23, 'joe rottman', '262', 'RUB617388BK', 148.65, 50, 'Anheuser-Busch Hall', 'rowz');
+(29, 263, 23, 'joe rottman', '262', 'RUB617388BK', 148.65, 50, 'Anheuser-Busch Hall', 'rowz'),
+(30, 3, 24, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Marillac Hall', 'rowz');
 
 -- --------------------------------------------------------
 
@@ -543,7 +545,11 @@ CREATE TABLE `slides` (
 
 INSERT INTO `slides` (`slide_id`, `slide_title`, `slide_image`) VALUES
 (1, 'Go Green', 'sustainability green igportrait.png'),
-(2, 'recycle', 'recycle.png');
+(2, 'recycle', 'recycle.png'),
+(3, 'UMSL - Yellow', 'umsl-yellow.png'),
+(4, 'UMSL - Black', 'UMSL - Black.png'),
+(5, 'UMSL - Red', 'UMSL - Red.png'),
+(6, 'UMSL - White', 'UMSL - White.png');
 
 -- --------------------------------------------------------
 
@@ -560,20 +566,20 @@ CREATE TABLE `users` (
   `user_lastname` text NOT NULL,
   `user_role` text NOT NULL,
   `user_photo` text NOT NULL,
-  `user_team` tinyint(1) NOT NULL DEFAULT 1
+  `user_team` tinyint(1) NOT NULL DEFAULT 1,
+  `user_brief` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`, `user_team`) VALUES
-(1, 'rowz', '$2y$10$iusesomecrazystrings2udMKBnriVkJj0sWcluGLpSm4uIao14h6', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1),
-(2, 'becky', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1),
-(3, 'joe', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 1),
-(5, 'test', '$2y$10$iusesomecrazystrings2usd4tvnPcFaqNGeifMT3OhdXRZWDd2L6', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 1),
-(6, 'admin', '$2y$10$iusesomecrazystrings2upG.qZ1GY57wWwdAjpSXdWfbhIw9kune', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 0),
-(7, 'test', '$2y$10$iusesomecrazystrings2udMKBnriVkJj0sWcluGLpSm4uIao14h6', 'pedro@mail.com', 'Pedro', 'Garcia', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0);
+INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`, `user_team`, `user_brief`) VALUES
+(1, 'rowz', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Storeroom Clerk Facilities Design Team 5 Design/Developer'),
+(2, 'becky', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1, 'Team Design 5 Tester'),
+(3, 'Joe', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, ''),
+(5, 'test', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 0, ''),
+(6, 'admin', '$2y$10$iusesomecrazystrings2uwxqVj7J7zQRBheEH.fn4YwpBoRp5IC6', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Design Team 5 Admin');
 
 --
 -- Indexes for dumped tables
@@ -653,7 +659,7 @@ ALTER TABLE `meetings`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -665,13 +671,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
