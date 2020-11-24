@@ -11,7 +11,6 @@ function last_id(){
     return mysqli_insert_id($connection);
 }
 
-
 function set_message($msg){
     if(!empty($msg)){
     $_SESSION['message'] = $msg;
@@ -19,7 +18,6 @@ function set_message($msg){
     $msg = "";
         }
 }
-
 
 function display_message(){
     if(isset($_SESSION['message'])){
