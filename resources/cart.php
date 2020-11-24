@@ -2,7 +2,7 @@
 
 <?php
 // adds product to cart
- if(isset($_GET['add'])){
+if(isset($_GET['add'])){
     $query = query("SELECT * FROM products WHERE product_id=" .escape_string($_GET['add'])." ");
     confirm($query);
     while($row = fetch_array($query)){
@@ -14,7 +14,7 @@
             redirect("../public/checkout.php");
         }
     }
- }
+}
 
 //  decreases the amount by one on the cart
 if(isset($_GET['remove'])){
@@ -122,8 +122,7 @@ function process_transaction(){
         $total = 0;
         $item_quantity = 0;
         
-        
-        $send_order = query("INSERT INTO orders (order_amount, order_transaction, order_status, order_currency, order_date, order_name, order_building) VALUES ('{$amount}','{$transaction}','{$status}','{$currency}','{$timestamp}','{$order_name}', '{$order_building}')");
+        $send_order = query("INSERT INTO orders (order_amount, order_transaction, order_status, order_currency, order_date, order_name, order_building ) VALUES ('{$amount}','{$transaction}','{$status}','{$currency}','{$timestamp}','{$order_name}', '{$order_building}')");
         
         // gets the order id from the session
         $last_id = last_id();

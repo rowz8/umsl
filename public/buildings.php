@@ -34,7 +34,7 @@
 
              <select name="building_id" id="" class="form-control" required> 
               <option  value="">Select Building</option>
-            <?php damnbuildings(); ?>   
+            <?php buildings_front(); ?>   
         </select>
 
     </div>
@@ -46,39 +46,6 @@
   
 </form>
 
-
-
-<?php
-function damnbuildings(){
-
-    $query = query ("SELECT * FROM buildings");
-    confirm($query);
-            while($row = mysqli_fetch_array($query)){
-                $building_options = <<<DELIMETER
-
-                 <option value="{$row['building_name']}">{$row['building_name']}</option>            
-DELIMETER;    
-        echo $building_options;
-    }
-}
-
-
-
-function add_building_order(){
-    if(isset($_POST[‘update])){
-
-    
-    $building_id    = escape_string($_POST['building_id']); 
-    $building_name    = escape_string($_POST['building_name']); 
-    
-    
-    }$_POST['building_name'];
-    echo $_POST['building_id'];
-}
-
-
-
-?>
 <!--  ***********CART TOTALS*************--> 
         
 <?php include(TEMPLATE_FRONT .  "/footer.php");  ?>

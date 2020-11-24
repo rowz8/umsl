@@ -4,7 +4,7 @@
     <div class="container">
 
             <header class="jumbotron hero-spacer">
-             <?php   title(); ?>
+             <?php title(); ?>
             
         </header> 
 
@@ -45,21 +45,4 @@
     <!-- /.container -->
 
  <?php include(TEMPLATE_FRONT . DS . "footer.php");?>
-<?php 
-function title(){
-    if(isset($_GET['id'])){
-        $query = query("SELECT * FROM categories WHERE cat_id =" . escape_string($_GET['id']). " ");
-        confirm($query);
-        while($cat = fetch_array($query)){
 
-            $cat_t = <<<DELIMETER
-
-            <h1 class="text-center">{$cat['cat_title']}</h1>
-
-DELIMETER;
-            echo $cat_t;
-        }
-    }
-}
-
-?>

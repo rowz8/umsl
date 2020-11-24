@@ -1,28 +1,5 @@
 <?php require_once("../resources/config.php"); ?>
 <?php include(TEMPLATE_FRONT . DS . "header.php")  ?>
-<?php 
-
-function last_order(){
-
-    // display the las product added 
-    $query = query("SELECT * FROM orders ORDER BY order_id DESC LIMIT 1");
-    confirm($query);
-
-    while($row= fetch_array($query)) {
-        $order = <<<DELIMITER
-
-        <td class="text-center" >{$row['order_id']}</td>
-        <td class="text-center" >&#36; {$row['order_amount']}</td>
-        <td class="text-center" >{$row['order_building']}</td>
-        
-DELIMITER;
-    } echo $order;
-    
-}
-
-
-
-?>
 
 <h1 class="text-center"><?php  display_message(); ?></h1>
 

@@ -416,6 +416,187 @@ DELIMETER;
     echo $meetings;
     }
 }
+
+// displays the buildings for the order
+function buildings_front(){
+
+    $query = query ("SELECT * FROM buildings");
+    confirm($query);
+            while($row = mysqli_fetch_array($query)){
+                $building_options = <<<DELIMETER
+
+                 <option value="{$row['building_name']}">{$row['building_name']}</option>            
+DELIMETER;    
+        echo $building_options;
+    }
+}
+
+// adds the building to the order
+function add_building_order(){
+    if(isset($_POST[‘update])){
+
+    
+    $building_id        = escape_string($_POST['building_id']); 
+    $building_name      = escape_string($_POST['building_name']); 
+    
+    }$_POST['building_name'];
+    echo $_POST['building_id'];
+    
+}
+
+// displays the order at the thank you page
+function last_order(){
+
+    // display the las product added 
+    $query = query("SELECT * FROM orders ORDER BY order_id DESC LIMIT 1");
+    confirm($query);
+
+    while($row= fetch_array($query)) {
+        $order = <<<DELIMITER
+
+        <td class="text-center" >{$row['order_id']}</td>
+        <td class="text-center" >&#36; {$row['order_amount']}</td>
+        <td class="text-center" >{$row['order_building']}</td>
+        
+DELIMITER;
+    } echo $order;
+    
+}
+
+// displays the team in the front
+function team(){
+    $users_query = query(" SELECT * FROM users WHERE user_team = 1");
+    confirm($users_query);
+
+    while($row = fetch_array($users_query)) {
+
+        $user_id = $row['user_id'];
+        $username = ucwords($row['username']);
+        $email = $row['email'];
+        $user_firstname = ucwords($row['user_firstname']);
+        $user_lastname = ucwords($row['user_lastname']);
+        $user_role   = ucwords($row['user_role']);
+        $user_brief  = ucwords($row['user_brief']);
+        
+        $user_photo = display_image($row['user_photo']);
+
+        $users = <<<DELIMETER
+            
+          <div class="col-sm-4 col-lg-4">
+            <div class="card">
+              <img  class="center" src="../resources/$user_photo" alt="$username" >
+                <div class="caption" style="height: 180px">
+                  <h2>$user_firstname $user_lastname</h2>
+                  <p class="title">$user_role</p>
+                  <p>$user_brief</p>
+                  <p>$email</p>
+                  <br>
+            <!-- <form name="" id="contactForm" method ="post" action="mailto:$email"> -->
+            <!-- <p><button type="submit" value="Send" class="button">Contact</button></p> -->
+              </div>
+           </div>
+          </div>
+        
+DELIMETER;
+        echo $users;
+
+}
+}
+
+// displays the title of the category selected
+function title(){
+    if(isset($_GET['id'])){
+        $query = query("SELECT * FROM categories WHERE cat_id =" . escape_string($_GET['id']). " ");
+        confirm($query);
+        while($cat = fetch_array($query)){
+
+            $cat_t = <<<DELIMETER
+
+            <h1 class="text-center">{$cat['cat_title']}</h1>
+
+DELIMETER;
+            echo $cat_t;
+        }
+    }
+}
+
+// Password forgot
+function forgot_psw(){
+    if(isset($_POST['forgot'])){
+        $username               = escape_string($_POST['username']);
+        $password               = escape_string($_POST['password']);
+        $email                  = escape_string($_POST['email']);
+        // hash format to encrypt the password
+            $hashFormat = "$2y$10$"; 
+        // is a string at least 22 characters
+            $salt = "iusesomecrazystrings22";
+
+            $hashF_and_salt = $hashFormat . $salt;
+        // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
+            $password = crypt($password,$hashF_and_salt); 
+        
+        $query = query("SELECT * FROM users where username = '{$username}' AND email = '{$email}'");
+            confirm($query);
+
+        $row = fetch_array($query);
+
+        if(mysqli_num_rows($query)==0){
+            set_message("Your Email or Username are incorrect");
+            // $username = "unregistered user";
+            redirect("../public/forgot.php");
+            
+            } 
+            else {
+
+            
+            
+             //  make sure there is a space after the word SET so the database can be updated 
+                $query ="UPDATE users SET ";
+                $query.="password                  = '{$password }'";
+
+                $send_update_query = query($query);
+                confirm($send_update_query);
+                set_message("User {$username} has been Updated");
+                redirect("../public/index.php");
+                
+            
+        }
+    }
+}
+
+// displays the search
+function display_search(){
+    if(isset($_GET['search'])){
+    
+    $search = escape_string($_GET['search']);
+
+    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' AND product_quantity >=1");
+    confirm($query);
+    
+    if(mysqli_num_rows($query) == 0){
+        set_message("Product not found");
+        redirect("search.php");
+        
+    } else{
+            while($row = fetch_array($query)) {
+            $orders = <<<DELIMETER
+            
+            <tr>
+            <td>{$row['product_title']}</td>
+            <td>CUST{$row['product_location']}</td>
+            <td>&#36; {$row['product_price']}</td>
+            <td>{$row['product_quantity']}</td>
+            <td><a href=item.php?id={$row['product_id']} class = "btn btn-default">More Info </a> </td>
+            <td><a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a></td>
+           
+            
+            </tr>
+DELIMETER;
+    echo $orders;
+            }          
+        }
+    } 
+}
 /* *********************************************                             BACKEND                                 ********************************************* */
 
 // displays all orders regarding status a month 

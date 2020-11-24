@@ -43,50 +43,6 @@
 
 </div>
 
-
-
-
-
-<?php
-function display_search(){
-if(isset($_GET['search'])){
-    
-    $search = escape_string($_GET['search']);
-
-    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' AND product_quantity >=1");
-    confirm($query);
-    
-    if(mysqli_num_rows($query) == 0){
-        set_message("Product not found");
-        redirect("search.php");
-        
-    } else{
-            while($row = fetch_array($query)) {
-            $orders = <<<DELIMETER
-            
-            <tr>
-            <td>{$row['product_title']}</td>
-            <td>CUST{$row['product_location']}</td>
-            <td>&#36; {$row['product_price']}</td>
-            <td>{$row['product_quantity']}</td>
-            <td><a href=item.php?id={$row['product_id']} class = "btn btn-default">More Info </a> </td>
-            <td><a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a></td>
-           
-            
-            </tr>
-DELIMETER;
-    echo $orders;
-            }          
-        }
-    } 
-}
-
-
-
-?>
-
-
-
 <?php include(TEMPLATE_FRONT .  "/footer.php");  ?>
 
 
