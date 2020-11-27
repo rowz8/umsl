@@ -1643,8 +1643,6 @@ function delete_building(){
 
     }
 }
-
-
 // displays stock items
 function get_in_stock_products(){
     if(isset($_GET['in_stock_id'])){
@@ -1803,7 +1801,6 @@ function add_meeting(){
     redirect("index.php?meetings");
     }
 }
-
 
 // update meetings in Admin   
 function update_meeting(){
