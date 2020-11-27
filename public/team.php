@@ -40,6 +40,7 @@ Meet the Team
 /* Some left and right padding inside the container */
 .container {
   padding: 0 16px;
+  
 }
 
 /* Clear floats */

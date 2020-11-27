@@ -62,18 +62,6 @@ function fetch_array($result){
 
 /* *********************************************                             FRONT END                                 ********************************************* */
 
-// Get total of number of rows from the database
-function count_all_records($table){
-    return mysqli_num_rows(query('SELECT * FROM '.$table));
-}
-
-
-// Gets the total amount of products in stock
-function count_all_products_in_stock(){
-
-    return mysqli_num_rows(query('SELECT * FROM products WHERE product_quantity >= 1'));
-}
-
 // displays products on index page & shop page
 function get_products ($perPage = "9"){
      $rows = count_all_products_in_stock();
@@ -391,17 +379,27 @@ function display_meetings(){
     confirm($query);
 
     while($row = fetch_array($query)) {
+        $meeting_date           = $row['meeting_date'];
+        $meeting_month          = $row['meeting_date'];
+        $meeting_day          = $row['meeting_date'];
+        $date = date_create($meeting_date);
+
+        $meeting_date = date_format($date, 'd/m/y');
+        $meeting_month = date_format($date, 'M');
+        $meeting_day          = date_format($date, 'D');
         
+       
+
         $meetings = <<<DELIMETER
  
              <div class="col-2 text-right">
-				<h1 class="display-4"><span class="badge badge-secondary">{$row['meeting_date']}</span></h1>
-				<h2>{$row['meeting_month']}</h2>
+				<h1 class="display-4"><span class="badge badge-secondary">{$meeting_date}</span></h1>
+				<h2>{$meeting_month}</h2>
 			</div>
 			<div class="col-10">
 				<h3 class="text-uppercase"><strong>{$row['meeting_title']}</strong></h3>
 				<ul class="list-inline">
-				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {$row['meeting_day']}</li>
+				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {$meeting_day}</li>
 					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {$row['meeting_time']}</li>
 					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> {$row['meeting_location']}</li>
 				</ul>
@@ -584,6 +582,7 @@ function display_search(){
             <td>CUST{$row['product_location']}</td>
             <td>&#36; {$row['product_price']}</td>
             <td>{$row['product_quantity']}</td>
+            <td>{$row['product_uom']}</td>
             <td><a href=item.php?id={$row['product_id']} class = "btn btn-default">More Info </a> </td>
             <td><a class="btn btn-success" href="../resources/cart.php?add={$row ['product_id']}">ADD</a></td>
            
@@ -597,6 +596,29 @@ DELIMETER;
 }
 /* *********************************************                             BACKEND                                 ********************************************* */
 
+// Get total of number of rows from the database
+function count_all_records($table){
+    return mysqli_num_rows(query('SELECT * FROM '.$table));
+}
+
+function count_all_records_processing(){
+    return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Processing"' ));
+}
+
+function count_all_records_approved(){
+    return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Approved"' ));
+}
+
+function count_all_records_completed(){
+    return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Completed"' ));
+}
+
+// Gets the total amount of products in stock
+function count_all_products_in_stock(){
+
+    return mysqli_num_rows(query('SELECT * FROM products WHERE product_quantity >= 1'));
+}
+
 // displays all orders regarding status a month 
 function display_orders(){
     $query = query("SELECT * FROM `orders` WHERE  (`order_date` > DATE_SUB(now(), INTERVAL 30 DAY))");
@@ -605,7 +627,7 @@ function display_orders(){
     while($row = fetch_array($query)) {
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/Y G:i');
+        $order_date = date_format($date, 'd/m/Y G:i:A');
         $order_name = ucwords($row['order_name']);
 
         $orders = <<<DELIMETER
@@ -749,7 +771,7 @@ DELIMETER;
     
 }
 
-// shows buttons in order view
+// shows buttons in order view prints and delete
 function show_buttons(){
     if(isset($_GET['order_id'])) {
         
@@ -1319,7 +1341,7 @@ DELIMETER;
 // shows orders Pending approval status displays a week approvals page
 function get_orders_approvals(){
 
- $query = query("SELECT * FROM orders WHERE order_status=\"Processing\" AND (`order_date` > DATE_SUB(now(), INTERVAL 7 DAY))");
+ $query = query("SELECT * FROM orders WHERE order_status=\"Processing\" ");
     confirm($query);
 
     while($row = fetch_array($query)) {
@@ -1353,6 +1375,42 @@ function update_order(){
     $order_status           = escape_string($_POST['order_status']);
     $order_id               = escape_string($_POST['order_id']);
 
+    //  if($_POST['update'] != ''){
+
+    //         $update = "UPDATE orders SET order_not = 1 WHERE order_not = 0";
+    //         confirm($update);
+    //     }
+    
+    //     $query = "SELECT * from orders ORDER BY order_id DESC LIMIT 10";
+    //     $result = confirm($query);
+    //     $output = '';
+    //     if(mysqli_num_rows($result) > 0){
+            
+    //         while($row=mysqli_fetch_array($result)){
+
+    //             $output.="
+    //                 <li>
+    //                 <a href='#'>
+    //                 <strong>".$row["comment_subject"]."</strong><br/>
+    //                 <small><em>".$row["comment_text"]."</em></small>
+    //                 </a>
+    //                 </li>
+    //             ";
+    //         } 
+            
+    //     } else {
+
+    //         $output .= "
+    //             <li>
+    //             <a href='#' class='text-bold text-italic'>
+    //                 No New Order Found
+    //             </a>
+            
+    //             </li>
+            
+    //         ";
+
+    //     }
 
     //  make sure there is a space after the word SET so the database can be updated 
     $query = "UPDATE orders SET ";
@@ -1364,6 +1422,17 @@ function update_order(){
     confirm($send_update_query);
     set_message("Order {$order_id} has been Updated");
     redirect("index.php?orders");
+
+    //     $status_query = "SELECT * FROM comments WHERE comment_status=0";
+    //     $result_query = mysqli_query($db, $status_query);
+    //     $count = mysqli_num_rows($result_query);
+    //     $data = array(
+    //      'notification' => $output,
+    //      'unseen_notification'  => $count
+    //      );
+    //      echo json_encode($data);
+    // }
+    
     }
 }
 
@@ -1679,9 +1748,18 @@ function meetings(){
         $meeting_location       = $row['meeting_location'];
         $meeting_date           = $row['meeting_date'];
         $meeting_time           = $row['meeting_time'];
-        $meeting_month          = $row['meeting_month'];
-        $meeting_day            = $row['meeting_day'];
         
+        
+        $date = date_create($meeting_date);
+        $meeting_date = date_format($date, 'd/m/y');
+        
+        $time = date_create($meeting_time);
+        $meeting_time = date_format($time, 'H:i:A');
+        
+        
+        $meeting_month = date_format($date, 'M');
+
+       $meeting_day          = date_format($date, 'l');
 
         $meeting = <<<DELIMETER
 
@@ -1715,11 +1793,10 @@ function add_meeting(){
     $meeting_location       = escape_string($_POST['meeting_location']);
     $meeting_date           = escape_string($_POST['meeting_date']);
     $meeting_time           = escape_string($_POST['meeting_time']);
-    $meeting_month          = escape_string($_POST['meeting_month']); 
-    $meeting_day            = escape_string($_POST['meeting_day']); 
+    
     
 
-    $query = query ("INSERT INTO meetings (meeting_title, meeting_description, meeting_location, meeting_date, meeting_time, meeting_month, meeting_day) VALUES ('{$meeting_title}', '{$meeting_description}', '{$meeting_location}', '{$meeting_date }', '{$meeting_time}', '{$meeting_month}', '{$meeting_day}' )");
+    $query = query ("INSERT INTO meetings (meeting_title, meeting_description, meeting_location, meeting_date, meeting_time) VALUES ('{$meeting_title}', '{$meeting_description}', '{$meeting_location}', '{$meeting_date }', '{$meeting_time}' )");
     $last_id = last_id();
     confirm($query);
     set_message("Meeting {$meeting_title} was Added");
@@ -1737,8 +1814,7 @@ function update_meeting(){
     $meeting_location       = escape_string($_POST['meeting_location']);
     $meeting_date           = escape_string($_POST['meeting_date']);
     $meeting_time           = escape_string($_POST['meeting_time']); 
-    $meeting_month          = escape_string($_POST['meeting_month']);
-    $meeting_day            = escape_string($_POST['meeting_day']);
+    
         
     //  make sure there is a space after the word SET so the database can be updated 
     $query ="UPDATE meetings SET ";
@@ -1746,9 +1822,8 @@ function update_meeting(){
     $query.="meeting_description                  = '{$meeting_description }',";
     $query.="meeting_location                     = '{$meeting_location }',";
     $query.="meeting_date                         = '{$meeting_date }',";
-    $query.="meeting_time                         = '{$meeting_time }',";
-    $query.="meeting_month                        = '{$meeting_month }',";
-    $query.="meeting_day                          = '{$meeting_day }' ";
+    $query.="meeting_time                         = '{$meeting_time }'";
+    
     $query.="WHERE meeting_id                     = ".escape_string($_GET['id']);
 
         

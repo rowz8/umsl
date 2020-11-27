@@ -103,7 +103,7 @@ DELIMETER;
 }
 
 
-// Gets the product id from the order  ----- needs work on the timestamp ----- need to find a way that the reportID doesn't get repeated took it from the foreach loop and nothing customer might not like this.  needs to add building codes to the send_order and report-----
+// Gets the product id from the order  ---- need to find a way that the reportID doesn't get repeated took it from the foreach loop and nothing customer might not like this. -----
 function process_transaction(){
        
     if (isset($_SESSION['item_total']) >=1   && ($_SESSION['username'])) {
@@ -168,6 +168,5 @@ function process_transaction(){
     }
     
 } 
-
 
 ?>

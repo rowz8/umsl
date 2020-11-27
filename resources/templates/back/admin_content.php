@@ -102,7 +102,7 @@
 <div class="col-lg-4">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Processing Orders</h3>
+        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Processing Orders  <span style="float: right" class="badge badge-pill badge-danger"><?php echo count_all_records_processing(); ?></span></h3>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
@@ -138,7 +138,7 @@
 <div class="col-lg-4">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Approved Orders</h3>
+        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Approved Orders  <span style="float: right" class="badge badge-pill badge-danger"><?php echo count_all_records_approved(); ?></span> </h3>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
@@ -174,7 +174,7 @@
 <div class="col-lg-4">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Completed Orders</h3>
+        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel Completed Orders  <span style="float: right" class="badge badge-pill badge-danger"><?php echo count_all_records_completed(); ?></span> </h3>
     </div>
     <div class="panel-body">
         <div class="table-responsive">

@@ -82,7 +82,7 @@ DELIMETER;
         
     </div>
 
-<br>
+  <br>
 
     <div class="form-group">
       <label for="order_status">Order # </label>

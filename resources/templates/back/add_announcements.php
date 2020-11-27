@@ -50,46 +50,9 @@
     </div>
 
     <div class="form-group">
-    <label for="meeting-title">Day</label>
-           <select name="meeting_day" id="" class="form-control"required>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                
-            </select>
-    </div>
-    <!-- Meeting Attributes-->
-
-
-    <div class="form-group">
           <label for="meeting-time"> Time </label>
         <input type="time" name="meeting_time" class="form-control" required>
     </div>
-
-    <div class="form-group">
-    <label for="meeting-title">Month</label>
-           <select name="meeting_month" id="" class="form-control"required>
-                <option value="Jan">January</option>
-                <option value="Feb">February</option>
-                <option value="March">March</option>
-                <option value="Apr">April</option>
-                <option value="May">May</option>
-                <option value="Jun">June</option>
-                <option value="Jul">July</option>
-                <option value="Aug">August</option>
-                <option value="Sept">September</option>
-                <option value="Oct">October</option>
-                <option value="Nov">November</option>
-                <option value="Dec">December</option>
-                
-                
-            </select>
-    </div>
-
-
-    
 
     <hr>
     

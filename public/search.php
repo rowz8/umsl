@@ -27,6 +27,7 @@
            <th>Product Location</th>
            <th>Price</th>
            <th>Available</th>
+           <th>Sold by:</th>
            <th>More Info</th>
             <th>Order</th>
          

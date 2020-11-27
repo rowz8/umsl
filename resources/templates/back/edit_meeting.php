@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['id'])) {
-  // gives me an error on  WHERE user_id 
+  
   $query = query("SELECT * FROM meetings WHERE meeting_id = " . escape_string($_GET['id']) . " ");
   confirm($query);
 
@@ -12,11 +12,7 @@ if(isset($_GET['id'])) {
     $meeting_location       = escape_string($row['meeting_location']);
     $meeting_date           = escape_string($row['meeting_date']);
     $meeting_time           = escape_string($row['meeting_time']); 
-    $meeting_month          = escape_string($row['meeting_month']);
-    $meeting_day            = escape_string($row['meeting_day']);
-
-
-   
+  
   }
   update_meeting();
   }
@@ -77,17 +73,7 @@ if(isset($_GET['id'])) {
 
     </div>
 
-    <div class="form-group">
-    <label for="meeting-title">Day</label>
-           <select name="meeting_day" id="" class="form-control"required>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                
-            </select>
-    </div>
+   
     <!-- Meeting Attributes-->
 
 
@@ -95,29 +81,6 @@ if(isset($_GET['id'])) {
           <label for="meeting-time"> Time </label>
         <input type="time" name="meeting_time" class="form-control" required value=" <?php echo $meeting_time; ?>" >
     </div>
-
-    <div class="form-group">
-    <label for="meeting-title">Month</label>
-           <select name="meeting_month" id="" class="form-control" required >
-                <option value="Jan">January</option>
-                <option value="Feb">February</option>
-                <option value="March">March</option>
-                <option value="Apr">April</option>
-                <option value="May">May</option>
-                <option value="Jun">June</option>
-                <option value="Jul">July</option>
-                <option value="Aug">August</option>
-                <option value="Sept">September</option>
-                <option value="Oct">October</option>
-                <option value="Nov">November</option>
-                <option value="Dec">December</option>
-                
-                
-            </select>
-    </div>
-
-
-    
 
     <hr>
     

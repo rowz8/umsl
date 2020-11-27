@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 23, 2020 at 11:45 PM
+-- Generation Time: Nov 27, 2020 at 04:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -29,67 +29,68 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `buildings` (
   `building_id` int(11) NOT NULL,
-  `building_name` text NOT NULL
+  `building_name` text NOT NULL,
+  `building_code` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `buildings`
 --
 
-INSERT INTO `buildings` (`building_id`, `building_name`) VALUES
-(1, 'AB Ecology & Conservation Complex'),
-(2, 'Alumni House'),
-(3, 'Arts Administration Building'),
-(4, 'Bellerive Hall'),
-(5, 'Benton Hall'),
-(6, 'BMT Performing Arts Center '),
-(7, 'Anheuser-Busch Hall'),
-(8, 'Campus Police Building'),
-(9, 'Chancellors Residence'),
-(10, 'Clark Hall'),
-(11, 'E. Desmond Lee TLC'),
-(12, 'Education Administration Building'),
-(13, 'Express Script Hall'),
-(14, 'Fine Arts Building'),
-(15, 'Innovative Technology Building'),
-(16, 'JC Penny Building'),
-(17, 'Kathy J. Weinman Advocacy Center'),
-(18, 'KWMU Grand Center'),
-(19, 'La Gras'),
-(20, 'Lucas Hall'),
-(21, 'Mansion Hill Condos'),
-(22, 'Marillac Hall'),
-(23, 'Mark Twain Athletic Center'),
-(24, 'Millennium Student Center'),
-(25, 'MSC Garage North'),
-(26, 'MSC Garage South'),
-(27, 'Music Building'),
-(28, 'Nursing Administration Building'),
-(29, 'Oak Hall'),
-(30, 'Patient Care Center'),
-(31, 'Provincial House'),
-(32, 'Recreation & Wellness Center'),
-(33, 'Regional Center for Education & Work'),
-(34, 'Research Building'),
-(35, 'Sassin Building'),
-(36, 'Science Learning Building'),
-(37, 'Sculpture & Ceramics Annex'),
-(38, 'Seton Center Hall'),
-(39, 'Social Sciences & Business Building'),
-(40, 'Softball Field'),
-(41, 'South Campus Classroom Building'),
-(42, 'South Campus Computer Building'),
-(43, 'South Campus Garage'),
-(44, 'St. Louis Mercantile Library'),
-(45, 'Stadler Hall'),
-(46, 'Thomas Jefferson Library'),
-(47, 'UMSL Postal Services'),
-(48, 'Villa Building'),
-(49, 'Ward E. Barns Building'),
-(50, 'West Drive Garage South'),
-(51, 'WLC Center for Nanoscience'),
-(52, 'Woods Hall'),
-(53, 'Floor Techs');
+INSERT INTO `buildings` (`building_id`, `building_name`, `building_code`) VALUES
+(1, 'AB Ecology & Conservation Complex', 85104),
+(2, 'Alumni House', 0),
+(3, 'Arts Administration Building', 0),
+(4, 'Bellerive Hall', 0),
+(5, 'Benton Hall', 0),
+(6, 'BMT Performing Arts Center ', 0),
+(7, 'Anheuser-Busch Hall', 0),
+(8, 'Campus Police Building', 0),
+(9, 'Chancellors Residence', 0),
+(10, 'Clark Hall', 0),
+(11, 'E. Desmond Lee TLC', 0),
+(12, 'Education Administration Building', 0),
+(13, 'Express Script Hall', 0),
+(14, 'Fine Arts Building', 0),
+(15, 'Innovative Technology Building', 0),
+(16, 'JC Penny Building', 0),
+(17, 'Kathy J. Weinman Advocacy Center', 0),
+(18, 'KWMU Grand Center', 0),
+(19, 'La Gras', 0),
+(20, 'Lucas Hall', 0),
+(21, 'Mansion Hill Condos', 0),
+(22, 'Marillac Hall', 0),
+(23, 'Mark Twain Athletic Center', 0),
+(24, 'Millennium Student Center', 0),
+(25, 'MSC Garage North', 0),
+(26, 'MSC Garage South', 0),
+(27, 'Music Building', 0),
+(28, 'Nursing Administration Building', 0),
+(29, 'Oak Hall', 0),
+(30, 'Patient Care Center', 0),
+(31, 'Provincial House', 0),
+(32, 'Recreation & Wellness Center', 0),
+(33, 'Regional Center for Education & Work', 0),
+(34, 'Research Building', 0),
+(35, 'Sassin Building', 0),
+(36, 'Science Learning Building', 0),
+(37, 'Sculpture & Ceramics Annex', 0),
+(38, 'Seton Center Hall', 0),
+(39, 'Social Sciences & Business Building', 0),
+(40, 'Softball Field', 0),
+(41, 'South Campus Classroom Building', 0),
+(42, 'South Campus Computer Building', 0),
+(43, 'South Campus Garage', 0),
+(44, 'St. Louis Mercantile Library', 0),
+(45, 'Stadler Hall', 0),
+(46, 'Thomas Jefferson Library', 0),
+(47, 'UMSL Postal Services', 0),
+(48, 'Villa Building', 0),
+(49, 'Ward E. Barns Building', 0),
+(50, 'West Drive Garage South', 0),
+(51, 'WLC Center for Nanoscience', 0),
+(52, 'Woods Hall', 0),
+(53, 'Floor Techs', 0);
 
 -- --------------------------------------------------------
 
@@ -118,8 +119,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (9, 'Labels'),
 (10, 'PPE'),
 (11, 'Equipment'),
-(12, 'Dispensers'),
-(13, 'joe rottman');
+(12, 'Dispensers');
 
 -- --------------------------------------------------------
 
@@ -134,8 +134,6 @@ CREATE TABLE `meetings` (
   `meeting_location` text NOT NULL,
   `meeting_date` date NOT NULL,
   `meeting_time` time NOT NULL,
-  `meeting_month` varchar(255) NOT NULL,
-  `meeting_day` text NOT NULL,
   `month` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -143,13 +141,9 @@ CREATE TABLE `meetings` (
 -- Dumping data for table `meetings`
 --
 
-INSERT INTO `meetings` (`meeting_id`, `meeting_title`, `meeting_description`, `meeting_location`, `meeting_date`, `meeting_time`, `meeting_month`, `meeting_day`, `month`) VALUES
-(1, 'Covid 19 2020', '   Know how it spreads.\\\\\\\\r\\\\\\\\nLess common ways COVID-19 can spread.', '   Storeroom', '2020-12-09', '11:30:56', 'Dec', 'Monday', '2020-12-09'),
-(7, 'gsdfdsfa', 'gvdsfdsf', 'adsfdsf', '2020-11-25', '09:34:55', 'Nov', 'Tuesday', '2020-11-14'),
-(8, 'test3', 'Come and have some ice cream to celebrate the holidays', 'Storeroom ', '2020-11-03', '10:43:00', '', 'Friday', '2020-11-14'),
-(9, 'tes4', 'oilahfjdlfjladf', 'adfadfsdgfasfdsf', '2020-11-01', '12:44:00', '', 'Friday', '2020-11-14'),
-(10, 'test3', 'dfafsdfc', 'afddsfdsfaf', '2020-11-24', '15:45:00', '', 'Friday', '2020-11-14'),
-(11, 'LAST TES', 'IS IT WORKING', 'MY OFFICE', '2020-11-26', '11:05:00', 'Nov', 'Thursday', '2020-11-14');
+INSERT INTO `meetings` (`meeting_id`, `meeting_title`, `meeting_description`, `meeting_location`, `meeting_date`, `meeting_time`, `month`) VALUES
+(13, 'Software Presentation', 'After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at rowz.website', 'Zoom joerottman channel ', '2020-12-15', '18:00:00', '2020-11-24'),
+(14, 'Pre-Launch Website ', ' After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at zoom channel link https://umsystem.zoom.us/my/josephrottman.', ' Zoom', '2020-12-08', '18:00:00', '2020-11-24');
 
 -- --------------------------------------------------------
 
@@ -173,20 +167,23 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_status`, `order_currency`, `order_date`, `order_name`, `order_building`) VALUES
-(10, 38.50, '1004896507', 'Approved', 'USD', '2020-11-17 00:00:00', 'rowz', 'Lucas Hall'),
+(10, 38.50, '1004896507', 'Completed', 'USD', '2020-11-17 00:00:00', 'rowz', 'Lucas Hall'),
 (11, 43.76, '1217368098', 'Cancelled', 'USD', '2020-11-17 00:00:00', 'rowz', 'Music Building'),
 (12, 43.76, '1322489877', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Clark Hall'),
 (13, 22.88, '1062362904', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Benton Hall'),
 (14, 22.88, '452855177', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Campus Police Building'),
 (15, 22.88, '737645590', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Education Administration Building'),
 (16, 45.76, '443131571', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Fine Arts Building'),
-(17, 62.38, '1108335655', 'Processing', 'USD', '2020-11-18 00:00:00', 'rowz', 'Chancellors Residence'),
+(17, 62.38, '1108335655', 'Completed', 'USD', '2020-11-18 00:00:00', 'rowz', 'Chancellors Residence'),
 (19, 16.62, '150545688', 'Completed', 'USD', '2020-11-18 00:00:00', 'joe', 'La Gras'),
 (20, 20.88, '1287691836', 'Cancelled', 'USD', '2020-11-19 00:00:00', 'rowz', 'Clark Hall'),
 (21, 0.00, '700895007', 'Completed', 'USD', '2020-11-19 00:00:00', 'rowz', 'Alumni House'),
 (22, 243.81, '1523463024', 'Cancelled', 'USD', '2020-11-20 00:00:00', 'rowz', 'Social Sciences & Business Building'),
 (23, 7432.50, '1645772906', 'Completed', 'USD', '2020-11-20 00:00:00', 'rowz', 'Anheuser-Busch Hall'),
-(24, 22.88, '1247017671', 'Processing', 'USD', '2020-11-23 15:22:32', 'rowz', 'Marillac Hall');
+(24, 22.88, '1247017671', 'Approved', 'USD', '2020-11-23 15:22:32', 'rowz', 'Marillac Hall'),
+(25, 51.07, '1657019383', 'Approved', 'USD', '2020-11-23 18:09:12', 'rowz', 'Campus Police Building'),
+(26, 20.88, '340074411', 'Approved', 'USD', '2020-11-23 18:14:17', 'rowz', 'BMT Performing Arts Center '),
+(27, 9.12, '970764010', 'Approved', 'USD', '2020-11-26 08:10:36', 'rowz', 'MSC Garage North');
 
 -- --------------------------------------------------------
 
@@ -213,7 +210,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `short_desc`, `product_quantity`, `product_uom`, `product_price`, `product_number`, `product_description`, `product_category_id`, `product_image`) VALUES
-(1, 0, 'Foam Block Fine Floor Sweep', '24In. Plastic Foam Block Fine Floor Sweep Flagged Polypropylene Fill.', 5, 'Each', 20.88, 'RUB9B02GY', 'Designed To Pick Up The Finest Debris. Available In Flagged Polypropylene Or Blended Horsehair Tampico For Removing Even Fine Dirt And Dust. Ideal For Highly Polished Or Waxed Floors. Two-Threaded Handle Holes On Either Side Of Block For Even Wear. Angle Brace Sku9B71 Adds Support And Stability. Handles Sold Separately.', 5, 'Broom_128.png'),
+(1, 0, 'Foam Block Fine Floor Sweep', '24In. Plastic Foam Block Fine Floor Sweep Flagged Polypropylene Fill.', 4, 'Each', 20.88, 'RUB9B02GY', 'Designed To Pick Up The Finest Debris. Available In Flagged Polypropylene Or Blended Horsehair Tampico For Removing Even Fine Dirt And Dust. Ideal For Highly Polished Or Waxed Floors. Two-Threaded Handle Holes On Either Side Of Block For Even Wear. Angle Brace Sku9B71 Adds Support And Stability. Handles Sold Separately.', 5, 'Broom_128.png'),
 (2, 1, 'Fine Floor Sweep', '36 in. Broom Fine Gray Flagged Polypropylene Sweep', 7, 'Each', 21.88, 'CSM4501623', 'Industrial floor fine sweep with 2 threaded handle holes and 3in bristle trim. Satin-Tip flagged polypropylene for sweeping smooth high- gloss floors.', 5, 'Broom_128.png'),
 (3, 2, 'Corn Broom Warehouse', 'Corn Broom Warehouse 1 1/8 in. dia 2.9 cm Stained/Lacquered Handle', 7, 'Each', 22.88, 'RUB6383BL', 'Designed for rugged indoor/outdoor cleaning. 100% natural broom corn fibers for long life and effective pick up. Remove fine dirt from even or rough surfaces. Hand-selected, heavy-duty lacquered pine handles.', 5, 'Broom_128.png'),
 (4, 3, 'Duo-Sweep Warehouse Broom', 'Duo-Sweep 13 In. Warehouse Broom W/ 48 In. Metal Handle.', 15, 'Each', 16.62, 'CSM3688314', 'Two Handle Holes; One Angled, One Upright. Flagged Blue Filament Sweeps Fine Debris; Use Black Stiff Filament For Heavier Sweeping. Use Lobby Brooms With Dust Pans (Sold Separately) For Continuous Cleaning Of Convention Centers, Malls, And Theme Parks. 7\" Bristle Trim.', 5, 'Broom_128.png'),
@@ -235,7 +232,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (20, 19, 'Carpet Pre-Spray', 'Carpet Pre-Spray   12 - 1 Quart Bottles.', 6, 'Cases', 47.00, 'HIL0081404', 'Carpet Pre-Spray is designed to maximize cleaning efficiency while minimizing harmful residue. Residue causes resoiling, which increases cleaning frequency, costing time and money.', 7, 'Misc_128.png'),
 (21, 20, 'Clorox Fresh Scent Disinfecting Wipes', 'Clorox Fresh Scent Disinfecting Wipes 12 Per Case.', 0, 'Cases', 37.37, 'CLO01593', 'Clorox Commercial Solutons Clorox Disinfecting Wipes Provide Quick And Convenient Cleaning For High Traffic And High Touch Zones, Such As Elevator Buttons. Pre-Moistened Wipe That Cleans And Disinfects. Convenient Cleaning Anytime, Anywhere That You Need. Bleach-Free Formula. 12 Canisters Per Case. 35 Wipes Per Canister.', 10, 'PPE_128.png'),
 (22, 21, 'Country Garden Air Freshner', 'Country Garden Air Freshener - 12 - 1 Quart Bottles.\n', 12, 'Cases', 38.33, 'HIL0101204', 'Can Be Sprayed On Nonporous Surfaces In Offices, Classrooms, Hospitals, Restrooms, Hotel Rooms, Or Wherever Odors Are A Problem. Malodor Counteractant Destroys A Wide Array Of Odors. Garden Fragrance Leaves A Pleasant Scent. Ready-To-Use, Spray Formula Makes It Easy To Use.\n', 2, 'chemicals_128.png'),
-(23, 22, 'Deep Action', 'Deep Action - 4 - 1 Gallon Containers.', 3, 'Cases', 72.41, 'HIL0091806', 'Specially Formulated Embrittling Chemistry Encapsulates Dirt, Spots, And Stains In Carpeting. Low Moisture System Allows For Faster Dry Time, Saving Labor And Down Time. Carpet Should Be Dry In About 20 Minutes. Spots And Spills Do Not Wick Back Improving The Appearance Of The Carpet After It Dries. Low Moisture System Has Faster Dry Times, Saves On Labor And Down-Time. Embrittling Technology Encapsulates Dirt For Easier Vaccuming. Formulated For Minimal Residue And Free Rinsing.\n', 1, 'Paper-128.png'),
+(23, 22, 'Deep Action', 'Deep Action - 4 - 1 Gallon Containers.', 3, 'Cases', 72.41, 'HIL0091806', 'Specially Formulated Embrittling Chemistry Encapsulates Dirt, Spots, And Stains In Carpeting. Low Moisture System Allows For Faster Dry Time, Saving Labor And Down Time. Carpet Should Be Dry In About 20 Minutes. Spots And Spills Do Not Wick Back Improving The Appearance Of The Carpet After It Dries. Low Moisture System Has Faster Dry Times, Saves On Labor And Down-Time. Embrittling Technology Encapsulates Dirt For Easier Vaccuming. Formulated For Minimal Residue And Free Rinsing.\\n', 2, 'chemicals_128.png'),
 (24, 23, 'Defoamer II', 'Defoamer II - 4 - 1 Gallon Containers.', 5, 'Cases', 67.96, 'HIL0018306', 'A Concentrated, Stable White Emulsion, Specially Formulated To Eliminate Foam In Recovery Tanks Of Carpet Cleaning Equipment, Automatic Floor Scrubbers, And Wet Pickup Vacuums. It Acts Quickly To Help Prevent Foam From Being Pulled Into The Electrical Vacuum Motor, Where Moisture Can Cause Rust And Other Damage. Prevents Foam Buildup. No Moisture Reaches The Electrical Vacuum Motor. Works In Hot Or Cold Water.\n', 8, 'floor_tech_128.png'),
 (25, 24, 'Devastator', 'Devastator - 4 - 1 Gallon Containers.', 0, 'Cases', 74.24, 'HIL0014706', 'A Fast-Acting Stripper Works Quickly To Remove The Toughest Wax And Polish Build-Ups. Removes Polish Coats That Have Been Repeatedly Burnished And Hardened With Ultra High-Speed Floor Machines. Does The Job The First Time. Reduces Labor Costs. May Be Used With A Floor Machine For Extremely Heavy Polish Build-Ups. Use On Masonry, Hard Floors And Vinyl Composition Flooring. It Should Not Be Used On Asphalt Tile, Linoleum, Rubber Floors, Synthetic Sports Floors, Or Any Surface That Has Been Painted.', 8, 'floor_tech_128.png'),
 (26, 25, 'Devastator', 'Devastator - 5 Gallon Bag-In-Box.', 19, '5 Gallons', 92.71, 'HIL0014707', 'A Fast-Acting Stripper Works Quickly To Remove The Toughest Wax And Polish Build-Ups. Removes Polish Coats That Have Been Repeatedly Burnished And Hardened With Ultra High-Speed Floor Machines. Does The Job The First Time. Reduces Labor Costs. May Be Used With A Floor Machine For Extremely Heavy Polish Build-Ups. Use On Masonry, Hard Floors And Vinyl Composition Flooring. It Should Not Be Used On Asphalt Tile, Linoleum, Rubber Floors, Synthetic Sports Floors, Or Any Surface That Has Been Painted.', 8, 'floor_tech_128.png'),
@@ -272,7 +269,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (57, 56, 'Majestic Vinegar Cleaner', 'Vinegar - 4 Gallons Per Case.', 4, 'Cases', 11.88, 'WLM09006B', 'Majestic Vinegar Cleaner. Cleaning agent. ', 2, 'chemicals_128.png'),
 (58, 57, 'Frame Mop Dust', 'Frame Mop Dust 5In. X 24In. Swivel Snap Quick Change.', 18, 'Each', 3.12, 'HIL52815', 'These Heavy Duty, Industry Standard Frames Are Constructed Of Rust Resistant Plated Metal Wire For Long Life. Features Welded One Piece Construction.', 5, 'Broom_128.png'),
 (59, 58, 'Frame Mop Dust ', 'Frame Mop Dust 5In. X 48In. Swivel Snap Quick Change.', 9, 'Each', 5.13, 'HIL52819', 'These Heavy Duty, Industry Standard Frames Are Constructed Of Rust Resistant Plated Metal Wire For Long Life. Features Welded One Piece Construction.', 5, 'Broom_128.png'),
-(60, 59, 'Bowl Brush', '21In. Bowl Brush W/ Non-Scratching Bristles And Looped End.', 19, 'Each', 4.56, 'CSM363300', 'Non-Scratching Bristles Are Not Affected By Standard Bowl Cleaners.', 7, 'Misc_128.png'),
+(60, 59, 'Bowl Brush', '21In. Bowl Brush W/ Non-Scratching Bristles And Looped End.', 17, 'Each', 4.56, 'CSM363300', 'Non-Scratching Bristles Are Not Affected By Standard Bowl Cleaners.', 7, 'Misc_128.png'),
 (61, 60, 'Flexible Putty Knife', 'Flexible Putty Knife With 1 1/2 In Carbon Steel Blade, Black\n', 0, 'Each', 2.66, '13A674', 'Flexible Blade Works Great For Hard To Reach And Small Areas. Polished Steel, Hollow Ground Blade Is Ideal For Compound Jobs. ', 11, 'Equipment_128.png'),
 (62, 61, 'Flying Insect Killer', 'Flying Insect Killer, Aerosol, 15 Oz, Indoor/Outdoor, Deet-Free Deet Concentration, Permethrin', 31, 'Each', 6.00, '48LR73', 'Hot Shot Flying Insect Killer3 Aerosol Kills Houseflies, Mosquitoes And Other Flying Insects By Contact. Effective For Up To 4 Weeks Against Mosquitoes And Houseflies On Nonporous Surfaces. Water-Based. Clean, Fresh Scent.', 7, 'Misc_128.png'),
 (63, 62, 'Manual Soap Dispenser', 'Affinity 1St Gen. Manual Soap Dispenser 1.25 L Black With Hillyard Logo', 0, 'Each', 0.00, 'HIL22281', 'One Reliable, Robust Dispenser Delivering Foam, Liquid Or Gel. Space- Saving Dispenser Design Utilizes 25% Less Plastic By Weight Than Other 1,250 Ml Dispensers Without Compromising Reliability Or Durability.', 12, 'soap-container.png'),
@@ -284,7 +281,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (69, 68, 'Soap Dispenser Automatic', 'Auto Bulk Fill 1200 Ml Soap Or Sanitizer Foam Dispenser Dispenser In White', 313, 'Each', 7.92, 'FSD1FM', 'Suitable For Liquid: Foaming Sanitizer/Soap (Bulk Pour In Refill). Refillable Bottle (1200Ml). Lockable With Window Design. Supports Dc(6V,1A) And Battery (The Standard Packing Does Not Include Dc Or Batteries). Light Indicator For Low Power. Includes Optional Drip Tray.', 12, 'soap-container.png'),
 (70, 69, 'Chalk Anti-Dust', 'Crayola Nontoxic Anti-Dust Chalk, White, 12 Sticks/Box (50-1402)', 106, 'Cases', 21.05, 'BIN501402', 'Blackboard Chalk: Features 12 Sticks Of White Crayola Chalk For Use On Traditional Blackboards And Chalkboard Paint. Anti Dust Art Tools: Chalk Sticks Are Specially Formulated To Resist Breaking And Produce Less Dust Than Traditional Classroom Chalk. Classroom Supplies: Crayola Chalkboard Chalk Is Ideal For School Blackboards And Can Be An Essential Addition To School Supplies Lists. Safe & Nontoxic: Crayola Chalk Is Safe And Nontoxic, Ideal For Ages 3 & Up. Anti Dust. 12 Sticks. White Chalk. Great For The Classroom. 12Ct Anti Dust White Chalk Sticks Erases Easily. Low-Dust Chalk For Use On Most Chalkboards. Makes Clean, Smooth Lines.', 7, 'Misc_128.png'),
 (71, 70, 'Universal Towel Dispenser - Manual', 'Dispenser Universal Hwrt Black.', 101, 'Each', 51.00, 'PAP306489', '7 7/8 In. Wide With A 1.9 In. Universal Core', 12, 'dispenser.png'),
-(72, 71, 'Disposable Face Coverings', 'Disposable Ear Loop Nuisance Masks', 411, 'Cases', 40.00, '96620687', 'Nuisance Masks Are Disposable And Good For General Purpose Applications. They Offer Basic Protection To Help Reduce Irritants Including Dust, Pollen And Other Small Particles. Not Intended For Use By Healthcare Professionals Or For Any Medical Purpose', 10, 'PPE_128.png'),
+(72, 71, 'Disposable Face Coverings', 'Disposable Ear Loop Nuisance Masks', 410, 'Cases', 40.00, '96620687', 'Nuisance Masks Are Disposable And Good For General Purpose Applications. They Offer Basic Protection To Help Reduce Irritants Including Dust, Pollen And Other Small Particles. Not Intended For Use By Healthcare Professionals Or For Any Medical Purpose', 10, 'PPE_128.png'),
 (73, 72, 'Ostrich Feather Duster', 'Duster 23In. African Feather Duster - Brown Ostrich Feathers.', 4, 'Each', 12.18, 'IMP4603', 'Economy Ostrich Feather Duster Is Perfect For Dusting Irregular Surfaces, Small Spaces And Around Delicate Items. Fine, Soft Ostrich Feathers Have More Surface Area To Effectively Grab And Hold Dust Particles. Smooth Handle Is Durable And Lightweight To Provide Excellent Maneuverability. Convenient Hang Hole Allows Fast, Simple Storage. Length 23 Inches', 7, 'Misc_128.png'),
 (74, 73, 'Starduster Lambswool Duster', 'Unger Starduster Lambswool Duster, 15\" Plastic Handle', 0, 'Each', 6.56, 'UNGLWDU0', 'Perfect For Dusting Shelves And Other Surfaces Superior Cleaning And Dust Removal Duster Can Be Used With Hiflo Nlite Poles By Attaching The Hiflo Nlite Locking Cone Adapter (Hfnlc) Or Telescopic Poles By Attaching The Ergotec Locking Cone (Ncan0). Bristle Material: Lambswool; Bristle Color: White; Handle Material: Plastic; Handle Color: Black. Unger Starduster Lambswool Duster, 15\" Handle, Sold As Each.', 7, 'Misc_128.png'),
 (75, 74, 'Lambswool Duster', '33In. To 60In. Extended Twist-And-Lock Lambswool Duster', 18, 'Each', 7.97, 'IMP3106', 'Genuine 100% Lambswool Duster. Attracts Dust Like A Magnet; Will Not Streak Or Scratch. Ideal For Cleaning Ceiling Fans And Other Hard-To-Reach Areas; Washable', 7, 'Misc_128.png'),
@@ -314,7 +311,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (99, 98, 'Vector Fruit Fly Trap', 'Vector 960 Fruit Fly Traps-12 Traps.', 3, 'Cases', 108.95, 'B008ZVMXLK', 'Box Of 12 The 960 Vector Fruit Fly Trap Is Engineered With A 10-Hole Venting Lid To Optimize Drosophila Exposure To The Vapors Emitted From The Liquid Attractant. The Trap Lid Is Removable For Easy Monitoring And Identification Of Catch. There Are Outer And Inner Spill Resistant Rings To Reduce Accidental Loss Of The Liquid Attractant.', 7, 'Misc_128.png'),
 (100, 99, 'Mop Bucket And Wringer', 'Wavebrake 44 Qt Down Press Combo Mop Bucket And Wringer.', 4, 'Each', 181.73, 'RUB757688YW', 'The Wavebrake Mop Bucket And Wringer System Reduces Splashing, Which Means A Safer Environment, Cleaner Floors, And Improved Productivity. Massive Capacity For The Largest Commercial Cleaning Jobs. Foot Pedal Water Evacuation Conveniently Located, No Lifting Required, For Worker Well-Being. Lasts 58 Times Longer Than Comparative Wringers. Tested To Exceed 50,000 Wringing Cycles, Average Wringers Perform Approximately 860 Cycles. Premium Tubular Steel And Structural Web Molded Plastic. Accepts Optional Dirty Water Bucket, 9C74.', 11, 'Equipment_128.png'),
 (101, 100, 'Disposable Gloves Nitrile 2 Extra Large.', 'Nitrile, Disposable Gloves, 2Xl, Powder-Free, 6.7 Mil Palm Thickness', 0, 'Boxes', 14.16, '3NFC8', 'Powder-Free Nitrile Disposable Gloves Provide High Resistance To Puncture, Tearing, And Abrasion, And Good Resistance To Accidental Chemical Splash. Nitrile Gloves Are Generally Thinner And More Tactile Than Vinyl And Latex Gloves, While Maintaining Strength. Powder-Free, General Purpose Disposable Gloves Provide Basic Hand Protection Against Non-Hazardous Materials And Do Not Have A Powder Coating Inside The Glove, Reducing The Risk Of Allergic Reactions And Contamination. Eneral Purpose Disposable Gloves Are Used For Common Tasks Such As Cleaning, Handling Parts, And Other General Maintenance Tasks. Disposable Gloves Are Used Once And Thrown Away Or Recycled After Each Task To Reduce The Risk Of Cross-Contamination.', 4, 'Gloves_128.png'),
-(102, 101, 'Exam Gloves Large', 'Exam Gloves Large - 100/Box, 10/Case.', 155, 'Boxes', 11.07, 'HIL30522', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
+(102, 101, 'Exam Gloves Large', 'Exam Gloves Large - 100/Box, 10/Case.', 154, 'Boxes', 11.07, 'HIL30522', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
 (103, 102, 'Exam Gloves Medium', 'Exam Gloves Medium - 100/Box, 10/Case.', 215, 'Boxes', 9.53, 'HIL30521', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
 (104, 103, 'Exam Gloves Extra Large', 'Exam Gloves Xlarge - 100/Box, 10/Case.', 164, 'Boxes', 10.20, 'HIL30523', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
 (105, 104, 'Chemical Resistant Gloves', 'Chemical Resistant Gloves, M, Glove Materials Nitrile, 1 PR', 0, 'Each', 1.51, '29UP83', 'Chemical Resistant, Water Resistant, Unsupported, Bisque Grip, Chlorinated, FDA Compliant', 4, 'Gloves_128.png'),
@@ -525,7 +522,11 @@ INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_title`, `
 (27, 239, 21, 'Affinity Expressions Manual Dispenser', '238', 'HIL22304', 0.00, 1, 'Alumni House', 'rowz'),
 (28, 248, 22, 'Light Duty Scraper', '247', 'UNGLH12C', 27.09, 9, 'Social Sciences & Business Building', 'rowz'),
 (29, 263, 23, 'joe rottman', '262', 'RUB617388BK', 148.65, 50, 'Anheuser-Busch Hall', 'rowz'),
-(30, 3, 24, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Marillac Hall', 'rowz');
+(30, 3, 24, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Marillac Hall', 'rowz'),
+(31, 72, 25, 'Disposable Face Coverings', '71', '96620687', 40.00, 1, 'Campus Police Building', 'rowz'),
+(32, 102, 25, 'Exam Gloves Large', '101', 'HIL30522', 11.07, 1, 'Campus Police Building', 'rowz'),
+(33, 1, 26, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'BMT Performing Arts Center ', 'rowz'),
+(34, 60, 27, 'Bowl Brush', '59', 'CSM363300', 4.56, 2, 'MSC Garage North', 'rowz');
 
 -- --------------------------------------------------------
 
@@ -544,12 +545,29 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`slide_id`, `slide_title`, `slide_image`) VALUES
-(1, 'Go Green', 'sustainability green igportrait.png'),
 (2, 'recycle', 'recycle.png'),
 (3, 'UMSL - Yellow', 'umsl-yellow.png'),
 (4, 'UMSL - Black', 'UMSL - Black.png'),
 (5, 'UMSL - Red', 'UMSL - Red.png'),
-(6, 'UMSL - White', 'UMSL - White.png');
+(6, 'UMSL - White', 'UMSL - White.png'),
+(7, 'Facilities', 'facilities logo.png'),
+(8, 'Design Team 5', 'Design Team 5.png'),
+(9, 'Earth Day', 'Earth Day Instagram Square.png'),
+(10, 'Recycle', 'recycle.png'),
+(11, 'UMSL Logo', 'UMSL Logos.jpg'),
+(12, 'Social Distancing ', 'social distancing poster.jpg'),
+(13, 'Chancellors Award 2020', 'Chancellors_Award.jpg'),
+(14, 'Covid 19', 'Covid_19.jpg'),
+(15, 'Tower', 'tower_msc_bridge_0918w.jpg'),
+(16, 'Covid 19 2', 'Covid_19_2.jpg'),
+(17, 'Happy Halloween', 'My Post (5).png'),
+(18, 'Veterans Day', 'My Post (4).png'),
+(19, 'Winter Break 2020', 'My Post (3).png'),
+(20, 'Fall 2020', 'My Post (2).png'),
+(21, 'Christmas', '_Rudolf Christmas Card.png'),
+(22, 'Thanksgiving', 'My Post.png'),
+(23, 'Winter Quote', 'Winter Quote Instagram Landscape.png'),
+(24, 'Fall Quote', 'My Post (6).png');
 
 -- --------------------------------------------------------
 
@@ -576,10 +594,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`, `user_team`, `user_brief`) VALUES
 (1, 'rowz', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Storeroom Clerk Facilities Design Team 5 Design/Developer'),
-(2, 'becky', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1, 'Team Design 5 Tester'),
-(3, 'Joe', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, ''),
-(5, 'test', '$2y$10$iusesomecrazystrings2u5lv.xa0P8OZj2e3GO2luGDVKazeXiue', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 0, ''),
-(6, 'admin', '$2y$10$iusesomecrazystrings2uwxqVj7J7zQRBheEH.fn4YwpBoRp5IC6', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Design Team 5 Admin');
+(2, 'becky', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1, 'Team Design 5 Tester'),
+(3, 'Joe', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, ''),
+(5, 'test', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 0, ''),
+(6, 'admin', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Design Team 5 Admin');
 
 --
 -- Indexes for dumped tables
@@ -647,19 +665,19 @@ ALTER TABLE `buildings`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `meetings`
 --
 ALTER TABLE `meetings`
-  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -671,13 +689,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`

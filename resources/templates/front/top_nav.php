@@ -26,16 +26,16 @@
 
             <li>
                 <a href="admin">Admin</a>
-            </li>
-            <!-- class="<?php echo $_SESSION['userType'] == "admin" ? 'show' : 'hidden'?>" -->
-                <li >
+            <!-- </li>
+            class="<?php echo $_SESSION['userType'] == "admin" ? 'show' : 'hidden'?>"
+                <li class="<?php echo $_SESSION['userType'] == "admin" ? 'show' : 'hidden'?>">
                 <a href="checkout.php">Checkout</a>
-            </li>
+            </li> -->
             <li>
                 <a href="contact.php">Contact</a>
             </li>
             <li>
-                <a href="announcements.php">Announcements</a>
+                <a href="announcements.php">Meetings</a>
             </li>
             <li>
                 <a class="font-weight-bold " href="team.php">Team</a>
