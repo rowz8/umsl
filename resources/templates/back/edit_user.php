@@ -7,8 +7,7 @@ if(isset($_GET['id'])) {
 
   while($row = fetch_array($query)) {
 
-    $username               = escape_string($row['username']);
-    $password               = escape_string($row['password']);
+    $username               = escape_string($row['username']); 
     $email                  = escape_string($row['email']);
     $user_firstname         = escape_string($row['user_firstname']);
     $user_lastname          = escape_string($row['user_lastname']); 
@@ -78,10 +77,7 @@ if(isset($_GET['id'])) {
                 </div>
 
     <!-- Password -->
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" value="" required>
-            </div>
+            
 
     <!-- User Brief -->
             <div class="form-group">

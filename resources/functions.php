@@ -259,7 +259,7 @@ function cat_title(){
     confirm($category_query);
     while($category_row = fetch_array($category_query)){
         return $category_row['cat_title'];
-}
+ }
 }
 
 // gets products in shop page
@@ -601,14 +601,17 @@ function count_all_records($table){
     return mysqli_num_rows(query('SELECT * FROM '.$table));
 }
 
+// gives the number of items under processing status
 function count_all_records_processing(){
     return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Processing"' ));
 }
 
+// gives the number of items under approved status
 function count_all_records_approved(){
     return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Approved"' ));
 }
 
+//gives the number of items under completed status
 function count_all_records_completed(){
     return mysqli_num_rows(query('SELECT * FROM orders WHERE order_status = "Completed"' ));
 }
@@ -647,7 +650,6 @@ DELIMETER;
     echo $orders;
     } 
 }
-
 
 // deletes orders in admin
 function delete_order(){
@@ -701,9 +703,7 @@ function show_order_details(){
 DELIMETER;
     echo $view_order;
     
-    }
-  
-    
+    } 
 }
 
 // function that displays order details
@@ -1100,8 +1100,7 @@ function display_users(){
 
         $user_id = ucwords($row['user_id']);
         $username = $row['username'];
-        $email = $row['email'];
-        $password = $row['password'];
+        $email = $row['email']; 
         $user_firstname = ucwords($row['user_firstname']);
         $user_lastname = ucwords($row['user_lastname']);
         $user_role   = ucwords($row['user_role']);
@@ -1190,7 +1189,6 @@ function update_user(){
     if(isset($_POST['submit'])){
 
     $username               = escape_string($_POST['username']);
-    $password               = escape_string($_POST['password']);
     $user_role              = escape_string($_POST['user_role']);
     $email                  = escape_string($_POST['email']);
     $user_firstname         = escape_string($_POST['user_firstname']);
@@ -1223,7 +1221,6 @@ function update_user(){
     //  make sure there is a space after the word SET so the database can be updated 
     $query ="UPDATE users SET ";
     $query.="username                  = '{$username }',";
-    $query.="password                  = '{$password }',";
     $query.="email                     = '{$email }',";
     $query.="user_firstname            = '{$user_firstname }',";
     $query.="user_lastname             = '{$user_lastname }',";
@@ -1277,7 +1274,6 @@ DELIMETER;
     echo $orders_panel;
     }
 }
-
 
 //  show orders in processing status displays a week
 function get_orders_in_panel_processing(){
@@ -1643,6 +1639,7 @@ function delete_building(){
 
     }
 }
+
 // displays stock items
 function get_in_stock_products(){
     if(isset($_GET['in_stock_id'])){
