@@ -375,18 +375,18 @@ function send_message(){
 
 // displays all the meetings in the front
 function display_meetings(){
-    $query = query("SELECT * FROM meetings WHERE MONTH(month) = MONTH(NOW()) ORDER BY meeting_date asc");
+    $query = query("SELECT * FROM meetings  ORDER BY meeting_date asc");
     confirm($query);
 
     while($row = fetch_array($query)) {
         $meeting_date           = $row['meeting_date'];
         $meeting_month          = $row['meeting_date'];
-        $meeting_day          = $row['meeting_date'];
-        $date = date_create($meeting_date);
+        $meeting_day            = $row['meeting_date'];
+        $date                   = date_create($meeting_date);
 
-        $meeting_date = date_format($date, 'd/m/y');
-        $meeting_month = date_format($date, 'M');
-        $meeting_day          = date_format($date, 'D');
+        $meeting_date           = date_format($date, 'd/m/y');
+        $meeting_month          = date_format($date, 'M');
+        $meeting_day            = date_format($date, 'D');
         
        
 
@@ -1745,16 +1745,16 @@ function meetings(){
         $meeting_time           = $row['meeting_time'];
         
         
-        $date = date_create($meeting_date);
-        $meeting_date = date_format($date, 'd/m/y');
+        $date                   = date_create($meeting_date);
+        $meeting_date           = date_format($date, 'd/m/y');
         
-        $time = date_create($meeting_time);
-        $meeting_time = date_format($time, 'H:i:A');
+        $time                   = date_create($meeting_time);
+        $meeting_time           = date_format($time, 'H:i:A');
         
         
-        $meeting_month = date_format($date, 'M');
+        $meeting_month          = date_format($date, 'M');
 
-       $meeting_day          = date_format($date, 'l');
+       $meeting_day             = date_format($date, 'l');
 
         $meeting = <<<DELIMETER
 
