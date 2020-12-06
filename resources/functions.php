@@ -26,29 +26,11 @@ function display_message(){
     }
 }
 
-// function redirect($location){
+function redirect($location){
  
-//     return header("Location: {$location}");
-// }
-
-function redirect($location, $sec=0){
-    if (!headers_sent())
-    {
-        header( "refresh: $sec;url=$location" ); 
-    }
-    elseif (headers_sent())
-    {
-        echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="'.$sec.';url='.$location.'" />';
-        echo '</noscript>';
-    }
-    else
-    {
-        echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$location.'";';
-        echo '</script>';
-    }
+    return header("Location: {$location}");
 }
+
 
 function adminGuard(){
     if($_COOKIE['role']!== "admin"){
@@ -221,7 +203,7 @@ function get_products ($perPage = "9"){
                     
                 </div>
             </div>
-        </div>
+        </div>       
 DELIMETER;
    
         echo $product;
