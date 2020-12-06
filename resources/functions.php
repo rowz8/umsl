@@ -26,9 +26,28 @@ function display_message(){
     }
 }
 
-function redirect($location){
+// function redirect($location){
  
-    return header("Location: {$location}");
+//     return header("Location: {$location}");
+// }
+
+function redirect($location, $sec=0){
+    if (!headers_sent())
+    {
+        header( "refresh: $sec;url=$location" ); 
+    }
+    elseif (headers_sent())
+    {
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="'.$sec.';url='.$location.'" />';
+        echo '</noscript>';
+    }
+    else
+    {
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$location.'";';
+        echo '</script>';
+    }
 }
 
 function adminGuard(){
@@ -1381,7 +1400,7 @@ function update_order(){
     $send_update_query = query($query);
     confirm($send_update_query);
     set_message("Order {$order_id} has been Updated");
-    redirect("index.php?");
+    redirect("index.php");
 
     }
 }

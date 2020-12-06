@@ -5,9 +5,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php" style="color: #ebab04;">CS Admin</a>
+                <a class="navbar-brand" href="../index2.php" style="color: #ebab04;">Shop</a>
 
-                <a class="navbar-brand" href="../index2.php" style="color: #9a1e35;">Shop</a>
+                
             </div>
 
             <!-- Top Menu Items -->

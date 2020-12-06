@@ -24,7 +24,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Sub-total</th>
-                <th>Order By</th>
+                <!-- <th>Order By</th> -->
                 </tr>
                 </thead>
                 <tbody>

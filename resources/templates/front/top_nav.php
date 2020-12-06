@@ -15,39 +15,79 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li>
-                <a class="font-weight-bold " href="shop.php">Shop</a>
+                <a style="font-size:11pt;"  href="shop.php">Shop</a>
             </li>
 
 
-            <li>
-                <a href="index.php">Login</a>
+            <li >
+                <a style="font-size:11pt;" href="index.php">Login</a>
             </li>
 
 
             <li class="<?php echo $_COOKIE['role'] == "admin" ? 'show' : 'hidden'?>">
-                <a href="admin">Admin</a>
+                <a style="font-size:11pt;" href="admin">Admin</a>
             </li>
             
-                <li>
-                <a href="checkout.php">Checkout</a>
+                <!-- <li>
+                <a style="font-size:11pt;" href="checkout.php">Checkout</a>
+            </li> -->
+            <li>
+                <a style="font-size:11pt;" href="contact.php">Contact</a>
             </li>
             <li>
-                <a href="contact.php">Contact</a>
+                <a style="font-size:11pt;" href="announcements.php">Meetings</a>
             </li>
             <li>
-                <a href="announcements.php">Meetings</a>
-            </li>
-            <li>
-                <a class="font-weight-bold " href="team.php">Team</a>
+                <a style="font-size:11pt;"  href="team.php">Team</a>
             </li>
 
             <li>
-                <a href="search.php">Search</a>
+                <a style="font-size:11pt;" href="search.php">Search</a>
             </li>
+
+            <ul class="nav navbar-right">
+                <li class="dropdown">
+                
+                <a style="color:#ebab04" "href="#" class="dropdown-toggle" data-toggle="dropdown"><span style="font-size:11pt; margin-right:0px;" class="glyphicon glyphicon-shopping-cart navbar-btn"> Cart </span>
+             
+                
        
-                <ul  class="nav navbar-right top-nav">
+                <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                       
+                        <li class="divider"></li>
+                        <li>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                         <table class="table table-striped">
+                <thead>
+                <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub-total</th>
+                
+                </tr>
+                </thead>
+                <tbody  >
+                        <?php cart_nav(); ?>
+                    
+                </tbody>
+                 
+            </table>
+            
+                <a class="btn btn-success btn-block" style="font-size:11pt;" href="checkout.php">Checkout</a>
+           
+                     </div>       
+                        </li>
+                    </ul>
+                
+                </ul>
+            </ul>
+            
+
+                <ul  class="nav navbar-right">
               <li class="dropdown">
-                    <a style="color:#ebab04" "href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                    <a style="color:#ebab04; font-size:12pt;" "href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                     <?php
                     if(isset($_SESSION['username'])){
                         echo $_COOKIE['username'];
@@ -64,9 +104,14 @@
                             <a href="../../../../umsl/public/admin/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
-                </li>
-                                                                                                               
-            </ul>
+                
+                        
+ 
+                
+ 
+
+                                                                                          
+            
                
             </ul>  
 
@@ -79,3 +124,13 @@
 </div>
 
 
+<style>
+.my-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+</style>

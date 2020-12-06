@@ -3,6 +3,7 @@
 <?php include(TEMPLATE_FRONT . DS . "header.php")  ?>
 
 
+
 <h1 class="text-center">
 Meet the Team
 </h1>
@@ -10,7 +11,12 @@ Meet the Team
 <br>
 <div class="container">
     
+<header class="jumbotron hero-spacer">
 
+  <p class="text-center display-3">To provide and maintain a clean, safe, and healthy building environment maintained at required standards for the use and enjoyment of the students, staff, and public 
+  ensuring that our campuses meet our customer's expectations while remaining conducive to teaching and learning.</p>
+            
+</header> 
     <!-- product display  -->
     <div class="row">
         
