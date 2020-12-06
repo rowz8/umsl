@@ -1371,42 +1371,6 @@ function update_order(){
     $order_status           = escape_string($_POST['order_status']);
     $order_id               = escape_string($_POST['order_id']);
 
-    //  if($_POST['update'] != ''){
-
-    //         $update = "UPDATE orders SET order_not = 1 WHERE order_not = 0";
-    //         confirm($update);
-    //     }
-    
-    //     $query = "SELECT * from orders ORDER BY order_id DESC LIMIT 10";
-    //     $result = confirm($query);
-    //     $output = '';
-    //     if(mysqli_num_rows($result) > 0){
-            
-    //         while($row=mysqli_fetch_array($result)){
-
-    //             $output.="
-    //                 <li>
-    //                 <a href='#'>
-    //                 <strong>".$row["comment_subject"]."</strong><br/>
-    //                 <small><em>".$row["comment_text"]."</em></small>
-    //                 </a>
-    //                 </li>
-    //             ";
-    //         } 
-            
-    //     } else {
-
-    //         $output .= "
-    //             <li>
-    //             <a href='#' class='text-bold text-italic'>
-    //                 No New Order Found
-    //             </a>
-            
-    //             </li>
-            
-    //         ";
-
-    //     }
 
     //  make sure there is a space after the word SET so the database can be updated 
     $query = "UPDATE orders SET ";
@@ -1417,18 +1381,8 @@ function update_order(){
     $send_update_query = query($query);
     confirm($send_update_query);
     set_message("Order {$order_id} has been Updated");
-    redirect("index.php?orders");
+    redirect("index.php?");
 
-    //     $status_query = "SELECT * FROM comments WHERE comment_status=0";
-    //     $result_query = mysqli_query($db, $status_query);
-    //     $count = mysqli_num_rows($result_query);
-    //     $data = array(
-    //      'notification' => $output,
-    //      'unseen_notification'  => $count
-    //      );
-    //      echo json_encode($data);
-    // }
-    
     }
 }
 

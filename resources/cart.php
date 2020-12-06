@@ -68,7 +68,6 @@ function cart(){
                             <td> &#36; {$row['product_price']}</td>
                             <td>{$value}</td>
                             <td> &#36; {$sub}</td>
-                            <td>{$_COOKIE['username']}<td>
                             <td><a class = "btn btn-warning" href = "../resources/cart.php?remove={$row['product_id']}"><span class ="glyphicon glyphicon-minus"></span></a>  <a class = "btn btn-success" href = "../resources/cart.php?add={$row['product_id']}"><span class ="glyphicon glyphicon-plus"></span></a>  <a class = "btn btn-danger" href = "../resources/cart.php?delete={$row['product_id']}"><span class ="glyphicon glyphicon-remove"></span></a> </td>
                                 
                     </tr>
@@ -122,7 +121,7 @@ function process_transaction(){
         $total = 0;
         $item_quantity = 0;
         
-        $send_order = query("INSERT INTO orders (order_amount, order_transaction, order_status, order_currency, order_date, order_name, order_building ) VALUES ('{$amount}','{$transaction}','{$status}','{$currency}','{$timestamp}','{$order_name}', '{$order_building}')");
+        $send_order = query("INSERT INTO orders (order_amount, order_transaction, order_status, order_currency, order_date, order_name, order_building) VALUES ('{$amount}','{$transaction}','{$status}','{$currency}','{$timestamp}','{$order_name}', '{$order_building}')");
         
         // gets the order id from the session
         $last_id = last_id();

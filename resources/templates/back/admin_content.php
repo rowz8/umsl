@@ -13,6 +13,7 @@
     <li class="active">
         <i class="fa fa-dashboard"></i> Dashboard
     </li>
+    <h4 class ="text-center" style = "color: #9a1e35" ><?php display_message(); ?></h4>
 </ol>
 </div>
 </div>

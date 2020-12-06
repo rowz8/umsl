@@ -19,8 +19,9 @@ if(isset($_GET['id'])) {
   
   }
   update_user();
-  }
-  ?>
+}
+
+?>
 
    <h1 style = "color: #9a1e35" class="page-header"> Edit User <small style = "color: #ebab04" > Page </small> </h1>
 
