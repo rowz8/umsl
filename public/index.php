@@ -1,6 +1,9 @@
 <?php require_once("../resources/config.php"); ?>
 
-<?php include(TEMPLATE_FRONT . DS . "header.php");?>
+  
+       <?php include(TEMPLATE_FRONT. DS . "top_nav_login.php"); ?>
+        <!-- /.container -->
+    </nav>
 
  <!-- Page Content -->
     <div class="container">

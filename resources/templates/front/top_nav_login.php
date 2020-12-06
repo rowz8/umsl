@@ -1,3 +1,38 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Custodial Store</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- [if lt IE 9]> -->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]
+    
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,20 +43,20 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="index2.php">Custodial Center</a>
+        <a class="navbar-brand" href="#">Custodial Center</a>
 
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li>
-                <a style="font-size:11pt;"  href="shop.php">Shop</a>
+                <a style="font-size:11pt;"  href="#">Shop</a>
             </li>
 
 
-            <!-- <li >
+            <li >
                 <a style="font-size:11pt;" href="index.php">Login</a>
-            </li> -->
+            </li>
 
 
             <li class="<?php echo $_COOKIE['role'] == "admin" ? 'show' : 'hidden'?>">
@@ -32,17 +67,17 @@
                 <a style="font-size:11pt;" href="checkout.php">Checkout</a>
             </li> -->
             <li>
-                <a style="font-size:11pt;" href="contact.php">Contact</a>
+                <a style="font-size:11pt;" href="#">Contact</a>
             </li>
             <li>
-                <a style="font-size:11pt;" href="announcements.php">Meetings</a>
+                <a style="font-size:11pt;" href="#">Meetings</a>
             </li>
             <li>
-                <a style="font-size:11pt;"  href="team.php">Team</a>
+                <a style="font-size:11pt;"  href="#">Team</a>
             </li>
 
             <li>
-                <a style="font-size:11pt;" href="search.php">Search</a>
+                <a style="font-size:11pt;" href="#">Search</a>
             </li>
 
             <ul class="nav navbar-right">
@@ -75,7 +110,7 @@
                  
             </table>
             
-                <a class="btn btn-success btn-block" style="font-size:11pt;" href="checkout.php">Checkout</a>
+                <a class="btn btn-success btn-block" style="font-size:11pt;" href="#">Checkout</a>
            
                      </div>       
                         </li>
