@@ -63,6 +63,11 @@
                  <input type="radio" name="user_team" class="custom-radio" value="0" required>&nbsp; No 
                 </div>
 
+                <div class="form-group">
+                <label for="user brief">Brief Description: </label>
+                <input type="text" name="user_brief" class="form-control" required >
+            </div>
+
     <!-- Delete  -->
             <div class="form-group">
                 <a id="user-id" class="btn btn-danger" href="">Delete</a>

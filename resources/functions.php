@@ -1146,9 +1146,19 @@ function add_user(){
             $photo_temp             = escape_string($_FILES['file']['tmp_name']);
             $user_brief             = escape_string($_POST['user_brief']);
 
+            
             move_uploaded_file($photo_temp, UPLOAD_DIRECTORY . DS . $user_photo);
 
-            // hash format to encrypt the password
+                $uppercase      = preg_match('@[A-Z]@', $password);
+                $lowercase      = preg_match('@[a-z]@', $password);
+                $number         = preg_match('@[0-9]@', $password);
+                $specialChars   = preg_match('@[^\w]@', $password);
+
+                if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
+                    echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+                } else {
+
+                     // hash format to encrypt the password
                 $hashFormat = "$2y$10$"; 
             // is a string at least 22 characters
                 $salt = "iusesomecrazystrings22";
@@ -1156,12 +1166,16 @@ function add_user(){
                 $hashF_and_salt = $hashFormat . $salt;
             // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
                 $password = crypt($password,$hashF_and_salt); 
+
         
             $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team, user_brief) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}', '{$user_brief}' )");
             $last_id = last_id();
             confirm($query);
             set_message("User {$username} was created");
             redirect("index.php?users");
+                }
+
+           
     }
 
 }
@@ -1210,14 +1224,6 @@ function update_user(){
 
     move_uploaded_file($image_temp_location , UPLOAD_DIRECTORY . DS . $user_photo );
         
-        // hash format to encrypt the password
-            $hashFormat = "$2y$10$"; 
-        // is a string at least 22 characters
-            $salt = "iusesomecrazystrings22";
-
-            $hashF_and_salt = $hashFormat . $salt;
-        // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
-            $password = crypt($password,$hashF_and_salt); 
         
     //  make sure there is a space after the word SET so the database can be updated 
     $query ="UPDATE users SET ";
@@ -1232,9 +1238,7 @@ function update_user(){
     $query.="user_brief                = '{$user_brief }' ";
     $query.="WHERE user_id             = ".escape_string($_GET['id']);
 
-        
-        
-        
+                
     $send_update_query = query($query);
     confirm($send_update_query);
     set_message("User {$username} has been Updated");
