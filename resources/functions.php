@@ -523,14 +523,7 @@ function forgot_psw(){
         $username               = escape_string($_POST['username']);
         $password               = escape_string($_POST['password']);
         $email                  = escape_string($_POST['email']);
-        // hash format to encrypt the password
-            $hashFormat = "$2y$10$"; 
-        // is a string at least 22 characters
-            $salt = "iusesomecrazystrings22";
-
-            $hashF_and_salt = $hashFormat . $salt;
-        // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
-            $password = crypt($password,$hashF_and_salt); 
+        
         
         $query = query("SELECT * FROM users where username = '{$username}' AND email = '{$email}'");
             confirm($query);
@@ -543,11 +536,27 @@ function forgot_psw(){
             redirect("../public/forgot.php");
             
             } 
+                $uppercase      = preg_match('@[A-Z]@', $password);
+                $lowercase      = preg_match('@[a-z]@', $password);
+                $number         = preg_match('@[0-9]@', $password);
+                $specialChars   = preg_match('@[^\w]@', $password);
+
+            if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
+                    echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+                }
+
             else {
 
+                // hash format to encrypt the password
+                $hashFormat = "$2y$10$"; 
+                // is a string at least 22 characters
+                $salt = "iusesomecrazystrings22";
+
+                $hashF_and_salt = $hashFormat . $salt;
+                // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
+                $password = crypt($password,$hashF_and_salt); 
             
-            
-             //  make sure there is a space after the word SET so the database can be updated 
+                //  make sure there is a space after the word SET so the database can be updated 
                 $query ="UPDATE users SET ";
                 $query.="password                  = '{$password }'";
 
@@ -1156,26 +1165,26 @@ function add_user(){
 
                 if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
                     echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
-                } else {
+                } 
+                else {
 
-                     // hash format to encrypt the password
+                // hash format to encrypt the password
                 $hashFormat = "$2y$10$"; 
-            // is a string at least 22 characters
+                // is a string at least 22 characters
                 $salt = "iusesomecrazystrings22";
 
                 $hashF_and_salt = $hashFormat . $salt;
-            // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
+                // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
                 $password = crypt($password,$hashF_and_salt); 
 
         
-            $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team, user_brief) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}', '{$user_brief}' )");
-            $last_id = last_id();
-            confirm($query);
-            set_message("User {$username} was created");
-            redirect("index.php?users");
-                }
-
-           
+                $query = query ("INSERT INTO users (username, password, user_role, email, user_firstname, user_lastname, user_photo, user_team, user_brief) VALUES ('{$username}', '{$password}',  '{$user_role}','{$email}', '{$user_firstname}', '{$user_lastname}', '{$user_photo}', '{$user_team}', '{$user_brief}' )");
+                $last_id = last_id();
+                confirm($query);
+                set_message("User {$username} was created");
+                redirect("index.php?users");
+            
+                }        
     }
 
 }

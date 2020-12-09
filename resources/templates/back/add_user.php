@@ -66,7 +66,7 @@
                 <div class="form-group">
                 <label for="user brief">Brief Description: </label>
                 <input type="text" name="user_brief" class="form-control" required >
-            </div>
+                </div>
 
     <!-- Delete  -->
             <div class="form-group">
