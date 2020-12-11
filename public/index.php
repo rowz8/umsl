@@ -33,9 +33,9 @@
             </form>
             <br>
             <form class="" action="../public/forgot.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
+            <!-- <div class="form-group">
             <INPUT TYPE = "submit" Name = "forgot2" VALUE = "Forgot Password" class="btn btn-danger">
-             </div>
+             </div> -->
             </form>
         </div>  
 

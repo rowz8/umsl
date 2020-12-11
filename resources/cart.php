@@ -118,7 +118,7 @@ function process_transaction(){
         $transaction = rand();
         $order_name = $_SESSION['username'];
         $order_building = $_POST['building_id'];
-        
+
         $total = 0;
         $item_quantity = 0;
         
@@ -136,6 +136,7 @@ function process_transaction(){
 
         $length = strlen($name);
         $id = substr($name, 8 , $length);
+
         $query = query("SELECT * FROM products WHERE product_id = " . escape_string($id). " ");
         confirm($query);
     
@@ -154,13 +155,13 @@ function process_transaction(){
             
         
         // inserts report on database
-        $insert_report = query("INSERT INTO reports (product_id, order_id, product_title, product_location, product_number, product_price, product_quantity, order_building, order_name) VALUES('{$id}', '{$last_id}', '{$product_title}', '{$product_location}', '{$product_number}', '{$product_price}','{$value}', '{$order_building}' ,'{$order_name}')");
+        $insert_report = query("INSERT INTO reports (product_id, order_id, product_title, product_location, product_number, product_price, product_quantity, order_building, order_name, order_status) VALUES('{$id}', '{$last_id}', '{$product_title}', '{$product_location}', '{$product_number}', '{$product_price}','{$value}', '{$order_building}' ,'{$order_name}','{$status}')");
         confirm($insert_report);   
-        }
+         }
         $total += $sub;
 
                 }
-            }
+            } 
         } 
         
     } else{

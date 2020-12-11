@@ -376,7 +376,7 @@ function send_message(){
 
 // displays all the meetings in the front
 function display_meetings(){
-    $query = query("SELECT * FROM meetings  ORDER BY meeting_date asc");
+    $query = query("SELECT * FROM meetings WHERE MONTH(month) = MONTH(NOW()) ORDER BY meeting_date asc");
     confirm($query);
 
     while($row = fetch_array($query)) {
@@ -385,7 +385,7 @@ function display_meetings(){
         $meeting_day            = $row['meeting_date'];
         $date                   = date_create($meeting_date);
 
-        $meeting_date           = date_format($date, 'd/m/y');
+        $meeting_date           = date_format($date, 'm/d/y');
         $meeting_month          = date_format($date, 'M');
         $meeting_day            = date_format($date, 'D');
         
@@ -518,57 +518,59 @@ DELIMETER;
 }
 
 // Password forgot
-function forgot_psw(){
-    if(isset($_POST['forgot'])){
-        $username               = escape_string($_POST['username']);
-        $password               = escape_string($_POST['password']);
-        $email                  = escape_string($_POST['email']);
+// function forgot_psw(){
+//     if(isset($_POST['forgot'])){
+//         $username               = escape_string($_POST['username']);
+//         $user_id                = escape_string($_POST['id']);
+//         $password               = escape_string($_POST['password']);
+//         $email                  = escape_string($_POST['email']);
         
         
-        $query = query("SELECT * FROM users where username = '{$username}' AND email = '{$email}'");
-            confirm($query);
+//         $query = query("SELECT * FROM users where user_id = '{$user_id}' AND email = '{$email}' LIMIT 1");
+//             confirm($query);
 
-        $row = fetch_array($query);
+//         $row = fetch_array($query);
 
-        if(mysqli_num_rows($query)==0){
-            set_message("Your Email or Username are incorrect");
-            // $username = "unregistered user";
-            redirect("../public/forgot.php");
+//         if(mysqli_num_rows($query)==0){
+//             set_message("Your Email or Username are incorrect");
+//             // $username = "unregistered user";
+//             redirect("../public/forgot.php");
             
-            } 
-                $uppercase      = preg_match('@[A-Z]@', $password);
-                $lowercase      = preg_match('@[a-z]@', $password);
-                $number         = preg_match('@[0-9]@', $password);
-                $specialChars   = preg_match('@[^\w]@', $password);
+//             } 
+//         if(mysqli_num_rows($query)==1){
+//                 $uppercase      = preg_match('@[A-Z]@', $password);
+//                 $lowercase      = preg_match('@[a-z]@', $password);
+//                 $number         = preg_match('@[0-9]@', $password);
+//                 $specialChars   = preg_match('@[^\w]@', $password);
 
-            if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
-                    echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
-                }
+//             if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
+//                     echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+//                 }
 
-            else {
+//             else {
 
-                // hash format to encrypt the password
-                $hashFormat = "$2y$10$"; 
-                // is a string at least 22 characters
-                $salt = "iusesomecrazystrings22";
+//                 // hash format to encrypt the password
+//                 $hashFormat = "$2y$10$"; 
+//                 // is a string at least 22 characters
+//                 $salt = "iusesomecrazystrings22";
 
-                $hashF_and_salt = $hashFormat . $salt;
-                // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
-                $password = crypt($password,$hashF_and_salt); 
+//                 $hashF_and_salt = $hashFormat . $salt;
+//                 // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
+//                 $password = crypt($password,$hashF_and_salt); 
             
-                //  make sure there is a space after the word SET so the database can be updated 
-                $query ="UPDATE users SET ";
-                $query.="password                  = '{$password }'";
-
-                $send_update_query = query($query);
-                confirm($send_update_query);
-                set_message("User {$username} has been Updated");
-                redirect("../public/index.php");
+//                 //  make sure there is a space after the word SET so the database can be updated 
+//                 $query ="UPDATE users SET ";
+//                 $query.="password                = '{$password }' ";
                 
+//                 $send_update_query = query($query);
+//                 confirm($send_update_query);
+//                 set_message("User {$username} has been Updated");
+//                 redirect("../public/index.php");
+//             }   
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 // displays the search
 function display_search(){
@@ -640,7 +642,7 @@ function display_orders(){
     while($row = fetch_array($query)) {
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/Y G:i:A');
+        $order_date = date_format($date, 'm/d/Y G:i:A');
         $order_name = ucwords($row['order_name']);
 
         $orders = <<<DELIMETER
@@ -763,7 +765,7 @@ function order_date(){
         while ($row = fetch_array($query)) {
             $order_date = escape_string($row['order_date']);
             $date = date_create($order_date);
-            $order_date = date_format($date, 'd/m/y');
+            $order_date = date_format($date, 'm/d/y');
              
             $view_date = <<<DELIMETER
 
@@ -818,7 +820,6 @@ function display_reports(){
             <!-- <td>&#36; {$row['product_price']}</td> -->
             <!-- <td>{$row['product_quantity']}</td> -->
             <td>{$row['order_building']}</a></td>
-
             </tr>
 DELIMETER;
     echo $reports;
@@ -1213,6 +1214,7 @@ function update_user(){
     if(isset($_POST['submit'])){
 
     $username               = escape_string($_POST['username']);
+    $password               = escape_string($_POST['password']);
     $user_role              = escape_string($_POST['user_role']);
     $email                  = escape_string($_POST['email']);
     $user_firstname         = escape_string($_POST['user_firstname']);
@@ -1230,13 +1232,33 @@ function update_user(){
              $user_photo = $pic['user_photo'];
          }
      }
-
+                
     move_uploaded_file($image_temp_location , UPLOAD_DIRECTORY . DS . $user_photo );
         
+                $uppercase      = preg_match('@[A-Z]@', $password);
+                $lowercase      = preg_match('@[a-z]@', $password);
+                $number         = preg_match('@[0-9]@', $password);
+                $specialChars   = preg_match('@[^\w]@', $password);
+
+            if(!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($password) < 8) {
+                    echo set_message("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+                }
+
+            else {
+
+                // hash format to encrypt the password
+                $hashFormat = "$2y$10$"; 
+                // is a string at least 22 characters
+                $salt = "iusesomecrazystrings22";
+
+                $hashF_and_salt = $hashFormat . $salt;
+                // need to declare the variable again for it to take the encrypted password other wise it will not be encrypted.
+                $password = crypt($password,$hashF_and_salt); 
         
     //  make sure there is a space after the word SET so the database can be updated 
     $query ="UPDATE users SET ";
     $query.="username                  = '{$username }',";
+    $query.="password                  = '{$password }',";
     $query.="email                     = '{$email }',";
     $query.="user_firstname            = '{$user_firstname }',";
     $query.="user_lastname             = '{$user_lastname }',";
@@ -1252,6 +1274,7 @@ function update_user(){
     confirm($send_update_query);
     set_message("User {$username} has been Updated");
     redirect("index.php?users");
+            }
     }
 }
 
@@ -1265,7 +1288,7 @@ function get_orders_in_panel_approved(){
 
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/y');
+        $order_date = date_format($date, 'm/d/y');
         $order_name = ucwords($row['order_name']);
         
     $orders_panel = <<<DELIMETER
@@ -1299,7 +1322,7 @@ function get_orders_in_panel_processing(){
 
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/y');
+        $order_date = date_format($date, 'm/d/y');
         $order_name = ucwords($row['order_name']);
 
     $orders_panel = <<<DELIMETER
@@ -1329,7 +1352,7 @@ function get_orders_in_panel_completed(){
 
         $order_date = escape_string($row['order_date']);
         $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/y');
+        $order_date = date_format($date, 'm/d/y');
         $order_name = ucwords($row['order_name']);
 
     $orders_panel = <<<DELIMETER
@@ -1357,9 +1380,11 @@ function get_orders_approvals(){
     while($row = fetch_array($query)) {
 
         $order_date = escape_string($row['order_date']);
-        $date = date_create($order_date);
-        $order_date = date_format($date, 'd/m/y');
+        $date       = date_create($order_date);
+        $order_date = date_format($date, 'm/d/y');
         $order_name = ucwords($row['order_name']);
+
+        
 
     $orders_panel = <<<DELIMETER
     
@@ -1396,8 +1421,7 @@ function update_order(){
     confirm($send_update_query);
     set_message("Order {$order_id} has been Updated");
     redirect("index.php");
-
-    }
+    }    
 }
 
 // function that adds new slides and displays them 
@@ -1714,7 +1738,7 @@ function meetings(){
         
         
         $date                   = date_create($meeting_date);
-        $meeting_date           = date_format($date, 'd/m/y');
+        $meeting_date           = date_format($date, 'm/d/y');
         
         $time                   = date_create($meeting_time);
         $meeting_time           = date_format($time, 'H:i:A');

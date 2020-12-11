@@ -26,7 +26,6 @@ if(!isset($_SESSION['username'])) {
             if(isset($_GET['approvals'])) {
                 include(TEMPLATE_BACK . "/approvals.php");  
             }
-            
             if(isset($_GET['products'])) {
                 include(TEMPLATE_BACK . "/products.php");  
             }
@@ -126,8 +125,6 @@ if(!isset($_SESSION['username'])) {
             if(isset($_GET['in_stock_id'])) {
                 include(TEMPLATE_BACK . "/in_stock.php");  
             }
-
-           
             ?>
 
                     <!-- displays directory -->

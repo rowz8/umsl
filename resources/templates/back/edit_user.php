@@ -8,6 +8,7 @@ if(isset($_GET['id'])) {
   while($row = fetch_array($query)) {
 
     $username               = escape_string($row['username']); 
+    $password               = escape_string($row['password']);
     $email                  = escape_string($row['email']);
     $user_firstname         = escape_string($row['user_firstname']);
     $user_lastname          = escape_string($row['user_lastname']); 
@@ -69,8 +70,12 @@ if(isset($_GET['id'])) {
                  <input type="radio" name="user_role" class="custom-radio" value="Team Lead" required>&nbsp; Team Lead |
                  <input type="radio" name="user_role" class="custom-radio" value="admin" required>&nbsp; Admin 
             </div> 
-
-            <!-- User Meet Team Display -->
+    <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+            </div>
+    <!-- User Meet Team Display -->
                 <div class="form-group">
                  <label for="userType">Do you want to display the user at the team Page?</label>
                  <input type="radio" name="user_team" class="custom-radio" value="1" required>&nbsp; Yes |
