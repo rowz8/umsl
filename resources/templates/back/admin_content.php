@@ -128,7 +128,7 @@
             </table>
         </div>
         <div class="text-right">
-            <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?orders">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
@@ -164,7 +164,7 @@
             </table>
         </div>
         <div class="text-right">
-            <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?approvals">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
@@ -199,7 +199,7 @@
             </table>
         </div>
         <div class="text-right">
-            <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?orders">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
