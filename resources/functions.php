@@ -867,7 +867,7 @@ DELIMETER;
 // displays all the products in admin
 function get_products_in_admin(){
    
-    $query = query("SELECT * FROM products ORDER BY product_id desc");
+    $query = query("SELECT * FROM products ORDER BY product_id asc");
     confirm($query);
     while($row = fetch_array($query))
    {

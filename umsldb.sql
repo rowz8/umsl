@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2020 at 04:18 PM
+-- Generation Time: Dec 12, 2020 at 06:19 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -29,68 +29,67 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `buildings` (
   `building_id` int(11) NOT NULL,
-  `building_name` text NOT NULL,
-  `building_code` int(11) NOT NULL
+  `building_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `buildings`
 --
 
-INSERT INTO `buildings` (`building_id`, `building_name`, `building_code`) VALUES
-(1, 'AB Ecology & Conservation Complex', 85104),
-(2, 'Alumni House', 0),
-(3, 'Arts Administration Building', 0),
-(4, 'Bellerive Hall', 0),
-(5, 'Benton Hall', 0),
-(6, 'BMT Performing Arts Center ', 0),
-(7, 'Anheuser-Busch Hall', 0),
-(8, 'Campus Police Building', 0),
-(9, 'Chancellors Residence', 0),
-(10, 'Clark Hall', 0),
-(11, 'E. Desmond Lee TLC', 0),
-(12, 'Education Administration Building', 0),
-(13, 'Express Script Hall', 0),
-(14, 'Fine Arts Building', 0),
-(15, 'Innovative Technology Building', 0),
-(16, 'JC Penny Building', 0),
-(17, 'Kathy J. Weinman Advocacy Center', 0),
-(18, 'KWMU Grand Center', 0),
-(19, 'La Gras', 0),
-(20, 'Lucas Hall', 0),
-(21, 'Mansion Hill Condos', 0),
-(22, 'Marillac Hall', 0),
-(23, 'Mark Twain Athletic Center', 0),
-(24, 'Millennium Student Center', 0),
-(25, 'MSC Garage North', 0),
-(26, 'MSC Garage South', 0),
-(27, 'Music Building', 0),
-(28, 'Nursing Administration Building', 0),
-(29, 'Oak Hall', 0),
-(30, 'Patient Care Center', 0),
-(31, 'Provincial House', 0),
-(32, 'Recreation & Wellness Center', 0),
-(33, 'Regional Center for Education & Work', 0),
-(34, 'Research Building', 0),
-(35, 'Sassin Building', 0),
-(36, 'Science Learning Building', 0),
-(37, 'Sculpture & Ceramics Annex', 0),
-(38, 'Seton Center Hall', 0),
-(39, 'Social Sciences & Business Building', 0),
-(40, 'Softball Field', 0),
-(41, 'South Campus Classroom Building', 0),
-(42, 'South Campus Computer Building', 0),
-(43, 'South Campus Garage', 0),
-(44, 'St. Louis Mercantile Library', 0),
-(45, 'Stadler Hall', 0),
-(46, 'Thomas Jefferson Library', 0),
-(47, 'UMSL Postal Services', 0),
-(48, 'Villa Building', 0),
-(49, 'Ward E. Barns Building', 0),
-(50, 'West Drive Garage South', 0),
-(51, 'WLC Center for Nanoscience', 0),
-(52, 'Woods Hall', 0),
-(53, 'Floor Techs', 0);
+INSERT INTO `buildings` (`building_id`, `building_name`) VALUES
+(1, 'AB Ecology & Conservation Complex'),
+(2, 'Alumni House'),
+(3, 'Arts Administration Building'),
+(4, 'Bellerive Hall'),
+(5, 'Benton Hall'),
+(6, 'BMT Performing Arts Center '),
+(7, 'Anheuser-Busch Hall'),
+(8, 'Campus Police Building'),
+(9, 'Chancellors Residence'),
+(10, 'Clark Hall'),
+(11, 'E. Desmond Lee TLC'),
+(12, 'Education Administration Building'),
+(13, 'Express Script Hall'),
+(14, 'Fine Arts Building'),
+(15, 'Innovative Technology Building'),
+(16, 'JC Penny Building'),
+(17, 'Kathy J. Weinman Advocacy Center'),
+(18, 'KWMU Grand Center'),
+(19, 'La Gras'),
+(20, 'Lucas Hall'),
+(21, 'Mansion Hill Condos'),
+(22, 'Marillac Hall'),
+(23, 'Mark Twain Athletic Center'),
+(24, 'Millennium Student Center'),
+(25, 'MSC Garage North'),
+(26, 'MSC Garage South'),
+(27, 'Music Building'),
+(28, 'Nursing Administration Building'),
+(29, 'Oak Hall'),
+(30, 'Patient Care Center'),
+(31, 'Provincial House'),
+(32, 'Recreation & Wellness Center'),
+(33, 'Regional Center for Education & Work'),
+(34, 'Research Building'),
+(35, 'Sassin Building'),
+(36, 'Science Learning Building'),
+(37, 'Sculpture & Ceramics Annex'),
+(38, 'Seton Center Hall'),
+(39, 'Social Sciences & Business Building'),
+(40, 'Softball Field'),
+(41, 'South Campus Classroom Building'),
+(42, 'South Campus Computer Building'),
+(43, 'South Campus Garage'),
+(44, 'St. Louis Mercantile Library'),
+(45, 'Stadler Hall'),
+(46, 'Thomas Jefferson Library'),
+(47, 'UMSL Postal Services'),
+(48, 'Villa Building'),
+(49, 'Ward E. Barns Building'),
+(50, 'West Drive Garage South'),
+(51, 'WLC Center for Nanoscience'),
+(52, 'Woods Hall'),
+(53, 'Floor Techs');
 
 -- --------------------------------------------------------
 
@@ -113,7 +112,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (3, 'Waste Management'),
 (4, 'Gloves'),
 (5, 'Brooms Handles & Frames'),
-(6, 'Mop Handles'),
+(6, 'Mop Heads'),
 (7, 'Miscellaneous'),
 (8, 'Floor Tech'),
 (9, 'Labels'),
@@ -142,8 +141,8 @@ CREATE TABLE `meetings` (
 --
 
 INSERT INTO `meetings` (`meeting_id`, `meeting_title`, `meeting_description`, `meeting_location`, `meeting_date`, `meeting_time`, `month`) VALUES
-(13, 'Software Presentation', 'After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at rowz.website', 'Zoom joerottman channel ', '2020-12-15', '18:00:00', '2020-11-24'),
-(14, 'Pre-Launch Website ', ' After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at zoom channel link https://umsystem.zoom.us/my/josephrottman.', ' Zoom', '2020-12-08', '18:00:00', '2020-11-24');
+(14, 'Pre-Launch Website ', ' After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at zoom channel link https://umsystem.zoom.us/my/josephrottman.', 'Zoom https://umsystem.zoom.us/my/josephrottman.', '2020-12-08', '18:00:00', '2020-11-24'),
+(20, 'Website Official Launch', 'After several months of hard work and dedication, we are thrilled to officially announce the launch of our new website on December 15, 2020! We invite you to visit us at zoom channel link https://umsystem.zoom.us/my/josephrottman.', 'zoom channel link https://umsystem.zoom.us/my/josephrottman.', '2020-12-15', '19:00:00', '2020-12-09');
 
 -- --------------------------------------------------------
 
@@ -167,23 +166,41 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_status`, `order_currency`, `order_date`, `order_name`, `order_building`) VALUES
-(10, 38.50, '1004896507', 'Completed', 'USD', '2020-11-17 00:00:00', 'rowz', 'Lucas Hall'),
-(11, 43.76, '1217368098', 'Cancelled', 'USD', '2020-11-17 00:00:00', 'rowz', 'Music Building'),
-(12, 43.76, '1322489877', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Clark Hall'),
-(13, 22.88, '1062362904', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Benton Hall'),
-(14, 22.88, '452855177', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Campus Police Building'),
-(15, 22.88, '737645590', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Education Administration Building'),
-(16, 45.76, '443131571', 'Cancelled', 'USD', '2020-11-18 00:00:00', 'rowz', 'Fine Arts Building'),
-(17, 62.38, '1108335655', 'Completed', 'USD', '2020-11-18 00:00:00', 'rowz', 'Chancellors Residence'),
-(19, 16.62, '150545688', 'Completed', 'USD', '2020-11-18 00:00:00', 'joe', 'La Gras'),
-(20, 20.88, '1287691836', 'Cancelled', 'USD', '2020-11-19 00:00:00', 'rowz', 'Clark Hall'),
-(21, 0.00, '700895007', 'Completed', 'USD', '2020-11-19 00:00:00', 'rowz', 'Alumni House'),
-(22, 243.81, '1523463024', 'Cancelled', 'USD', '2020-11-20 00:00:00', 'rowz', 'Social Sciences & Business Building'),
-(23, 7432.50, '1645772906', 'Completed', 'USD', '2020-11-20 00:00:00', 'rowz', 'Anheuser-Busch Hall'),
-(24, 22.88, '1247017671', 'Approved', 'USD', '2020-11-23 15:22:32', 'rowz', 'Marillac Hall'),
-(25, 51.07, '1657019383', 'Approved', 'USD', '2020-11-23 18:09:12', 'rowz', 'Campus Police Building'),
-(26, 20.88, '340074411', 'Approved', 'USD', '2020-11-23 18:14:17', 'rowz', 'BMT Performing Arts Center '),
-(27, 9.12, '970764010', 'Approved', 'USD', '2020-11-26 08:10:36', 'rowz', 'MSC Garage North');
+(24, 22.88, '1247017671', 'Completed', 'USD', '2020-11-23 15:22:32', 'rowz', 'Marillac Hall'),
+(25, 51.07, '1657019383', 'Completed', 'USD', '2020-11-23 18:09:12', 'rowz', 'Campus Police Building'),
+(26, 20.88, '340074411', 'Completed', 'USD', '2020-11-23 18:14:17', 'rowz', 'BMT Performing Arts Center '),
+(27, 9.12, '970764010', 'Completed', 'USD', '2020-11-26 08:10:36', 'rowz', 'MSC Garage North'),
+(28, 65.64, '657015574', 'Completed', 'USD', '2020-12-05 11:48:01', 'rowz', 'E. Desmond Lee TLC'),
+(40, 21.88, '371499986', 'Cancelled', 'USD', '2020-12-05 12:10:05', 'rowz', 'BMT Performing Arts Center '),
+(41, 16.33, '2120283099', 'Completed', 'USD', '2020-12-06 11:39:06', 'joe', 'Kathy J. Weinman Advocacy Center'),
+(42, 43.76, '1233794688', 'Approved', 'USD', '2020-12-06 12:20:55', 'rowz', 'UMSL Postal Services'),
+(43, 34.33, '211933804', 'Approved', 'USD', '2020-12-06 16:22:50', 'becky', 'Floor Techs'),
+(44, 98.59, '1428664806', 'Completed', 'USD', '2020-12-06 16:24:20', 'becky', 'Chancellors Residence'),
+(45, 16.54, '852033409', 'Cancelled', 'USD', '2020-12-06 16:24:50', 'joe', 'Lucas Hall'),
+(46, 47.76, '2076296780', 'Cancelled', 'USD', '2020-12-08 17:27:50', 'rowz', 'South Campus Classroom Building'),
+(47, 78.12, '964604692', 'Cancelled', 'USD', '2020-12-08 17:28:41', 'becky', 'Millennium Student Center'),
+(48, 46.50, '515846176', 'Cancelled', 'USD', '2020-12-08 20:02:54', 'joe', 'Lucas Hall'),
+(49, 94.49, '1733768500', 'Approved', 'USD', '2020-12-10 07:58:49', 'rowz', 'Campus Police Building'),
+(50, 22.88, '1518041995', 'Cancelled', 'USD', '2020-12-10 09:39:25', 'rowz', 'AB Ecology & Conservation Complex'),
+(51, 22.88, '303814376', 'Cancelled', 'USD', '2020-12-10 09:42:48', 'rowz', 'Benton Hall'),
+(52, 22.88, '1148063546', 'Completed', 'USD', '2020-12-10 11:20:51', 'rowz', 'Arts Administration Building'),
+(53, 22.88, '1006037213', 'Completed', 'USD', '2020-12-10 11:21:07', 'rowz', 'Arts Administration Building'),
+(54, 45.76, '1713014875', 'Completed', 'USD', '2020-12-10 11:22:50', 'rowz', 'Bellerive Hall'),
+(55, 6.36, '382373504', 'Approved', 'USD', '2020-12-10 11:24:22', 'rowz', 'Alumni House'),
+(56, 16.62, '1552475897', 'Processing', 'USD', '2020-12-10 11:27:57', 'rowz', 'AB Ecology & Conservation Complex'),
+(57, 16.62, '2107801439', 'Processing', 'USD', '2020-12-10 11:29:30', 'rowz', 'Alumni House'),
+(58, 33.24, '393801687', 'Processing', 'USD', '2020-12-10 11:30:45', 'rowz', 'Bellerive Hall'),
+(59, 16.62, '1330483202', 'Processing', 'USD', '2020-12-10 11:33:17', 'rowz', 'Alumni House'),
+(60, 16.62, '647049135', 'Processing', 'USD', '2020-12-10 11:34:42', 'rowz', 'Benton Hall'),
+(61, 95.24, '524706791', 'Processing', 'USD', '2020-12-10 11:37:22', 'rowz', 'Clark Hall'),
+(62, 16.62, '481880238', 'Processing', 'USD', '2020-12-10 11:42:21', 'rowz', 'Alumni House'),
+(63, 16.62, '1736296507', 'Processing', 'USD', '2020-12-10 11:45:20', 'rowz', 'Bellerive Hall'),
+(64, 5.45, '1878077789', 'Processing', 'USD', '2020-12-10 11:48:36', 'rowz', 'KWMU Grand Center'),
+(65, 17.84, '49107005', 'Processing', 'USD', '2020-12-10 11:49:15', 'rowz', 'Education Administration Building'),
+(66, 40.90, '970730970', 'Processing', 'USD', '2020-12-10 12:33:42', 'rowz', 'Fine Arts Building'),
+(67, 44.28, '2133712599', 'Processing', 'USD', '2020-12-11 09:49:50', 'rowz', 'BMT Performing Arts Center '),
+(68, 44.28, '1793827210', 'Processing', 'USD', '2020-12-11 10:00:37', 'rowz', 'BMT Performing Arts Center '),
+(69, 16.62, '925261291', 'Processing', 'USD', '2020-12-11 10:01:19', 'rowz', 'Benton Hall');
 
 -- --------------------------------------------------------
 
@@ -210,24 +227,24 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `short_desc`, `product_quantity`, `product_uom`, `product_price`, `product_number`, `product_description`, `product_category_id`, `product_image`) VALUES
-(1, 0, 'Foam Block Fine Floor Sweep', '24In. Plastic Foam Block Fine Floor Sweep Flagged Polypropylene Fill.', 4, 'Each', 20.88, 'RUB9B02GY', 'Designed To Pick Up The Finest Debris. Available In Flagged Polypropylene Or Blended Horsehair Tampico For Removing Even Fine Dirt And Dust. Ideal For Highly Polished Or Waxed Floors. Two-Threaded Handle Holes On Either Side Of Block For Even Wear. Angle Brace Sku9B71 Adds Support And Stability. Handles Sold Separately.', 5, 'Broom_128.png'),
-(2, 1, 'Fine Floor Sweep', '36 in. Broom Fine Gray Flagged Polypropylene Sweep', 7, 'Each', 21.88, 'CSM4501623', 'Industrial floor fine sweep with 2 threaded handle holes and 3in bristle trim. Satin-Tip flagged polypropylene for sweeping smooth high- gloss floors.', 5, 'Broom_128.png'),
-(3, 2, 'Corn Broom Warehouse', 'Corn Broom Warehouse 1 1/8 in. dia 2.9 cm Stained/Lacquered Handle', 7, 'Each', 22.88, 'RUB6383BL', 'Designed for rugged indoor/outdoor cleaning. 100% natural broom corn fibers for long life and effective pick up. Remove fine dirt from even or rough surfaces. Hand-selected, heavy-duty lacquered pine handles.', 5, 'Broom_128.png'),
-(4, 3, 'Duo-Sweep Warehouse Broom', 'Duo-Sweep 13 In. Warehouse Broom W/ 48 In. Metal Handle.', 15, 'Each', 16.62, 'CSM3688314', 'Two Handle Holes; One Angled, One Upright. Flagged Blue Filament Sweeps Fine Debris; Use Black Stiff Filament For Heavier Sweeping. Use Lobby Brooms With Dust Pans (Sold Separately) For Continuous Cleaning Of Convention Centers, Malls, And Theme Parks. 7\" Bristle Trim.', 5, 'Broom_128.png'),
-(5, 4, 'Mop Handle', 'Mop Handle Quick Change Wood 60In.', 4, 'Each', 9.96, 'HIL22652', '60\" Hardwood Handle Constructed Of Heavy Duty Plated Metal That Resists Rust And Features A Release Bar For Fast Changing Of Mop Heads.', 5, 'Broom_128.png'),
+(1, 0, 'Foam Block Fine Floor Sweep', '24In. Plastic Foam Block Fine Floor Sweep Flagged Polypropylene Fill.', 10, 'Each', 20.88, 'RUB9B02GY', 'Designed To Pick Up The Finest Debris. Available In Flagged Polypropylene Or Blended Horsehair Tampico For Removing Even Fine Dirt And Dust. Ideal For Highly Polished Or Waxed Floors. Two-Threaded Handle Holes On Either Side Of Block For Even Wear. Angle Brace Sku9B71 Adds Support And Stability. Handles Sold Separately.', 5, 'Broom_128.png'),
+(2, 1, 'Fine Floor Sweep', '36 in. Broom Fine Gray Flagged Polypropylene Sweep', 0, 'Each', 21.88, 'CSM4501623', 'Industrial floor fine sweep with 2 threaded handle holes and 3in bristle trim. Satin-Tip flagged polypropylene for sweeping smooth high- gloss floors.', 5, 'Broom_128.png'),
+(3, 2, 'Corn Broom Warehouse', 'Corn Broom Warehouse 1 1/8 in. dia 2.9 cm Stained/Lacquered Handle', 0, 'Each', 22.88, 'RUB6383BL', 'Designed for rugged indoor/outdoor cleaning. 100% natural broom corn fibers for long life and effective pick up. Remove fine dirt from even or rough surfaces. Hand-selected, heavy-duty lacquered pine handles.', 5, 'Broom_128.png'),
+(4, 3, 'Duo-Sweep Warehouse Broom', 'Duo-Sweep 13 In. Warehouse Broom W/ 48 In. Metal Handle.', 4, 'Each', 16.62, 'CSM3688314', 'Two Handle Holes; One Angled, One Upright. Flagged Blue Filament Sweeps Fine Debris; Use Black Stiff Filament For Heavier Sweeping. Use Lobby Brooms With Dust Pans (Sold Separately) For Continuous Cleaning Of Convention Centers, Malls, And Theme Parks. 7\" Bristle Trim.', 5, 'Broom_128.png'),
+(5, 4, 'Mop Handle', 'Mop Handle Quick Change Wood 60In.', 0, 'Each', 9.96, 'HIL22652', '60\" Hardwood Handle Constructed Of Heavy Duty Plated Metal That Resists Rust And Features A Release Bar For Fast Changing Of Mop Heads.', 5, 'Broom_128.png'),
 (6, 5, 'Handle Clencher', 'Handle Clencher Fiberglass 60In.', 0, 'Each', 16.42, 'HIL22711', 'Extra Durable Nylon Construction Assures Long Life For This Jaw Style Handle. Ideal For Wide Headbands. 60\" Fiberglass Handle. Head Also Sold Separately.', 5, 'Broom_128.png'),
-(7, 6, 'Dust Mop Frame', 'Handle 60In. Swivel Snap Wood - Dust Mop Frame - 1In. Diameter.', 5, 'Each', 11.07, 'HIL22608', 'Dust Mop Handle Features 180 Degree Swivel Action Or Rigid Position And Spring Clip For Easy Attachment To Dust Mop Frame. 60\" Wood Handle In 1\" Or 1 1/8\" Diameter.', 5, 'Broom_128.png'),
-(8, 7, 'Handle Wood Threaded', 'Handle 60In. Wood Threaded 15/16In. Diameter.', 12, 'Each', 3.18, 'CSM4027100', 'Standard Threaded Handle Made Of Lacquered Hardwood.', 5, 'Broom_128.png'),
-(9, 8, 'Broom Lobby', 'Broom Lobby Polypropylene Fill 6Cs.', 46, 'Each', 8.92, 'RUB6374BK', 'Ideal For One-Handed Cleaning Under Tables, Fixtures And Hard To Reach Areas. Ideal For Use In Malls, Restaurants And Lobbies. Tough Polypropylene With Flagged Bristles Trap Fine Particles. Will Not Stain, Discolor Or Absorb Odors. Can Be Used Wet Or Dry. Works Well With Lobby Pro Dust Pan (Sold Separately).\n\n', 5, 'Broom_128.png'),
+(7, 6, 'Dust Mop Frame', 'Handle 60In. Swivel Snap Wood - Dust Mop Frame - 1In. Diameter.', 5, 'Each', 11.07, 'HIL22608', 'Dust Mop Handle Features 180 Degree Swivel Action Or Rigid Position And Spring Clip For Easy Attachment To Dust Mop Frame. 60\\\" Wood Handle In 1\\\" Or 1 1/8\\\" Diameter.', 5, 'Broom_128.png'),
+(8, 7, 'Handle Wood Threaded', 'Handle 60In. Wood Threaded 15/16In. Diameter.', 10, 'Each', 3.18, 'CSM4027100', 'Standard Threaded Handle Made Of Lacquered Hardwood.', 5, 'Broom_128.png'),
+(9, 8, 'Broom Lobby', 'Broom Lobby Polypropylene Fill 6Cs.', 44, 'Each', 8.92, 'RUB6374BK', 'Ideal For One-Handed Cleaning Under Tables, Fixtures And Hard To Reach Areas. Ideal For Use In Malls, Restaurants And Lobbies. Tough Polypropylene With Flagged Bristles Trap Fine Particles. Will Not Stain, Discolor Or Absorb Odors. Can Be Used Wet Or Dry. Works Well With Lobby Pro Dust Pan (Sold Separately).\n\n', 5, 'Broom_128.png'),
 (10, 9, 'Handle Wedge Mop', 'Handle Wedge Mop.', 5, 'Each', 10.60, 'RUBU110', '# Use The Trapper Looped-End Or Kut-A-Way Cut-End Triangle-Shaped Wedge Mops. # The Wood Handle With Heavy-Gauge Plated Wire Frame Fits Either Style Head.', 5, 'Broom_128.png'),
-(11, 10, 'Gray Round Bucket', '14 Quart Gray Round Bucket W/ Handle.', 6, 'Each', 17.53, 'RUB2614GY', 'Heavy-Duty Thick Wall Construction. Brute Buckets Have Molded-In Graduations For Accurate Measuring.\n', 3, 'waste_128.png'),
+(11, 10, 'Gray Round Bucket', '14 Quart Gray Round Bucket W/ Handle.', 4, 'Each', 17.53, 'RUB2614GY', 'Heavy-Duty Thick Wall Construction. Brute Buckets Have Molded-In Graduations For Accurate Measuring.\n', 3, 'waste_128.png'),
 (12, 11, 'Gray Round Container', '22 Gallon Gray Untouchable Round Container', 0, 'Each', 70.57, 'RUB3546GY', 'Available In Round, Half-Round And Square Shapes To Fit Every Application. Durable And Crack Resistant, Even Under Tough Indoor/Outdoor Conditions. Perfect For Hotel Lobbies, Offices, Restrooms, Shopping Malls, Restaurants And Other Public Locations.\n\n', 3, 'waste_128.png'),
-(13, 12, 'Brute Dolly', '2640 Brute Dolly - 2620 2632 2643 2655 Containers.', 3, 'Each', 47.62, 'RUB2640BK', 'Easy Mobility And Maneuverability Of Heavy Loads. Up To 350 Lb. Continuous Static Load Rating. All Plastic Construction Resists Rust, Chipping And Denting. Heavy-Duty Wheels With Swivel Capabilities Provide For Ease Of Mobility. User-Friendly Solution For Moving Heavy Loads.\n', 3, 'waste_128.png'),
-(14, 13, 'Deskside Recycling Container', '28 Quart Deskside Recycling Container Medium W/ Universal Recycle Symbol.', 3, 'Each', 5.84, 'RUB295673BL', 'An Easy And Effective Way To Recycle Paper. Contains Post Consumer Recycled Resin (Pcr) Exceeding Epa Guidelines. Designed To Be Used In Systems With Existing Office Containers And Accessories. Placed Beside Traditional Wastebaskets, Rubbermaids Deskside Recycling Containers Make It Easy To Separate Waste Paper. 28 1/8 Qt\n', 3, 'waste_128.png'),
-(15, 14, 'Beige Wastebasket', 'Beige 28 1/8 Quart Wastebasket.', 3, 'Each', 5.45, 'RUB2956BG', 'Space-Efficient And Economical. Fits Under Standard Desk Height Even When Swing Top Is Fully Extended. All-Plastic Construction Won\'T Chip, Rust Or Dent. Rolled Rims Add Strength, And Are Easy To Clean.', 3, 'waste_128.png'),
-(16, 15, 'Rim Caddy', 'Brute Rim Caddy - 2643 Containers.', 5, 'Each', 67.99, 'RUB9W87YW', 'Snaps Securely Onto The Rim Of Brute 44-Gallon Containers (2643 And 2643-60). User-Friendly Handles For Easy Maneuverability, And Minimizes Contact With Refuse. Easily Attach And Remove Poly- Liners. Efficiently Dispense Smaller Liners From Inside Brute Container. Spots For Bottles Wet-Floor Signs, Sponges, Lobby Dust Pan, Brushes, Liner Rolls, Gloves, And Whatever Else You Can Imagine. Bottles, Wet-Floor Sign, And Other Tools Stay In Place When Bag Is Unloaded In A Full Tipped Position Or An Upright Position. ', 3, 'waste_128.png'),
+(13, 12, 'Brute Dolly', '2640 Brute Dolly - 2620 2632 2643 2655 Containers.', 1, 'Each', 47.62, 'RUB2640BK', 'Easy Mobility And Maneuverability Of Heavy Loads. Up To 350 Lb. Continuous Static Load Rating. All Plastic Construction Resists Rust, Chipping And Denting. Heavy-Duty Wheels With Swivel Capabilities Provide For Ease Of Mobility. User-Friendly Solution For Moving Heavy Loads.\n', 3, 'waste_128.png'),
+(14, 13, 'Deskside Recycling Container', '28 Quart Deskside Recycling Container Medium W/ Universal Recycle Symbol.', 2, 'Each', 5.84, 'RUB295673BL', 'An Easy And Effective Way To Recycle Paper. Contains Post Consumer Recycled Resin (Pcr) Exceeding Epa Guidelines. Designed To Be Used In Systems With Existing Office Containers And Accessories. Placed Beside Traditional Wastebaskets, Rubbermaids Deskside Recycling Containers Make It Easy To Separate Waste Paper. 28 1/8 Qt\n', 3, 'waste_128.png'),
+(15, 14, 'Beige Wastebasket', 'Beige 28 1/8 Quart Wastebasket.', 2, 'Each', 5.45, 'RUB2956BG', 'Space-Efficient And Economical. Fits Under Standard Desk Height Even When Swing Top Is Fully Extended. All-Plastic Construction Won\'T Chip, Rust Or Dent. Rolled Rims Add Strength, And Are Easy To Clean.', 3, 'waste_128.png'),
+(16, 15, 'Rim Caddy', 'Brute Rim Caddy - 2643 Containers.', 4, 'Each', 67.99, 'RUB9W87YW', 'Snaps Securely Onto The Rim Of Brute 44-Gallon Containers (2643 And 2643-60). User-Friendly Handles For Easy Maneuverability, And Minimizes Contact With Refuse. Easily Attach And Remove Poly- Liners. Efficiently Dispense Smaller Liners From Inside Brute Container. Spots For Bottles Wet-Floor Signs, Sponges, Lobby Dust Pan, Brushes, Liner Rolls, Gloves, And Whatever Else You Can Imagine. Bottles, Wet-Floor Sign, And Other Tools Stay In Place When Bag Is Unloaded In A Full Tipped Position Or An Upright Position. ', 3, 'waste_128.png'),
 (17, 16, 'Funnel Top Round', 'Funnel Top Round Fits 2947 3546 Containers.', 6, 'Each', 30.01, 'RUB3548GY', 'Untouchable Containers Are Available In Round, Half-Round And Square Shapes For Every Application. # Durable And Crack Resistant, Even Under Tough Indoor/Outdoor Conditions. # Perfect For Hotel Lobbies, Restrooms, Shopping Malls, Restaurants And Snack Areas. Untouchable Tops For Hygienic, Hands-Free Refuse Disposal. # Drop And Swing Lid Designs Provide Easy Access For Refuse Disposal And Then Quickly Return To Hide Refuse From Public View. # Controls Waste, Odors And Smoking Debris. Styleline Series Lids Attractive Solutions To Your Waste Handling Problems. # Styleline Series Lids Combine Aesthetic Form With Ash-Trash Function. # Styleline Series Lids Include Retainer Hardware For Concealing Polyliner Bags. Color: Light Gray', 3, 'waste_128.png'),
-(18, 17, 'Baseboard Stripper', 'Baseboard Stripper - 12 - 19 Oz. Cans.', 9, 'Each', 3.85, 'HIL0113355', ' This Heavy-Duty, Foaming Product Is Designed To Remove Excess Floor Finish Where Floor Machines Cannot Reach. The Thick, Penetrating Foam Clings To Vertical Surfaces Like Baseboards For Easy Removal Of Wax Build-Up. Wax Build-Up Is Quickly Emulsified By Chemical Action For Easy Removal, Leaving A Wax-Free Surface. Removes Heavy Wax Build-Up In Hard To Reach Areas. Clinging Foam Adheres To Surfaces. Easy Rinsing.\n', 7, 'Misc_128.png'),
+(18, 17, 'Baseboard Stripper', 'Baseboard Stripper - 12 - 19 Oz. Cans.', 7, 'Each', 3.85, 'HIL0113355', ' This Heavy-Duty, Foaming Product Is Designed To Remove Excess Floor Finish Where Floor Machines Cannot Reach. The Thick, Penetrating Foam Clings To Vertical Surfaces Like Baseboards For Easy Removal Of Wax Build-Up. Wax Build-Up Is Quickly Emulsified By Chemical Action For Easy Removal, Leaving A Wax-Free Surface. Removes Heavy Wax Build-Up In Hard To Reach Areas. Clinging Foam Adheres To Surfaces. Easy Rinsing.\n', 7, 'Misc_128.png'),
 (19, 18, 'Laundry Bleach & Disinfectant', 'Bleach 1 Gallon, 6/Cs.', 19, 'Cases', 19.68, 'KIKBLEACH6', 'Kik International Pure Bright Liquid Bleach: Disinfecting Bleach Meets Your Laundering Or Sanitizing Needs. Full-Strength, Concentrated Liquid Removes Odors And Stains. For The Brightest Whites, Always Add At Least Five Ounces To Your White Laundry Loads.', 2, 'chemicals_128.png'),
 (20, 19, 'Carpet Pre-Spray', 'Carpet Pre-Spray   12 - 1 Quart Bottles.', 6, 'Cases', 47.00, 'HIL0081404', 'Carpet Pre-Spray is designed to maximize cleaning efficiency while minimizing harmful residue. Residue causes resoiling, which increases cleaning frequency, costing time and money.', 7, 'Misc_128.png'),
 (21, 20, 'Clorox Fresh Scent Disinfecting Wipes', 'Clorox Fresh Scent Disinfecting Wipes 12 Per Case.', 0, 'Cases', 37.37, 'CLO01593', 'Clorox Commercial Solutons Clorox Disinfecting Wipes Provide Quick And Convenient Cleaning For High Traffic And High Touch Zones, Such As Elevator Buttons. Pre-Moistened Wipe That Cleans And Disinfects. Convenient Cleaning Anytime, Anywhere That You Need. Bleach-Free Formula. 12 Canisters Per Case. 35 Wipes Per Canister.', 10, 'PPE_128.png'),
@@ -245,10 +262,10 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (33, 32, 'Green Select Glass Cleaner ', 'Green Select Glass Cleaner - 4 - 2.5 Liter Containers.', 17, 'Cases', 61.32, 'HIL0082725', 'Green Select Glass Cleaner Will Clean Windows, Tv Screens, Porcelain, Plastic, Counter Tops, Restroom Fixtures, And Stainless Steel. Works Well As An All-Purpose Spray And Wipe For Any Surface Not Harmed By Water. Formulated To Be Effective With Cold Water, Contains No Phosphates And Is Biodegradable Which Means It Has A Lower Impact On The Environment.', 2, 'chemicals_128.png'),
 (34, 33, 'Liquid Gum-Go', 'Liquid Gum-Go.', 3, 'Cases', 145.80, 'HIL0091204', 'Formulated For The Safe And Effective Removal Of Gum From Carpeting, Upholstery, And Hard Surfaces. Simply Apply Liquid Gum-Go To The Gum, Let The Product Work To Break The Bond, And Scrape Up The Gum With A Bone Knife Or Putty Knife.', 2, 'chemicals_128.png'),
 (35, 34, 'Hair & Body Wash Gel ', 'Hair & Body Wash Gel - 4 - 1 Gallon Containers.', 5, 'Cases', 52.96, 'HIL0036406', 'A Luxurious Gel Body Wash For A Gentle All Over Cleansing. Fortified With Essential Oils For Skin Conditioning And A Clean Sweet Pea Fragrance. Perfect For General Washroom And Shower Settings In Lodgings, School And Athletic Facilities.', 2, 'chemicals_128.png'),
-(36, 35, 'Heavy Duty Floor Cleaner', 'Heavy Duty Floor Cleaner - 4 - 2.5 Liter Containers.', 6, 'Cases', 80.20, 'HIL0080925', 'A Concentrated, Multipurpose Cleaner Formulated To Efficiently Remove A Wide Variety Of Dirt, Grime, And Grease. It Can Be Used For Cleaning Any Hard Surface Not Damaged By Water, Including Resilient Tile, Concrete, Paver Brick, And Quarry Tile.', 2, 'chemicals_128.png'),
+(36, 35, 'Heavy Duty Floor Cleaner', 'Heavy Duty Floor Cleaner - 4 - 2.5 Liter Containers.', 5, 'Cases', 80.20, 'HIL0080925', 'A Concentrated, Multipurpose Cleaner Formulated To Efficiently Remove A Wide Variety Of Dirt, Grime, And Grease. It Can Be Used For Cleaning Any Hard Surface Not Damaged By Water, Including Resilient Tile, Concrete, Paver Brick, And Quarry Tile.', 2, 'chemicals_128.png'),
 (37, 36, 'Hil-Glo', 'Hil-Glo -  4 - 1 Gallon Containers.', 5, 'Cases', 57.31, 'HIL0053306', 'Specially Formulated Spray Buff Compound Which Gives Your Floors A Durable, High Gloss Quickly And Easily. Plus Hil-Glo Cleans The Surface Of Your Floor As It Polishes. It Delivers Maximum Gloss While It Cleans Stubborn Scuffs And Black Heel Marks.', 2, 'chemicals_128.png'),
 (38, 37, 'Lemon Odor Counteractant', 'Lemon Odor Counteractant - 4 - 1 Gallon Containers.', 4, 'Cases', 69.95, 'HIL0018606', 'Ideal Choice For Combating Hard-To-Hide Odors In Restaurants, Hotels, Motels, Hospitals, Nursing Homes, Restrooms, Kitchens, Schools And Veterinary Clinics. It Can Be Safely Used On Any Washable, Nonporous Surface Including Floors, Toilets, Sinks, Garbage Containers, Ashtrays, Animal Cages And Kennels. Especially Effective For Suppressing Odors From Pets, Urine, Fecal Matter, Food And Cooking Odors, Smoke, Vomit, Body Odors And Mildew.', 2, 'chemicals_128.png'),
-(39, 38, 'Lustre-Mist', 'Lustre-Mist Furniture Polish - 12 - 18 Oz. Cans.', 29, 'Each', 3.40, 'HIL0103155', 'A Unique Dust-Blocking, No Wax Formula For Use Directly On Surfaces As Well As On Cloths And Mitts. Dusts, Polishes And Shines In One Simple Step. Eliminates Dust Fly-Away And Leaves A Lasting Shine. Leaves No Waxy Build-Up. Reduces Dust Accumulation And Preserves The Beauty Of The Surface. Features A Soak-In Formula That Restores Life And Brilliance To Wood Surfaces And Adds A Beautiful Gloss To Less Porous Surfaces. Use On Marble, Solid Synthetic, Laminate, Plastic, Stainless Steel, Baked Enamel, Blinds, Cabinets, Appliances, Baseboards And Paneling.', 7, 'Misc_128.png'),
+(39, 38, 'Lustre-Mist', 'Lustre-Mist Furniture Polish - 12 - 18 Oz. Cans.', 28, 'Each', 3.40, 'HIL0103155', 'A Unique Dust-Blocking, No Wax Formula For Use Directly On Surfaces As Well As On Cloths And Mitts. Dusts, Polishes And Shines In One Simple Step. Eliminates Dust Fly-Away And Leaves A Lasting Shine. Leaves No Waxy Build-Up. Reduces Dust Accumulation And Preserves The Beauty Of The Surface. Features A Soak-In Formula That Restores Life And Brilliance To Wood Surfaces And Adds A Beautiful Gloss To Less Porous Surfaces. Use On Marble, Solid Synthetic, Laminate, Plastic, Stainless Steel, Baked Enamel, Blinds, Cabinets, Appliances, Baseboards And Paneling.', 7, 'Misc_128.png'),
 (40, 39, 'Mandarin-Cranberry Premium Foam Soap', 'Mandarin-Cranberry Premium Foam Soap - 6 - 14 Oz. Pump Bottles.', 14, 'Each', 6.60, 'HIL0039482', 'This Premium Foaming Soap Has Additional Active Ingredients That Makes It Our Thickest And Most Luxurious Foaming Soap Yet. Infused With Premium Moisturizers That Leave Your Skin Smooth And Clean With A Refreshing Citrus And Berry Scent.', 2, 'chemicals_128.png'),
 (41, 40, 'Nutra Rinse', 'Nutra Rinse - 6 - 1/2 Gallon Containers.', 4, 'Cases', 86.22, 'HIL0071522', 'A High Quality Neutralizer And Conditioner Formulated To Help Eliminate Alkaline Residues On Floors. Its Special Chelating Action Ties Up The Insoluble Alkaline Salts Left Behind By Alkaline Strippers That Can Cause Floor Finishes To Powder Or Wear Poorly. Nutra-Rinse Allows Stripper Residue To Be Quickly And Easily Removed. Its Labor-Saving Formula Eliminates Multiple Rinsing Steps.', 2, 'chemicals_128.png'),
 (42, 41, 'Nutra-Rinse', 'Nutra-Rinse - 4 - 1 Gallon Containers.', 1, 'Cases', 59.60, 'HIL0021906', 'A High Quality Neutralizer And Conditioner Formulated To Help Eliminate Alkaline Residues On Floors. Its Special Chelating Action Ties Up The Insoluble Alkaline Salts Left Behind By Alkaline Strippers That Can Cause Floor Finishes To Powder Or Wear Poorly. Nutra-Rinse Allows Stripper Residue To Be Quickly And Easily Removed. Its Labor-Saving Formula Eliminates Multiple Rinsing Steps.', 2, 'chemicals_128.png'),
@@ -256,7 +273,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (44, 43, 'Re-Juv-Nal', 'Re-Juv-Nal - 4 - 2.5 Liter Containers.', 0, 'Cases', 46.52, 'HIL0081625', 'A Phosphate-Free, Ph Neutral Formulation Designed To Provide Effective Cleaning, Deodorizing, And Disinfection Where Housekeeping Is Of Prime Importance In Controlling Cross-Contamination From Treated Surfaces. R-Juv-Nal (Epa Reg # 1839-169-1658) Has Demonstrated Effectiveness Against Viruses Similar To 2019 Novel Coronavirus (Sars- Cov-2) On Hard, Non-Porous Surfaces. Therefore, This Product Can Be Used Against Sars- Cov-2, The Novel Coronavirus That Causes The Disease Covid- 19, When Used In Accordance With The Directions For Use Against Rotavirus On Hard, Non-Porous Surfaces. ', 2, 'chemicals_128.png'),
 (45, 44, 'Seal 340', 'Seal 340 - 4 - 1 Gallon Containers.', 6, 'Each', 65.60, 'HIL0034006', 'A Seal And Finish. Seal 340 Was Formulated To Enhance The Rich, Natural Colors Of Your Hard Floors Without Leaving A Shiny, Plastic-Looking Surface. It Also Seals Resilient Tile Floors To Create A Smooth, Unbroken Base For High-Speed Finishes. Seal 340 Not Only Enhances The Natural Colors In Hard Floors,It Protects All Floors From Dirt, Spills, And Abrasions That Come From Heavy Traffic.', 2, 'chemicals_128.png'),
 (46, 45, 'Soap Lotion Hand W Moisturizer', 'Enriched Lotion Hand Soap With Moisturizers 800Ml 4/Cs\n', 0, 'Cases', 40.48, 'RUB4013111', 'Enriched With Glycerin, Silk Proteins, Aloe Vera, And Vitamin E Hypoallergenic For Sensitive Skin. Light Passion Flower Fragrance. Rich, Teal Pearlized Appearance. Biodegradable.', 2, 'chemicals_128.png'),
-(47, 46, 'Stainless Steel Cleaner & Polish', 'Stainless Steel Cleaner & Polish - Oil Based - 12 - 15 Oz. Cans.', 11, 'Each', 4.76, 'HIL0103455', 'Formulated With A Blend Of Cleaning Solvents And Fine Oils For A Superior Cleaning Job On Your Stainless Steel. This Product Cleans, Polishes And Protects The Surface Without Hard Rubbing. Does Not Leave An Oily Residue. With Regular Care This Product Can Help Prolong The Factory Finish. Resists Fingerprints, Grease And Water Spatter.', 7, 'Misc_128.png'),
+(47, 46, 'Stainless Steel Cleaner & Polish', 'Stainless Steel Cleaner & Polish - Oil Based - 12 - 15 Oz. Cans.', 10, 'Each', 4.76, 'HIL0103455', 'Formulated With A Blend Of Cleaning Solvents And Fine Oils For A Superior Cleaning Job On Your Stainless Steel. This Product Cleans, Polishes And Protects The Surface Without Hard Rubbing. Does Not Leave An Oily Residue. With Regular Care This Product Can Help Prolong The Factory Finish. Resists Fingerprints, Grease And Water Spatter.', 7, 'Misc_128.png'),
 (48, 47, 'Super Hil-Tone', 'Super Hil-Tone - 12 - 1 Quart Bottles.', 1, 'Cases', 83.88, 'HIL0101604', 'A High-Quality Dust Mop Treatment Formulated To Clean And Protect Seals And Finishes. Daily Dust Mopping With Super Hil-Tone Increases The Life And Beauty Of Your Floors By Reducing The Abrasive Effects Of Tracked In Dirt. Treatment With Super Hil-Tone Provides Excellent Resistance To Black Heel Marks, Scuffing, And Scratching.', 2, 'chemicals_128.png'),
 (49, 48, 'Super Shine-All', 'Super Shine All 4 - 1 Gallon Containers\n', 2, 'Cases', 52.40, 'HIL0014006', 'Concentrated, Neutral Ph Formula Won\'T Harm Your Floor Finish. Perfect For Cleaning Resilient Tile, Asphalt Tile, Vinyl Floors, Synthetic Floors, Terrazzo, Quarry Tile, Paver Brick, Natural Stone And Coated Wood Floors. Protective Sheen Helps Preserve And Protect. Excellent Choice For Damp Mopping And Auto Scrubbing. Effective In Hard Or Soft, Hot Or Cold Water. Biodegradable. Phosphate Free.', 2, 'chemicals_128.png'),
 (50, 49, 'Super Shine-All', 'Super Shine-All - 4 - 2.5 Liter Containers.', 6, 'Cases', 69.96, 'HIL0080825', 'Concentrated, Neutral Ph Formula Won\'T Harm Your Floor Finish. Perfect For Cleaning Resilient Tile, Asphalt Tile, Vinyl Floors, Synthetic Floors, Terrazzo, Quarry Tile, Paver Brick, Natural Stone And Coated Wood Floors. Protective Sheen Helps Preserve And Protect. Excellent Choice For Damp Mopping And Auto Scrubbing. Biodegradable. Phosphate Free.', 2, 'chemicals_128.png'),
@@ -269,17 +286,17 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (57, 56, 'Majestic Vinegar Cleaner', 'Vinegar - 4 Gallons Per Case.', 4, 'Cases', 11.88, 'WLM09006B', 'Majestic Vinegar Cleaner. Cleaning agent. ', 2, 'chemicals_128.png'),
 (58, 57, 'Frame Mop Dust', 'Frame Mop Dust 5In. X 24In. Swivel Snap Quick Change.', 18, 'Each', 3.12, 'HIL52815', 'These Heavy Duty, Industry Standard Frames Are Constructed Of Rust Resistant Plated Metal Wire For Long Life. Features Welded One Piece Construction.', 5, 'Broom_128.png'),
 (59, 58, 'Frame Mop Dust ', 'Frame Mop Dust 5In. X 48In. Swivel Snap Quick Change.', 9, 'Each', 5.13, 'HIL52819', 'These Heavy Duty, Industry Standard Frames Are Constructed Of Rust Resistant Plated Metal Wire For Long Life. Features Welded One Piece Construction.', 5, 'Broom_128.png'),
-(60, 59, 'Bowl Brush', '21In. Bowl Brush W/ Non-Scratching Bristles And Looped End.', 17, 'Each', 4.56, 'CSM363300', 'Non-Scratching Bristles Are Not Affected By Standard Bowl Cleaners.', 7, 'Misc_128.png'),
+(60, 59, 'Bowl Brush', '21In. Bowl Brush W/ Non-Scratching Bristles And Looped End.', 14, 'Each', 4.56, 'CSM363300', 'Non-Scratching Bristles Are Not Affected By Standard Bowl Cleaners.', 7, 'Misc_128.png'),
 (61, 60, 'Flexible Putty Knife', 'Flexible Putty Knife With 1 1/2 In Carbon Steel Blade, Black\n', 0, 'Each', 2.66, '13A674', 'Flexible Blade Works Great For Hard To Reach And Small Areas. Polished Steel, Hollow Ground Blade Is Ideal For Compound Jobs. ', 11, 'Equipment_128.png'),
-(62, 61, 'Flying Insect Killer', 'Flying Insect Killer, Aerosol, 15 Oz, Indoor/Outdoor, Deet-Free Deet Concentration, Permethrin', 31, 'Each', 6.00, '48LR73', 'Hot Shot Flying Insect Killer3 Aerosol Kills Houseflies, Mosquitoes And Other Flying Insects By Contact. Effective For Up To 4 Weeks Against Mosquitoes And Houseflies On Nonporous Surfaces. Water-Based. Clean, Fresh Scent.', 7, 'Misc_128.png'),
+(62, 61, 'Flying Insect Killer', 'Flying Insect Killer, Aerosol, 15 Oz, Indoor/Outdoor, Deet-Free Deet Concentration, Permethrin', 30, 'Each', 6.00, '48LR73', 'Hot Shot Flying Insect Killer3 Aerosol Kills Houseflies, Mosquitoes And Other Flying Insects By Contact. Effective For Up To 4 Weeks Against Mosquitoes And Houseflies On Nonporous Surfaces. Water-Based. Clean, Fresh Scent.', 7, 'Misc_128.png'),
 (63, 62, 'Manual Soap Dispenser', 'Affinity 1St Gen. Manual Soap Dispenser 1.25 L Black With Hillyard Logo', 0, 'Each', 0.00, 'HIL22281', 'One Reliable, Robust Dispenser Delivering Foam, Liquid Or Gel. Space- Saving Dispenser Design Utilizes 25% Less Plastic By Weight Than Other 1,250 Ml Dispensers Without Compromising Reliability Or Durability.', 12, 'soap-container.png'),
 (64, 63, 'Pd Portable Dispensing Gun', 'Arsenal One Pd Portable Dispensing Gun', 7, 'Each', 24.19, 'HIL99706', 'Portable Dispensing Gun For Use With Arsenal One Refill Products. *Shown Here With An Arsenal One Refill. Asse 1055B Certified.', 11, 'Equipment_128.png'),
 (65, 64, 'Big Jinx Roach & Ant Killer', 'Big Jinx Roach & Ant Killer, 14 Oz.', 14, 'Each', 5.43, 'CLR296', 'Provides Quick Killing Action And Residual Control. Kills Bugs You See And Even The Ones You Don#T See. Protects For Up To 3 Months. Pleasing Cherry Scent. Dielectric Breakdown Voltage Of 47,000 Volts. Spot And/Or Crack And Crevice Treatment.', 7, 'Misc_128.png'),
-(66, 65, 'Bottle Carafe Poly', 'Bottle Carafe Poly 1 Qt.', 1347, 'Each', 0.62, 'HIL31950', 'Translucent Quart Spray Bottles In Quart Size. Sold As 1 32 Ounce Bottle. Trigger (Hil26011 Or Hil26013) Sold Separately. Made Of Polypropylene. Fda Compliant. 10\" X 3 3/8\"', 7, 'Misc_128.png'),
+(66, 65, 'Bottle Carafe Poly', 'Bottle Carafe Poly 1 Qt.', 1346, 'Each', 0.62, 'HIL31950', 'Translucent Quart Spray Bottles In Quart Size. Sold As 1 32 Ounce Bottle. Trigger (Hil26011 Or Hil26013) Sold Separately. Made Of Polypropylene. Fda Compliant. 10\" X 3 3/8\"', 7, 'Misc_128.png'),
 (67, 66, '44-Gallon Utility Container', 'Brute 44 Gallon Gray Utility Container W/ Vent Channel.', 4, 'Each', 46.80, 'RUB264360GY', 'Heavy-Duty, Round Container Without Lid Helps Decrease Workplace Injuries And Increase Productivity As Well As Safety And Cleanliness. Innovative Venting Channels Make Lifting Out Liners 50 Percent Easier, Improving Productivity And Reducing The Risk Of Injury. Integrated Cinches Secure The Liner, Allowing Efficient, Knot-Free Liner Changes. Reinforced Rounded Handles Make Lifting And Moving Easier, And Are Reinforced To Resist Tearing Or Damage From Even The Heaviest Loads. Contoured Base Handles Make The Container Easier To Lift And Control During Emptying. Strengthened Base Is Engineered To Be Dragged Over Rough Surfaces, Extending Life And Overall Durability Even In The Toughest Environments. Proprietary Design Constructed With The Highest Quality Material Plus A Uv Inhibitor Ensures Long Life In Even The Most Extreme Commercial Environments. It Never Fades, Warps, Cracks Or Can Be Crushed. Self-Draining Lid (Sold Separately) Eliminates Water Pooling.', 3, 'waste_128.png'),
 (68, 67, 'Bulk Foam Soap Dispenser - Black', 'Bulk Foam Soap Dispenser - Black - 6 Per Case.', 0, 'Each', 6.67, 'HIL22297', '1000Ml Refillable Dispenser. Bottle Can Be Easily Removed For Cleaning And Filling. 1000Ml Capacity. Permanent Sturdy Pump. Pump And Cartridge Are Easily Removed For Cleaning Or Replacement. Lockable Cabinet Uses Same Key As Affinity Dispensers. Can Be Used For Liquid Soaps By Changing The Pump To Hil22097.', 12, 'soap-container.png'),
-(69, 68, 'Soap Dispenser Automatic', 'Auto Bulk Fill 1200 Ml Soap Or Sanitizer Foam Dispenser Dispenser In White', 313, 'Each', 7.92, 'FSD1FM', 'Suitable For Liquid: Foaming Sanitizer/Soap (Bulk Pour In Refill). Refillable Bottle (1200Ml). Lockable With Window Design. Supports Dc(6V,1A) And Battery (The Standard Packing Does Not Include Dc Or Batteries). Light Indicator For Low Power. Includes Optional Drip Tray.', 12, 'soap-container.png'),
-(70, 69, 'Chalk Anti-Dust', 'Crayola Nontoxic Anti-Dust Chalk, White, 12 Sticks/Box (50-1402)', 106, 'Cases', 21.05, 'BIN501402', 'Blackboard Chalk: Features 12 Sticks Of White Crayola Chalk For Use On Traditional Blackboards And Chalkboard Paint. Anti Dust Art Tools: Chalk Sticks Are Specially Formulated To Resist Breaking And Produce Less Dust Than Traditional Classroom Chalk. Classroom Supplies: Crayola Chalkboard Chalk Is Ideal For School Blackboards And Can Be An Essential Addition To School Supplies Lists. Safe & Nontoxic: Crayola Chalk Is Safe And Nontoxic, Ideal For Ages 3 & Up. Anti Dust. 12 Sticks. White Chalk. Great For The Classroom. 12Ct Anti Dust White Chalk Sticks Erases Easily. Low-Dust Chalk For Use On Most Chalkboards. Makes Clean, Smooth Lines.', 7, 'Misc_128.png'),
+(69, 68, 'Soap Dispenser Automatic', 'Auto Bulk Fill 1200 Ml Soap Or Sanitizer Foam Dispenser Dispenser In White', 312, 'Each', 7.92, 'FSD1FM', 'Suitable For Liquid: Foaming Sanitizer/Soap (Bulk Pour In Refill). Refillable Bottle (1200Ml). Lockable With Window Design. Supports Dc(6V,1A) And Battery (The Standard Packing Does Not Include Dc Or Batteries). Light Indicator For Low Power. Includes Optional Drip Tray.', 12, 'soap-container.png'),
+(70, 69, 'Chalk Anti-Dust', 'Crayola Nontoxic Anti-Dust Chalk, White, 12 Sticks/Box (50-1402)', 105, 'Cases', 21.05, 'BIN501402', 'Blackboard Chalk: Features 12 Sticks Of White Crayola Chalk For Use On Traditional Blackboards And Chalkboard Paint. Anti Dust Art Tools: Chalk Sticks Are Specially Formulated To Resist Breaking And Produce Less Dust Than Traditional Classroom Chalk. Classroom Supplies: Crayola Chalkboard Chalk Is Ideal For School Blackboards And Can Be An Essential Addition To School Supplies Lists. Safe & Nontoxic: Crayola Chalk Is Safe And Nontoxic, Ideal For Ages 3 & Up. Anti Dust. 12 Sticks. White Chalk. Great For The Classroom. 12Ct Anti Dust White Chalk Sticks Erases Easily. Low-Dust Chalk For Use On Most Chalkboards. Makes Clean, Smooth Lines.', 7, 'Misc_128.png'),
 (71, 70, 'Universal Towel Dispenser - Manual', 'Dispenser Universal Hwrt Black.', 101, 'Each', 51.00, 'PAP306489', '7 7/8 In. Wide With A 1.9 In. Universal Core', 12, 'dispenser.png'),
 (72, 71, 'Disposable Face Coverings', 'Disposable Ear Loop Nuisance Masks', 410, 'Cases', 40.00, '96620687', 'Nuisance Masks Are Disposable And Good For General Purpose Applications. They Offer Basic Protection To Help Reduce Irritants Including Dust, Pollen And Other Small Particles. Not Intended For Use By Healthcare Professionals Or For Any Medical Purpose', 10, 'PPE_128.png'),
 (73, 72, 'Ostrich Feather Duster', 'Duster 23In. African Feather Duster - Brown Ostrich Feathers.', 4, 'Each', 12.18, 'IMP4603', 'Economy Ostrich Feather Duster Is Perfect For Dusting Irregular Surfaces, Small Spaces And Around Delicate Items. Fine, Soft Ostrich Feathers Have More Surface Area To Effectively Grab And Hold Dust Particles. Smooth Handle Is Durable And Lightweight To Provide Excellent Maneuverability. Convenient Hang Hole Allows Fast, Simple Storage. Length 23 Inches', 7, 'Misc_128.png'),
@@ -300,20 +317,20 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (88, 87, 'Chalkboard Eraser ', 'Quartet Chalkboard Eraser 5 X 2 X 1.', 163, 'Each', 4.14, 'QRT804526', 'This Absorbent Chalkboard Eraser Features A Soft Felt Surface To Remove Chalk Writing Both Quickly And Easily. Its Durable Design Is Made Of Six Strips Of Dense Felt On A Strong Felt Backing For Excellent Chalk Absorption And Cleaning Power. High-Quality Material Is Safe For Daily Use In Classrooms, Work Spaces And More. Chalkboard Eraser Is Perfect For Use On All Chalkboard Surfaces.', 7, 'Misc_128.png'),
 (89, 88, 'Reclaimed Huck Towels', 'Reclaimed Huck Towels - 25 Lb Case Blue.', 25, 'Pounds', 4.60, 'MED2040', 'Reclaimed Huck Towels (Also Known As Surgical Towels) Are Cotton Hemmed Towel, And Hygenically Cleaned And Sanitized For Immediate Use. Towels Are Recycled From Surgical Cotton For An Environmentally Friendly Solution.', 7, 'Misc_128.png'),
 (90, 89, 'Safety Scraper Replacement Blades', 'Safety Scraper Replacement Blades 100 /Box.', 5, 'Boxes', 19.98, 'UNGSRB30', 'No. 9 (11/2\") Razor Blades Packed In Convenient Re-Closable Plastic Trays So Blades Are Kept Safe And Dry To Prevent Rusting.', 11, 'Equipment_128.png'),
-(91, 90, 'Safety Scraper', 'Safety Scraper W/ Unique Locking System.', 44, 'Cases', 3.10, 'UNGSR500', 'Unique Locking System Eliminates Blades From Sliding Out While Working. Uses Standard No. 9 (1 1/2\") Razor Blades (Not Included).', 11, 'Equipment_128.png'),
+(91, 90, 'Safety Scraper', 'Safety Scraper W/ Unique Locking System.', 43, 'Cases', 3.10, 'UNGSR500', 'Unique Locking System Eliminates Blades From Sliding Out While Working. Uses Standard No. 9 (1 1/2\") Razor Blades (Not Included).', 11, 'Equipment_128.png'),
 (92, 91, 'Jumbo Roll Toilet Paper Dispenser', 'Single 9In. Jumbo Roll Tissue Dispenser.', 20, 'Each', 8.12, 'VDCAE42V', 'Jumbo Roll Toilet Paper Dispenser - 9 Inch Single Roll, Wall Mount, Translucent Black', 12, 'dispenser.png'),
 (93, 92, 'Dispenser Tissue', 'Dispenser Tissue 9\" Black Trans', 4, 'Each', 7.14, 'PAP42519', 'Our 9\" Tissue Dispenser Holds One Roll Of Toilet Tissue. This Dispenser Fits Where Larger Dispensers Can\'T, But Is Still Ideal For Heavy Traffic Washroom Usage.', 12, 'dispenser.png'),
 (94, 93, 'Snow Shovel', 'Snow Shovel - 1 Ea', 19, 'Each', 20.39, '82761123', 'Snow Shovel - 1 Ea', 11, 'Equipment_128.png'),
 (95, 94, 'Medium Duty Scrub Sponge', 'Sponge 74 C Scotch-Britetm Medium Duty Scrub Sponge - 20 Per Case.', 154, 'Each', 2.27, 'MIN61500110376', 'Our Premier Dual-Action, Medium-Duty Cleaning Pad/Sponge For Most Common Cleaning Jobs. Medium Abrasive Scotch-Brite(Tm) Material On One Side And Cellulose Sponge On The Other. Green/Yellow, 3.5\" X 6.25\" , 20 Per Case. Typical Applications: Walls, Tables, Fixtures, Countertops, Floors.', 7, 'Misc_128.png'),
 (96, 95, 'Tampon.', 'Tampon.', 18, 'Each', 37.08, '', '', 7, 'Misc_128.png'),
 (97, 96, 'Microfiber Glass Cloth - Blue', 'Trident Specialty Microfiber Glass Cloth - Blue.', 0, 'Packs', 14.22, 'HIL20023', 'Use For Glass And Mirrors. Fine Non-Streak Performance. 16 X 16 12 Pack', 7, 'Misc_128.png'),
-(98, 97, 'Trigger Sprayer', 'Trigger Sprayer W/ 10In. Tube And 28Mm Neck General Purpose - White.', 1347, 'Each', 1.15, 'HIL26011', 'Adjustable Spray Trigger With Nylon Filter. Fits Hillyard Quart Bottles And Other Bottles With A 28Mm Neck. Quality Sprayer For General Purpose Applications Ergonomic Design, Comfortable, Value Priced Trigger Has Textured Grip 28/400 Mm Neck Finish', 7, 'Misc_128.png'),
+(98, 97, 'Trigger Sprayer', 'Trigger Sprayer W/ 10In. Tube And 28Mm Neck General Purpose - White.', 1346, 'Each', 1.15, 'HIL26011', 'Adjustable Spray Trigger With Nylon Filter. Fits Hillyard Quart Bottles And Other Bottles With A 28Mm Neck. Quality Sprayer For General Purpose Applications Ergonomic Design, Comfortable, Value Priced Trigger Has Textured Grip 28/400 Mm Neck Finish', 7, 'Misc_128.png'),
 (99, 98, 'Vector Fruit Fly Trap', 'Vector 960 Fruit Fly Traps-12 Traps.', 3, 'Cases', 108.95, 'B008ZVMXLK', 'Box Of 12 The 960 Vector Fruit Fly Trap Is Engineered With A 10-Hole Venting Lid To Optimize Drosophila Exposure To The Vapors Emitted From The Liquid Attractant. The Trap Lid Is Removable For Easy Monitoring And Identification Of Catch. There Are Outer And Inner Spill Resistant Rings To Reduce Accidental Loss Of The Liquid Attractant.', 7, 'Misc_128.png'),
 (100, 99, 'Mop Bucket And Wringer', 'Wavebrake 44 Qt Down Press Combo Mop Bucket And Wringer.', 4, 'Each', 181.73, 'RUB757688YW', 'The Wavebrake Mop Bucket And Wringer System Reduces Splashing, Which Means A Safer Environment, Cleaner Floors, And Improved Productivity. Massive Capacity For The Largest Commercial Cleaning Jobs. Foot Pedal Water Evacuation Conveniently Located, No Lifting Required, For Worker Well-Being. Lasts 58 Times Longer Than Comparative Wringers. Tested To Exceed 50,000 Wringing Cycles, Average Wringers Perform Approximately 860 Cycles. Premium Tubular Steel And Structural Web Molded Plastic. Accepts Optional Dirty Water Bucket, 9C74.', 11, 'Equipment_128.png'),
 (101, 100, 'Disposable Gloves Nitrile 2 Extra Large.', 'Nitrile, Disposable Gloves, 2Xl, Powder-Free, 6.7 Mil Palm Thickness', 0, 'Boxes', 14.16, '3NFC8', 'Powder-Free Nitrile Disposable Gloves Provide High Resistance To Puncture, Tearing, And Abrasion, And Good Resistance To Accidental Chemical Splash. Nitrile Gloves Are Generally Thinner And More Tactile Than Vinyl And Latex Gloves, While Maintaining Strength. Powder-Free, General Purpose Disposable Gloves Provide Basic Hand Protection Against Non-Hazardous Materials And Do Not Have A Powder Coating Inside The Glove, Reducing The Risk Of Allergic Reactions And Contamination. Eneral Purpose Disposable Gloves Are Used For Common Tasks Such As Cleaning, Handling Parts, And Other General Maintenance Tasks. Disposable Gloves Are Used Once And Thrown Away Or Recycled After Each Task To Reduce The Risk Of Cross-Contamination.', 4, 'Gloves_128.png'),
-(102, 101, 'Exam Gloves Large', 'Exam Gloves Large - 100/Box, 10/Case.', 154, 'Boxes', 11.07, 'HIL30522', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
-(103, 102, 'Exam Gloves Medium', 'Exam Gloves Medium - 100/Box, 10/Case.', 215, 'Boxes', 9.53, 'HIL30521', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
-(104, 103, 'Exam Gloves Extra Large', 'Exam Gloves Xlarge - 100/Box, 10/Case.', 164, 'Boxes', 10.20, 'HIL30523', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
+(102, 101, 'Exam Gloves Large', 'Exam Gloves Large - 100/Box, 10/Case.', 153, 'Boxes', 11.07, 'HIL30522', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
+(103, 102, 'Exam Gloves Medium', 'Exam Gloves Medium - 100/Box, 10/Case.', 214, 'Boxes', 9.53, 'HIL30521', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
+(104, 103, 'Exam Gloves Extra Large', 'Exam Gloves Xlarge - 100/Box, 10/Case.', 163, 'Boxes', 10.20, 'HIL30523', 'Ideal For Most Tasks Involving Minimal Risk Of Biological Contamination. Cost-Effective Solution Where Frequent Glove Changes Are Required. Meets Or Exceeds Astm And Fda Examination Glove Standards. Passes Astm F1671 For Resistance To Penetration By Bloodborne Pathogens', 4, 'Gloves_128.png'),
 (105, 104, 'Chemical Resistant Gloves', 'Chemical Resistant Gloves, M, Glove Materials Nitrile, 1 PR', 0, 'Each', 1.51, '29UP83', 'Chemical Resistant, Water Resistant, Unsupported, Bisque Grip, Chlorinated, FDA Compliant', 4, 'Gloves_128.png'),
 (106, 105, 'Chemical Resistant Gloves', 'Chemical Resistant Gloves, L, Glove Materials Nitrile, 1 PR', 0, 'Each', 1.54, '29UP84', 'Chemical Resistant, Water Resistant, Unsupported, Bisque Grip, Chlorinated, FDA Compliant', 4, 'Gloves_128.png'),
 (107, 106, 'Chemical Resistant Gloves', 'Chemical Resistant Gloves, XL, Glove Materials Nitrile, 1 PR', 0, 'Each', 1.54, '29UP85', 'Chemical Resistant, Water Resistant, Unsupported, Bisque Grip, Chlorinated, FDA Compliant', 4, 'Gloves_128.png'),
@@ -322,7 +339,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (110, 109, 'Label Super Hil-Tone', 'Label Ready To Use #215 Super Hil-Tone.', 25, 'Each', 0.00, 'HIL31215', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
 (111, 110, 'Label Nutra-Rinse', 'Label Ready To Use #219 Nutra-Rinse.', 25, 'Each', 0.00, 'HIL31219', 'Color Coded, Pressure Sensitive Labe', 9, 'Labels-128.png'),
 (112, 111, 'Label Super Shine-All', 'Label Ready To Use #808 Arsenal Super Shine-All.', 25, 'Each', 0.00, 'HIL31603', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
-(113, 112, 'Label Heavy Duty Floor Cleaner', 'Label Ready To Use #809 Arsenal Heavy Duty Floor Cleaner.', 25, 'Each', 0.00, 'HIL31609', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
+(113, 112, 'Label Heavy Duty Floor Cleaner', 'Label Ready To Use #809 Arsenal Heavy Duty Floor Cleaner.', 24, 'Each', 0.00, 'HIL31609', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
 (114, 113, 'Label Country Garden Air Freshener', 'Label Ready To Use Arsenal #804 Counntry Garden Air Freshener', 25, 'Each', 0.00, 'HIL31623', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
 (115, 114, 'Label Vindicator+', 'Label Ready To Use Arsenal #806 Vindicator+.', 99, 'Each', 0.00, 'HIL31625', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
 (116, 115, 'Label Re-Juv-Nal', 'Label Ready To Use Arsenal #816 Re-Juv-Nal.', 25, 'Each', 0.00, 'HIL31616', 'Color Codes, Pressure Sensitive Labels.', 9, 'Labels-128.png'),
@@ -335,22 +352,22 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (123, 122, 'Duratuff Liners 60 Gal.', 'Duratuff Liners 60 Gal., 38X58, 0.97 Mil - Black, 100/Cs.', 25, 'Cases', 21.00, 'LL3860100K', 'Linear Low Density Lldpe Can Liners. When You\'Ve Got A Heavy Load, You Need A Bag That Will Stand Up To The Test. Duratuff Bags Pass With Flying Colors No Leaks, No Tears, And No Punctures. Just Superior Performance That\'S Suited To A Variety Of Industrial Applications. The Result: You Get Better Performance At A Lower Cost. Duratuff Bags Offer Dependable Performance And Are A Great, All- Purpose Solution For Industrial, Commercial, And Institutional Applications. Ideal For Everything From Paper And General Refuse, To Heavy Or Sharp Objects. Ideal When You Want The Feel Of A Thick, Strong Bag. Made With 100% Prime Virgin Resins Using Proprietary Formulas. Superior Strength, Puncture And Tear Resistance. Seamless Tubular Construction. Leak-Proof Star Seal. Available In Gauges From 0.34 To 2.00 Mil. Coreless Rolls For Ease Of Use And Storage. ', 3, 'waste_128.png'),
 (124, 123, 'Payload Liners 56 Gal.', 'Payload Liners 56 Gal., 43X48, 1.7 Mil - Black, 100/Cs.', 0, 'Cases', 33.91, 'LR4348170K', 'Blended-Recycled Lldpe Can Liners. Hillyard Payload# Liners Meet Or Exceed Epa Guidelines For 10 Percent Post-Consumer Content. They#Re Made From A Combination Of Post-Consumer And Post Industrial Materials. And Here#S More Good News: You Don#T Have To Sacrifice Performance To Make An Environmentally Sound Choice. These Liners Deliver Strength And Thickness Equal To Your Toughest Applications. Even The Carton In Environmentally Friendly# Inks Used Are Water-Based And The Cartons Are Manufactured With Up To 60 Percent Recycled Content. Payload# Liners Are Made From Recycled Materials, So They#Re An Environmentally Better Choice. Perfect For Cost-Conscious Users Looking For A Thick Bag Suited To Heavy-Duty Applications Like Sharp, Heavy Or Irregular Waste. Made With High-Quality Blended Resins, Which Meet Or Exceed Epa Guidelines For 10% Post-Consumer Content. Super Tough # Great Puncture And Tear Resistance. Seamless Tubular Construction. Leak-Proof Star Steal. Designed For Extra-Heavy-Duty Use # Available In 1.00 To 2.00 Mil. Coreless Rolls For Ease Of Use And Storage. ', 3, 'waste_128.png');
 INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `short_desc`, `product_quantity`, `product_uom`, `product_price`, `product_number`, `product_description`, `product_category_id`, `product_image`) VALUES
-(125, 124, 'Stellar Liners 60 Gal.', 'Stellar Liners 60 Gal., 38X60, 14 Mic - Natural, 200/Cs.', 23, 'Cases', 26.50, 'LH386014N', 'High Density-Hmw-Hdpe Can Liners. Gauge For Gauge, Stellar# Liners Handle Heavier Loads At A Lower Cost Versus Competitive Bags Made From Less-Advanced Films. These Liners Also Promote Environmental Source Reduction # Thinner, Stronger Films Mean Less Waste Going Into Incinerators Or Landfills. The Result: You Get Better Performance At A Lower Cost While Promoting Environmental Source Reduction. Stellar# Liners Bring Outstanding Performance And Environmental Source Reduction To A Wide Range Of Waste-Containment Needs, Including Foodservice, Commercial And Institutional Applications. These Liners Easily Handle Non-Sharp, Heavy, Wet Waste, Provide Highly Effective Odor Containment And Are An Environmentally Sound Choice. Made With Hmw-Hdpe Resins Using Our Exclusive Manufacturing Process. Maximum Strength And Load Capacity. Great Chemical Resistance And Odor Containment. Wide Range Of Temperature Resistance. Leak-Proof Star Seal. Coreless Rolls For Easy Use And Storage. ', 3, 'waste_128.png'),
+(125, 124, 'Stellar Liners 60 Gal.', 'Stellar Liners 60 Gal., 38X60, 14 Mic - Natural, 200/Cs.', 22, 'Cases', 26.50, 'LH386014N', 'High Density-Hmw-Hdpe Can Liners. Gauge For Gauge, Stellar# Liners Handle Heavier Loads At A Lower Cost Versus Competitive Bags Made From Less-Advanced Films. These Liners Also Promote Environmental Source Reduction # Thinner, Stronger Films Mean Less Waste Going Into Incinerators Or Landfills. The Result: You Get Better Performance At A Lower Cost While Promoting Environmental Source Reduction. Stellar# Liners Bring Outstanding Performance And Environmental Source Reduction To A Wide Range Of Waste-Containment Needs, Including Foodservice, Commercial And Institutional Applications. These Liners Easily Handle Non-Sharp, Heavy, Wet Waste, Provide Highly Effective Odor Containment And Are An Environmentally Sound Choice. Made With Hmw-Hdpe Resins Using Our Exclusive Manufacturing Process. Maximum Strength And Load Capacity. Great Chemical Resistance And Odor Containment. Wide Range Of Temperature Resistance. Leak-Proof Star Seal. Coreless Rolls For Easy Use And Storage. ', 3, 'waste_128.png'),
 (126, 125, 'Verde Liners 12-16 Gal.', 'Verde Liners 12-16 Gal., 24X33, 6 Mic - Natural, 1,000/Cs.', 55, 'Cases', 19.35, 'LHV24338N', 'Valued-Based Verde Can Liners Handle Heavier Loads At A Lower Cost Than Competitive Bags Made From Less-Advanced Films. These Liners Also Promote Environmental Source Reduction -- Thinner, Stronger Hillyard Films Mean Less Waste Going Into Incinerators Or Landfills. High Density Hmw-Dpe Value-Based Can Liners. Made With Fda Approved Hmw-Hdpe Resins (Natural Only) Using Our Exclusive Manufacutring Process. Exellent Chemical Resistance, Temperature Resistance And Odor Containment.Seamless Tubular Construction. Leak-Proof Star Steal. Sizes To Fit The Industry\'S Most Popular Receptacles. Convenient, Easy-Tear Perforation Separates Liners Within The Roll \n\n', 3, 'waste_128.png'),
 (127, 126, 'Verde Liners 33 Gal.', 'Verde Liners 33 Gal., 33X40, 9 Mic - Natural, 500/Cs.', 22, 'Cases', 24.43, 'LHV334011N', 'Valued-Based Verde Can Liners Handle Heavier Loads At A Lower Cost Than Competitive Bags Made From Less-Advanced Films. These Liners Also Promote Environmental Source Reduction -- Thinner, Stronger Hillyard Films Mean Less Waste Going Into Incinerators Or Landfills. High Density Hmw-Dpe Value-Based Can Liners. Made With Fda Approved Hmw-Hdpe Resins (Natural Only) Using Our Exclusive Manufacutring Process. Exellent Chemical Resistance, Temperature Resistance And Odor Containment. Seamless Tubular Construction. Leak-Proof Star Steal. Sizes To Fit The Industry\'S Most Popular Receptacles. Convenient, Easy-Tear Perforation Separates Liners Within The Roll ', 3, 'waste_128.png'),
-(128, 127, 'Utility Wax Mops', '24Oz Rayon Utility Wax Mops White - Narrow Band.', 36, 'Each', 6.23, 'HIL24543', 'With Quick Absorption And Liquid Release, 4-Ply Cut End Rayon Utility Wax Mops Are Great For Liquid Pick-Up, Economy Finishing And Disinfecting. Available In Both Narrow (1 1/4\") Or Wide (5\") Blue Headbands.', 6, 'Mop_128.png'),
+(128, 127, 'Utility Wax Mops', '24Oz Rayon Utility Wax Mops White - Narrow Band.', 34, 'Each', 6.23, 'HIL24543', 'With Quick Absorption And Liquid Release, 4-Ply Cut End Rayon Utility Wax Mops Are Great For Liquid Pick-Up, Economy Finishing And Disinfecting. Available In Both Narrow (1 1/4\") Or Wide (5\") Blue Headbands.', 6, 'Mop_128.png'),
 (129, 128, 'Bowl Mop', 'Bowl Mop W/ Full Head.', 10, 'Each', 1.37, 'HIL20411', 'Full 5 3/4\" Mop Head For Greater Absorbency Acid-Resistant Polypropylene Strands.12\" Strong I-Beam Plastic Handle.', 7, 'Misc_128.png'),
 (130, 129, 'Mop Dust', 'Mop 5In. X 24In. Infinity Twist Cotton Dust Mop - White.', 10, 'Each', 8.32, 'HIL52814', 'Industry Standard Dust Mop Is Constructed Of 4-Ply Cotton Blended Yarn Sewn To A Durable Synthetic Backing. Absorbent Yarn Provides Excellent Dust Retention And Is Ideal For General Maintenance. Natural Yarn With 3\" Wide Or 5\" Wide Blue Synthetic Backing. (60\" And 72\" Have White Backing.) Both Widths Are Available As Complete Sets (With Frame And 60\" Wood Handle ) Or Order Refills Separately.', 6, 'Mop_128.png'),
 (131, 130, 'Dust Mop - Blue', 'Mop 5In. X 60In. Infinity Twist Cotton Dust Mop - Blue.', 5, 'Each', 28.52, 'HIL53409', 'Twisted Loop Yarn Provides Maximum Durability For Laundering And Heavy Use. No Cut Ends To Lint And Fray. Twisted Yarn Provides An Effective Dust Trap For Better Collection And Retention. Yarn Is Dyed Blue And Laundered.', 6, 'Mop_128.png'),
-(132, 131, 'Mop Dust - White', 'Mop Dust 5In. X 60In. Infinity Twist- White.', 2, 'Each', 24.07, 'HIL52820', 'Industry Standard Dust Mop Is Constructed Of 4-Ply Cotton Blended Yarn Tufted Or Sewn To Durable Synthetic Backing. Absorbent Yarns Provides Excellent Dust Retention.', 6, 'Mop_128.png'),
-(133, 132, 'Mop Fasttrack Finish', 'Mop Fasttrack Finish Narrow Band Head Medium-Blue & White.', 32, 'Each', 5.47, 'HIL24011', 'The Fasttrack Finish Mop Is Constructed Of A 6-Ply High-Wet Modulous Rayon Blend That Gives Quick, Controlled Liquid Release For Floor Finishing And Disinfecting. Blue And White Striped Yarn Keeps Mop Looking New And Identifies Mop As \"Finish Mop\" To Prevent Cross Contamination With Other Chemicals. Narrow (1 1/4\") Headband.', 6, 'Mop_128.png'),
+(132, 131, 'Mop Dust - White', 'Mop Dust 5In. X 60In. Infinity Twist- White.', 1, 'Each', 24.07, 'HIL52820', 'Industry Standard Dust Mop Is Constructed Of 4-Ply Cotton Blended Yarn Tufted Or Sewn To Durable Synthetic Backing. Absorbent Yarns Provides Excellent Dust Retention.', 6, 'Mop_128.png'),
+(133, 132, 'Mop Fasttrack Finish', 'Mop Fasttrack Finish Narrow Band Head Medium-Blue & White.', 30, 'Each', 5.47, 'HIL24011', 'The Fasttrack Finish Mop Is Constructed Of A 6-Ply High-Wet Modulous Rayon Blend That Gives Quick, Controlled Liquid Release For Floor Finishing And Disinfecting. Blue And White Striped Yarn Keeps Mop Looking New And Identifies Mop As \"Finish Mop\" To Prevent Cross Contamination With Other Chemicals. Narrow (1 1/4\") Headband.', 6, 'Mop_128.png'),
 (134, 133, 'Mop Wet Utility Wax', 'Mop Wet 12 Oz Rayon Utility Wax - White - Wide Band.', 0, 'Each', 4.73, ' HIL24516', 'With Quick Absorption And Liquid Release, 4-Ply Cut End Rayon Utility Wax Mops Are Great For Liquid Pick-Up, Economy Finishing And Disinfecting. Available In Both Narrow (1 1/4\") Or Wide (5\") Blue Headbands.', 6, 'Mop_128.png'),
 (135, 134, 'Mop Wet Aggressor', 'Mop Wet Aggressor Loop Mop White -Large.', 37, 'Each', 5.68, 'HIL24992', 'High-Quality,Multi-Layered, Blended Cotton/Rayon/Synthetic Yarns Provides Good Absorption And Durability For This Top Of Line General Maintenance Mop. Excellent For General Cleaning.', 6, 'Mop_128.png'),
-(136, 135, 'Mop Wet Super Crown ', 'Mop Wet Super Crown Blue-Large- Wide Band.', 51, 'Each', 7.11, 'HIL24987', 'High-Quality,Multi-Layered, Blended Cotton/Rayon/Synthetic Yarns Provides Good Absorption And Durability For This Top Of Line General Maintenance Mop. Excellent For General Cleaning.', 6, 'Mop_128.png'),
+(136, 135, 'Mop Wet Super Crown ', 'Mop Wet Super Crown Blue-Large- Wide Band.', 50, 'Each', 7.11, 'HIL24987', 'High-Quality,Multi-Layered, Blended Cotton/Rayon/Synthetic Yarns Provides Good Absorption And Durability For This Top Of Line General Maintenance Mop. Excellent For General Cleaning.', 6, 'Mop_128.png'),
 (137, 136, 'Caddy Bag', '2642 Brute Caddy Bag - 2632 2643 Containers.', 4, 'Each', 47.32, 'RUB2642YW', 'Snaps Securely Onto The Rim Of Brute 44-Gallon Containers (2643 And 2643-60). Durable Nylon Reinforced Vinyl Is Strong And Easy To Keep Clean. Twelve Pockets Of Various Sizes To Accommodate Most Cleaning Supplies. ', 3, 'waste_128.png'),
 (138, 137, 'A-Gressive Staining & Mark Remover', 'A-Gressive Staining & Mark Remover 24 Pads /Cs.', 22, 'Cases', 25.77, 'HIL30312', 'This Innovative Cleaning Product Is Powered By The Microscopic Abrasive Qualities Of Genuine Melamine Resin-Based Foam. When Combined With Water, The Unique Properties Of Gentle Abrasion & Conformability \"Erase\" Away Stains And Marks Often Untouched By Many Chemical Products. This Breakthrough Approach To Cleaning Is Environmentally Sensitive And Ideal For Use In The Most Restrictive Of Regulatory Concerns As It Requires No Traditional Cleaning Chemicals Or Vocs. The Addition Of The Blue Durability Strip Provides Dimensional Stability To Harness Both The Power And The Longevity Of Each Individual Eraser. # Advanced Technology Melamine Foam Construction. # Use With Ordinary Tap Water Only - No Other Chemicals Or Vocs Needed. # Fortified With Blue Durability Strip For Maximum Life. # Easily Conforms To Contours & Grooves To Get To The Tough Stuff. # Ideal For Cleaning Crayon, Marker, Ink, Lipstick, Tea & Coffee Stains, Soap Scum, Scuff Marks, Fingerprints, Hard Water Spots, Red Wine Stains, Nicotine Film, Rust Spots, Pencil, Carbon. Residue, Burn Marks & Moore\n', 7, 'Misc_128.png'),
 (139, 138, 'Black Heavy Duty Strip Pads', 'Black Heavy Duty Strip Pads 20\" - 20\" Pad - 5 Per Case.', 28, 'Cases', 27.49, 'HIL42920', 'Extra Aggressive Stripping Pad. Designed With Open Mesh Construction. Excellent For Removing Floor Finishes.', 8, 'floor_tech_128.png'),
-(140, 139, 'Black Strip Pads', 'Black Strip Pads - 20\" Pad - 5 Per Case.', 22, 'Cases', 21.03, 'HIL42720', 'Designed For Heavy Duty Wet Stripping. Aggressively Removes Floor Finish And Dirt. Cleans Down To Original Surface.', 8, 'floor_tech_128.png'),
+(140, 139, 'Black Strip Pads', 'Black Strip Pads - 20\" Pad - 5 Per Case.', 21, 'Cases', 21.03, 'HIL42720', 'Designed For Heavy Duty Wet Stripping. Aggressively Removes Floor Finish And Dirt. Cleans Down To Original Surface.', 8, 'floor_tech_128.png'),
 (141, 140, 'Champagne Burnish Pads', 'Champagne Burnish Pads - 20\" Pad - 5 Per Case.', 3, 'Cases', 20.75, 'HIL44020', 'Designed To Minimize Machine Drag While Producing An Unsurpassed Wet Look Gloss. Especially Effective On Medium To Hard Finishes. ', 8, 'floor_tech_128.png'),
 (142, 141, 'Easer Burnish Pads', '20 In Non-Woven Polyester Fiber Round Burnishing Pad, 1500 To 3000 Rpm, Pink, 5 Pk ', 3, 'Each', 0.00, '5ND30', 'Environmentally Sustainable Pads Are Washable And Reusable. Burnishing Pads Are For Ultra High-Speed Floor Machines. The Eraser Pink 3600 Pads Produce Optimum Results On Harder Finishes And Heavy-Traffic Floors. Pads Remove Black Marks, Restore Excellent Gloss And Image Clarity.', 8, 'floor_tech_128.png'),
 (143, 142, 'Pad 96 Utility Hand- Green', 'Green Nylon Scouring Pad.', 14, 'Each', 0.50, 'HIL29956', 'A Medium-Duty, Versatile Scouring Pad.', 7, 'Misc_128.png'),
@@ -363,8 +380,8 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (150, 149, 'White Light Duty Utility Pad', 'White Light Duty Utility Pad 4.5\"X10\".', 9, 'Packs', 4.48, 'HIL29959', 'Non-Abrasive Pad For Cleaning, Buffing And Polishing. For Use With Hil29961 Utility Pad Holder Kit', 7, 'Misc_128.png'),
 (151, 150, 'White Polish Pads', 'White Polish Pads 20\" - 20\" Pad - 5 Per Case.', 4, 'Cases', 20.30, 'HIL42020', 'Extra Fine Pad For Polishing Clean Dry Floors. Use Dry Or With Restorative Chemicals To Produce A Wet Look Gloss.', 8, 'floor_tech_128.png'),
 (152, 151, '3M White Super Polish', '3M White Super Polish Pad 4100, 17 In, 5/Case', 0, 'Each', 0.00, '61-5000-3595-3', '3M White Super Polish Pad 4100, 17 In, 5/Case. For Buffing Very Soft Finishes Or For Polishing Soft Waxes On Wood Floors. Removes Scuffs And Black Heel Marks And Enhances Floor Appearance. Equipment Type: Rotary Machine Speed: Low Speed, 175-600 Rpm', 8, 'floor_tech_128.png'),
-(153, 152, 'Toilet Tissue, Jr Jumbo', 'Bathroom Tissue, 3.3\"X 1000\', Acclaim, 2-Ply, Jumbo Jr. (Rpjrt-2-Prem).', 158, 'Cases', 24.61, 'RPJRT-2-PREM', 'Bathroom Tissue, 3.3\"X 1000\', Acclaim, 2-Ply, Jumbo Jr.', 1, 'Paper-128.png'),
-(154, 153, 'Bathroom Tissue Envision', 'Envision Standard Roll Embossed 2-Ply Toilet Paper By Gp Pro (Georgia-Pacific), 80 Rolls Per Case', 5, 'Cases', 38.43, 'GP19880', 'Environmentally Concerned Customers Appreciate The Reliable Performance Of Envision Standard Roll Embossed 2-Ply Toilet Paper. It Can Help Earn Leed Credits. A Sustainable Option, It Meets Green Seal Standard Gs-1 Based On Chlorine-Free Processing, Energy And Water Efficiency And Content Of 100% Recovered Material With A Minimum Of 25% Post-Consumer Material (See Greenseal.Org). It\'S Also Ul Ecologo Certified For Reduced Environmental Impact (View Specific Attributes Evaluated At Ul.Com/Eul-175). It\'S Also A Septic-Safe Toilet Paper Option, Great For All Standard Sewer And Septic Systems. Consumers Give This Toilet Paper High Marks For Its Softness, Quick Absorbency, Durability And Thickness. It\'S Great For Use In Education, Government, Manufacturing And Qsr Applications. The Smaller Size Carton Makes Handling Easier And Takes Up Less Of Your Valuable Storage Space Than Standard-Size Cases. The Leed Certification Mark Is A Registered Trademark Owned By The U.S. Green Building Council And Is Used By Permission.', 1, 'Paper-128.png'),
+(153, 152, 'Toilet Tissue, Jr Jumbo', 'Bathroom Tissue, 3.3\"X 1000\', Acclaim, 2-Ply, Jumbo Jr. (Rpjrt-2-Prem).', 154, 'Cases', 24.61, 'RPJRT-2-PREM', 'Bathroom Tissue, 3.3\"X 1000\', Acclaim, 2-Ply, Jumbo Jr.', 1, 'Paper-128.png'),
+(154, 153, 'Bathroom Tissue Envision', 'Envision Standard Roll Embossed 2-Ply Toilet Paper By Gp Pro (Georgia-Pacific), 80 Rolls Per Case', 4, 'Cases', 38.43, 'GP19880', 'Environmentally Concerned Customers Appreciate The Reliable Performance Of Envision Standard Roll Embossed 2-Ply Toilet Paper. It Can Help Earn Leed Credits. A Sustainable Option, It Meets Green Seal Standard Gs-1 Based On Chlorine-Free Processing, Energy And Water Efficiency And Content Of 100% Recovered Material With A Minimum Of 25% Post-Consumer Material (See Greenseal.Org). It\'S Also Ul Ecologo Certified For Reduced Environmental Impact (View Specific Attributes Evaluated At Ul.Com/Eul-175). It\'S Also A Septic-Safe Toilet Paper Option, Great For All Standard Sewer And Septic Systems. Consumers Give This Toilet Paper High Marks For Its Softness, Quick Absorbency, Durability And Thickness. It\'S Great For Use In Education, Government, Manufacturing And Qsr Applications. The Smaller Size Carton Makes Handling Easier And Takes Up Less Of Your Valuable Storage Space Than Standard-Size Cases. The Leed Certification Mark Is A Registered Trademark Owned By The U.S. Green Building Council And Is Used By Permission.', 1, 'Paper-128.png'),
 (155, 154, 'Multifold Paper Towels', 'Gp Pro Pacific Blue Basic M-Fold Recycled Papertowel', 12, 'Cases', 18.75, 'GP24590', 'Offers Dependable Absorbency, Thickness, And Strength. Green Seal Certified. Designed To Fit Into A Wide Range Of Multifold Or Trifold Towel Dispensers. 9.25\" X 9.5\" Folded Width: 3 1/4\" 250 Towels Per Pkg., 16 Pkg Per Case.', 1, 'Paper-128.png'),
 (156, 155, 'Roll Towel (Pac)', 'Enmotion 10in Recycled Paper Towel Rolls By Gp Pro (Georgia-Pacific), Brown, 6 Rolls Per Case', 0, 'Cases', 23.60, 'GP89480', 'Brown Enmotion 10in Recycled Paper Towel Rolls Are A Sustainable Choice In Cost-Effective, High-Quality Paper Towels Specifically Engineered To Be Used With Our Enmotion 10in Automated Touchless Paper Towel Dispensers (59462A, 59460A, 59407A) Or Enmotion Impulse 10in 1-Roll Automated Touchless Paper Towel Dispensers (59488A, 59487A, 59447A) . Choose These Commercial Paper Towels For Dependable, Cost-Saving Performance And Customer Satisfaction. The High-Capacity 800\' X 10 Inch Paper Towel Rolls Help Minimize The Need For Refills. Shown Here In The 6-Roll Case, These Brown Paper Towels Are Also Available In A Space-Saving 3-Roll Case (89485). Enmotion 89480 Brown 10in Paper Towel Rolls Are Made With 100% Recycled Material And Contain At Least 50% Post-Consumer Recycled Fiber To Meet Or Exceed Epa Comprehensive Procurement Guidelines. A Usda Certified Biobased Product, They\'Re Also Ul Ecologo Certified For Reduced Environmental Impact. (View Specific Attributes Evaluated At Ul.Com/El Ul-175) Our Brown Enmotion 10\" Recycled Paper Towel Rolls Meet Green Seal Standard Gs-1, Based On Chlorine-Free Processing, Energy And Water Efficiency, And Content Of 100% Recovered Material, With A Minimum Of 50% Post-Consumer Material. (Learn More At Greenseal.Org)\nThe Leed Certification Mark Is A Registered Trademark Owned By The U.S. Green Building Council And Is Used By Permission.', 1, 'Paper-128.png'),
 (157, 156, 'Roll Towel', 'Acclaim 2in Core Paper Towel Rolls By Gp Pro (Georgia-Pacific), White, 6 Rolls Per Case', 151, 'Cases', 23.75, 'GP26602', 'These Roll Towels Are Designed With A Larger 2 Inch Cores To Fit Into A Wide Range Of Everyday Hardwound Roll Towel Dispensers. Acclaim High Capacity White Economical Hardwound Towels Help You Keep Costs Under Control. Low Per-Unit Costs Makes These Towels The Affordable Choice For Areas Such As Washrooms In Government And Public Facilities, Office Buildings, Foodservice Facilities And Lodging. Acclaim Hardwound Roll Towels Let You Offer Your Customers Quality And Reliable Performance At A Low Cost', 1, 'Paper-128.png'),
@@ -449,7 +466,7 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (236, 235, 'Dust Mop - Blue', 'Mop 5In. X 48In. Infinity Twist Cotton Dust Mop - Blue.', 5, 'Each', 13.82, 'HIL53408', 'Twisted Loop Yarn Provides Maximum Durability For Laundering And Heavy Use. No Cut Ends To Lint And Fray. Twisted Yarn Provides An Effective Dust Trap For Better Collection And Retention. Yarn Is Dyed Blue And Laundered.', 5, 'Broom_128.png'),
 (237, 236, 'Instant Hand Sanitizer Gel', 'Instant Hand Sanitizer Gel -   Affinity Touch-Free Refill.\n', 8, 'Cases', 44.83, 'HIL0040202', 'Hillyard Instant Hand Sanitizer Gel Is An Alcohol-Based Hand Sanitizer Formulated To Be Used Without Water For Maximum Convenience. It Is Designed To Help Prevent The Spread Of Infection And Cross-Contamination. Hillyard Instant Hand Sanitizer Gel Is Formulated W Ith Aloe And Conditioners To Keep Hands Conditioned During Repeated Use.', 10, 'PPE_128.png'),
 (238, 237, 'Touch-Free Dispenser', 'Touch-Free Dispenser 1 L - Black - Hand Sanitizer.\n', 0, 'Each', 5.00, 'HIL22283', 'One Reliable, Robust Dispenser Delivering Foam, Liquid Or Gel. Space-Saving Dispenser Design Utilizes 25% Less Plastic By Weight Than Other 1,000 Ml Dispensers Without Compromising Reliability Or Durability. (Ea)', 12, 'soap-container.png'),
-(239, 238, 'Affinity Expressions Manual Dispenser', 'Affinity Expressions Manual Dispenser.\n', 31, 'Each', 0.00, 'HIL22304', 'Affinity Expressions By Hillyard Combines One Dispenser With 4 Output Options. Maximum Flexibility, Maximum Performance. Implement A Hand Hygiene And Skincare Program That Utilizes The Same Dispenser For Foam And Liquid Hand Soap, Gel Or Spray Hand Sanitizer, And Foam Or Gel Body Wash.', 12, 'soap-container.png'),
+(239, 238, 'Affinity Expressions Manual Dispenser', 'Affinity Expressions Manual Dispenser.\n', 29, 'Each', 0.00, 'HIL22304', 'Affinity Expressions By Hillyard Combines One Dispenser With 4 Output Options. Maximum Flexibility, Maximum Performance. Implement A Hand Hygiene And Skincare Program That Utilizes The Same Dispenser For Foam And Liquid Hand Soap, Gel Or Spray Hand Sanitizer, And Foam Or Gel Body Wash.', 12, 'soap-container.png'),
 (240, 239, 'Deep Action Bonnet', '17\" Deep Action Bonnet - 6 Per Case.\n', 0, 'Each', 0.00, 'HIL49917', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
 (241, 240, 'Deep Action Bonnet ', '19\" Deep Action Bonnet - 6 Per Case.\n\n', 0, 'Each', 0.00, 'HIL49919', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
 (242, 241, 'Deep Action Bonnet', '21\" Deep Action Bonnet - 6 Per Case.\n\n\n', 0, 'Each', 0.00, 'HIL49921', 'Use With Any Standard Rotary Floor Machine For Routine Carpet Bonneting, Spot And Stain Removal Or Polishing Wood Floors. Ideal For Medium To Thick Pile Carpet And High Wet Situations. Thick Pile Of 6-Ply, Cut And Loop Yarn Provides Excellent Absorption.', 8, 'floor_tech_128.png'),
@@ -465,14 +482,15 @@ INSERT INTO `products` (`product_id`, `product_location`, `product_title`, `shor
 (252, 251, 'Microfiber Cloth - Green', 'Trident General Purpose Microfiber Cloth - Green 12\" X 12\".', 0, 'Dozen', 8.70, 'HIL20030', '250 Gram Weight Cloth For General Purpose Cleaning Tasks. 12\" X 12\" 12 Pack', 7, 'Misc_128.png'),
 (253, 252, 'Microfiber Cloth - Yellow', 'Trident General Purpose Microfiber Cloth - Yellow 12\" X 12\".\n', 0, 'Dozen', 8.70, 'HIL20031', '250 Gram Weight Cloth For General Purpose Cleaning Tasks. 12\" X 12\" 12 Pack', 7, 'Misc_128.png'),
 (254, 253, 'Shoe Cover', 'Shoe Cover Blue 50 Pr/Pk.\n', 0, 'Packs', 43.99, 'FSCBPK50', 'Disposable Polypropylene Shoe Covers Protect Carpets And Floors. Economical And Disposable. Made Of Polypropylene Non Woven Fabric', 10, 'PPE_128.png'),
-(255, 254, 'Hand Sanitizing Wipes', 'Rico Hand Sanitizing Wipes.', 1809, 'Each', 7.99, 'HHRICOSW80EXP', 'Kills 99.9% Of Germs And Microorganisms. 50 Wipes Per Quantity.', 10, 'PPE_128.png'),
+(255, 254, 'Hand Sanitizing Wipes', 'Rico Hand Sanitizing Wipes.', 1808, 'Each', 7.99, 'HHRICOSW80EXP', 'Kills 99.9% Of Germs And Microorganisms. 50 Wipes Per Quantity.', 10, 'PPE_128.png'),
 (256, 255, 'Hand Sanitizer Spray', 'Pack Of (36), 8 Oz Pump Spray Bottles Liquid Hand Sanitizer Citrus Scent', 1008, 'Each', 4.49, '16989212', 'This Product Is Not A Substitute For Proper Handwashing & Has Not Been Tested To Determine Its Efficacy Against Viruses Such As The Coronavirus', 10, 'PPE_128.png'),
 (257, 256, 'Alcohol Gel Hand Sanitizer', 'Alcohol Gel Hand Sanitizer - 16 Oz. Pump Bottle - 24 Bottles/Case.', 312, 'Each', 7.77, 'WG641481', '70% Alcohol-Based Gel Hand Sanitizer With Moisturizing Aloe Vera Is Formulated To Be Used Without Water Or Towels. Ethyl Alcohol Scent; New And Improved Fragrance. Made In The Usa. 16 Oz. Pump Bottle (Actual Bottle Style May Vary). Sold 24 Bottles Per Case.', 10, 'PPE_128.png'),
 (258, 257, 'Alcohol Gel Hand Sanitizer', 'Alcohol Gel Hand Sanitizer - 8 Oz. Disc Top Bottle - Pkg Qty 24.', 213, 'Each', 4.13, 'WG641499', ' 70% Alcohol-Based Gel Hand Sanitizer With Moisturizing Aloe Vera Is Formulated To Be Used Without Water Or Towels. Ethyl Alcohol Scent; New And Improved Fragrance. Made In The Usa. 8 Oz. Bottle With Disc Top Cap. Sold In Quantities Of 24 Per Case.', 10, 'PPE_128.png'),
 (259, 258, 'Microfiber Carpet Bonnet', '21 In Microfiber Carpet Bonnet White 5Cs.', 16, 'Cases', 71.04, 'RUBQ261WH', 'Microfiber Carpet Bonnets Are Constructed With Microfiber That Provides Better Cleaning Power And Longer Product Life. Best-In-The-Industry Microfiber Provides Better Cleaning Power And Longer Product Life. Microfiber Carpet Bonnets Work With Standard Rotary Floor Machines. Standard Thickness Bonnets Work Well With Shampoo Or Solvent-Based Chemicals; Use With 175 Rpm Floor Machines. The Low-Profile Bonnet Provides Improved Operator Control On Rotary Floor Machines From 175 To 300 Rpm', 8, 'floor_tech_128.png'),
 (260, 259, 'Towel Roll White', 'Towel Roll White High Capacity 800 Ft Per Roll 6 Rolls.', 130, 'Cases', 44.64, ' PAP22000', 'This Ecosoft Controlled Roll Towel Is Designed For Customers Who Prefer Recycled Toweling That Helps Create A Cleaner Environment. This Ecosoft Toweling Has Added Value And Benefits Such As Controlled Usage And Cost Savings When Combined With Hillyard Brand Controlled Roll Towel Dispensers. Its High Capacity Is Ideal For High-Traffic Areas, Office Buildings And Hotel Lobby Restrooms Or Convention Facilities. High-Capacity - Most Efficient Towel To Use With Large Capacity Hillyard Brand 42500-Series Dispensers. Made Entirely From 100% Recovered Materials. Contains A Minimum Of 40% Post-Consumer Waste, Which Meets Epa Guidelines 800 Linear Feet Per Roll 6 Rolls Per Case.', 1, 'Paper-128.png'),
 (261, 260, 'Clarke Advance Vacuum Bags', 'Advance Vacuum Bags Clark Vacuum  Pack Of 10.', 0, 'Packages', 16.88, '107413584', '10-Pack Of Bags For The Advance Spectrum Upright Vacuums. These Bags Are Disposable And Incorporate An Easy-To-Install Design Which Allows For Fast Replacement For Immediate Use. Incorporated Allergen Filtration Makes Sure No Dust Or Debris Escape.', 11, 'Equipment_128.png'),
-(262, 261, 'Black Cleaning Cart', 'Black Cleaning Cart w/ Zippered Yellow Vinyl Bag', 0, 'Each', 148.65, 'RUB617388BK', 'Collect waste and transport tools for efficient cleaning. Smooth, easy-to-clean surface. Zippered bag for easy trash removal. Non-marking 8\" (20.3 cm) wheels and 4\" (10.2 cm) casters. Optional locking compartment to keep cleaning chemicals out of reach.', 11, 'Equipment_128.png');
+(262, 261, 'Black Cleaning Cart', 'Black Cleaning Cart w/ Zippered Yellow Vinyl Bag', 0, 'Each', 148.65, 'RUB617388BK', 'Collect waste and transport tools for efficient cleaning. Smooth, easy-to-clean surface. Zippered bag for easy trash removal. Non-marking 8\" (20.3 cm) wheels and 4\" (10.2 cm) casters. Optional locking compartment to keep cleaning chemicals out of reach.', 11, 'Equipment_128.png'),
+(265, 262, 'joe', 'joe', 8, 'Each', 34.99, 'RUB617388BK', 'joe', 12, 'sanitizer-dispenser.png');
 
 -- --------------------------------------------------------
 
@@ -526,7 +544,71 @@ INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_title`, `
 (31, 72, 25, 'Disposable Face Coverings', '71', '96620687', 40.00, 1, 'Campus Police Building', 'rowz'),
 (32, 102, 25, 'Exam Gloves Large', '101', 'HIL30522', 11.07, 1, 'Campus Police Building', 'rowz'),
 (33, 1, 26, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'BMT Performing Arts Center ', 'rowz'),
-(34, 60, 27, 'Bowl Brush', '59', 'CSM363300', 4.56, 2, 'MSC Garage North', 'rowz');
+(34, 60, 27, 'Bowl Brush', '59', 'CSM363300', 4.56, 2, 'MSC Garage North', 'rowz'),
+(35, 1, 28, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, 'E. Desmond Lee TLC', 'rowz'),
+(36, 2, 28, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 1, 'E. Desmond Lee TLC', 'rowz'),
+(37, 3, 28, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'E. Desmond Lee TLC', 'rowz'),
+(38, 1, 29, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, '29', 'rowz'),
+(39, 5, 29, 'Mop Handle', '4', 'HIL22652', 9.96, 1, '29', 'rowz'),
+(40, 2, 36, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 1, '', 'rowz'),
+(41, 1, 36, 'Foam Block Fine Floor Sweep', '0', 'RUB9B02GY', 20.88, 1, '', 'rowz'),
+(42, 2, 37, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 1, '', 'rowz'),
+(43, 2, 38, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 1, '', 'rowz'),
+(44, 154, 39, 'Bathroom Tissue Envision', '153', 'GP19880', 38.43, 1, '', 'rowz'),
+(45, 2, 40, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 1, 'BMT Performing Arts Center ', 'rowz'),
+(46, 18, 41, 'Baseboard Stripper', '17', 'HIL0113355', 3.85, 1, 'Kathy J. Weinman Advocacy Center', 'joe'),
+(47, 60, 41, 'Bowl Brush', '59', 'CSM363300', 4.56, 1, 'Kathy J. Weinman Advocacy Center', 'joe'),
+(48, 69, 41, 'Soap Dispenser Automatic', '68', 'FSD1FM', 7.92, 1, 'Kathy J. Weinman Advocacy Center', 'joe'),
+(49, 2, 42, 'Fine Floor Sweep', '1', 'CSM4501623', 21.88, 2, 'UMSL Postal Services', 'rowz'),
+(50, 140, 43, 'Black Strip Pads', '139', 'HIL42720', 21.03, 1, 'Floor Techs', 'becky'),
+(51, 91, 43, 'Safety Scraper', '90', 'UNGSR500', 3.10, 1, 'Floor Techs', 'becky'),
+(52, 239, 43, 'Affinity Expressions Manual Dispenser', '238', 'HIL22304', 0.00, 2, 'Floor Techs', 'becky'),
+(53, 104, 43, 'Exam Gloves Extra Large', '103', 'HIL30523', 10.20, 1, 'Floor Techs', 'becky'),
+(54, 4, 44, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Chancellors Residence', 'becky'),
+(55, 113, 44, 'Label Heavy Duty Floor Cleaner', '112', 'HIL31609', 0.00, 1, 'Chancellors Residence', 'becky'),
+(56, 36, 44, 'Heavy Duty Floor Cleaner', '35', 'HIL0080925', 80.20, 1, 'Chancellors Residence', 'becky'),
+(57, 66, 44, 'Bottle Carafe Poly', '65', 'HIL31950', 0.62, 1, 'Chancellors Residence', 'becky'),
+(58, 98, 44, 'Trigger Sprayer', '97', 'HIL26011', 1.15, 1, 'Chancellors Residence', 'becky'),
+(59, 7, 45, 'Dust Mop Frame', '6', 'HIL22608', 11.07, 1, 'Lucas Hall', 'joe'),
+(60, 133, 45, 'Mop Fasttrack Finish', '132', 'HIL24011', 5.47, 1, 'Lucas Hall', 'joe'),
+(61, 103, 46, 'Exam Gloves Medium', '102', 'HIL30521', 9.53, 1, 'South Campus Classroom Building', 'rowz'),
+(62, 102, 46, 'Exam Gloves Large', '101', 'HIL30522', 11.07, 1, 'South Campus Classroom Building', 'rowz'),
+(63, 18, 46, 'Baseboard Stripper', '17', 'HIL0113355', 3.85, 1, 'South Campus Classroom Building', 'rowz'),
+(64, 60, 46, 'Bowl Brush', '59', 'CSM363300', 4.56, 1, 'South Campus Classroom Building', 'rowz'),
+(65, 62, 46, 'Flying Insect Killer', '61', '48LR73', 6.00, 1, 'South Campus Classroom Building', 'rowz'),
+(66, 47, 46, 'Stainless Steel Cleaner & Polish', '46', 'HIL0103455', 4.76, 1, 'South Campus Classroom Building', 'rowz'),
+(67, 255, 46, 'Hand Sanitizing Wipes', '254', 'HHRICOSW80EXP', 7.99, 1, 'South Campus Classroom Building', 'rowz'),
+(68, 128, 47, 'Utility Wax Mops', '127', 'HIL24543', 6.23, 2, 'Millennium Student Center', 'becky'),
+(69, 132, 47, 'Mop Dust - White', '131', 'HIL52820', 24.07, 1, 'Millennium Student Center', 'becky'),
+(70, 136, 47, 'Mop Wet Super Crown ', '135', 'HIL24987', 7.11, 1, 'Millennium Student Center', 'becky'),
+(71, 133, 47, 'Mop Fasttrack Finish', '132', 'HIL24011', 5.47, 1, 'Millennium Student Center', 'becky'),
+(72, 70, 47, 'Chalk Anti-Dust', '69', 'BIN501402', 21.05, 1, 'Millennium Student Center', 'becky'),
+(73, 60, 47, 'Bowl Brush', '59', 'CSM363300', 4.56, 1, 'Millennium Student Center', 'becky'),
+(74, 39, 47, 'Lustre-Mist', '38', 'HIL0103155', 3.40, 1, 'Millennium Student Center', 'becky'),
+(75, 4, 48, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Lucas Hall', 'joe'),
+(76, 5, 48, 'Mop Handle', '4', 'HIL22652', 9.96, 3, 'Lucas Hall', 'joe'),
+(77, 16, 49, 'Rim Caddy', '15', 'RUB9W87YW', 67.99, 1, 'Campus Police Building', 'rowz'),
+(78, 125, 49, 'Stellar Liners 60 Gal.', '124', 'LH386014N', 26.50, 1, 'Campus Police Building', 'rowz'),
+(79, 3, 50, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'AB Ecology & Conservation Complex', 'rowz'),
+(80, 3, 51, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Benton Hall', 'rowz'),
+(81, 3, 52, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Arts Administration Building', 'rowz'),
+(82, 3, 53, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 1, 'Arts Administration Building', 'rowz'),
+(83, 3, 54, 'Corn Broom Warehouse', '2', 'RUB6383BL', 22.88, 2, 'Bellerive Hall', 'rowz'),
+(84, 8, 55, 'Handle Wood Threaded', '7', 'CSM4027100', 3.18, 2, 'Alumni House', 'rowz'),
+(85, 4, 56, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'AB Ecology & Conservation Complex', 'rowz'),
+(86, 4, 57, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Alumni House', 'rowz'),
+(87, 4, 58, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 2, 'Bellerive Hall', 'rowz'),
+(88, 4, 59, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Alumni House', 'rowz'),
+(89, 4, 60, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Benton Hall', 'rowz'),
+(90, 13, 61, 'Brute Dolly', '12', 'RUB2640BK', 47.62, 2, 'Clark Hall', 'rowz'),
+(91, 4, 62, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Alumni House', 'rowz'),
+(92, 4, 63, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Bellerive Hall', 'rowz'),
+(93, 15, 64, 'Beige Wastebasket', '14', 'RUB2956BG', 5.45, 1, 'KWMU Grand Center', 'rowz'),
+(94, 9, 65, 'Broom Lobby', '8', 'RUB6374BK', 8.92, 2, 'Education Administration Building', 'rowz'),
+(95, 11, 66, 'Gray Round Bucket', '10', 'RUB2614GY', 17.53, 2, 'Fine Arts Building', 'rowz'),
+(96, 14, 66, 'Deskside Recycling Container', '13', 'RUB295673BL', 5.84, 1, 'Fine Arts Building', 'rowz'),
+(97, 7, 68, 'Dust Mop Frame', '6', 'HIL22608', 11.07, 4, 'BMT Performing Arts Center ', 'rowz'),
+(98, 4, 69, 'Duo-Sweep Warehouse Broom', '3', 'CSM3688314', 16.62, 1, 'Benton Hall', 'rowz');
 
 -- --------------------------------------------------------
 
@@ -593,11 +675,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `user_firstname`, `user_lastname`, `user_role`, `user_photo`, `user_team`, `user_brief`) VALUES
-(1, 'rowz', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Storeroom Clerk Facilities Design Team 5 Design/Developer'),
-(2, 'becky', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1, 'Team Design 5 Tester'),
-(3, 'Joe', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, ''),
-(5, 'test', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 0, ''),
-(6, 'admin', '$2y$10$iusesomecrazystrings2uGtDpLi/sz8giU0Qqyz0jXbOCxzug3S6', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Design Team 5 Admin');
+(1, 'rowz', '$2y$10$iusesomecrazystrings2u6RhO4i5Tcb6yGqucmDlnHyRJ1G/.tS2', 'rowz@testing.com', 'Rosemary', 'Romero', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Storeroom Clerk Facilities Design Team 5 Design/Developer'),
+(2, 'becky', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'becky@testing.com', 'Becky', 'Lin', 'admin', 'umsl_type_white.jpg', 1, 'Team Design 5 Tester'),
+(3, 'Joe', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'joe@testing.com', 'Joe', 'Rottman', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, ''),
+(5, 'test', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'test@mail.com', 'test', 'test', 'Team Lead', 'umsl_type_black.jpg', 0, ''),
+(6, 'admin', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'admin@admin.com', 'admin', 'admin', 'admin', 'umsl_type_yellow_234r_171g_0b.jpg', 1, 'Design Team 5 Admin'),
+(13, 'test', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'test@mail.com', 'ROSEMARY', 'ROMERO', 'Team Lead', 'umsl_type_red_152r_30g_50b.jpg', 0, 'Im a new team member'),
+(15, 'test', '$2y$10$iusesomecrazystrings2u8RqKP2XP/Bec.lnzvw7tO8zmg6/6XSS', 'test@mail.com', 'test', 'test', 'Team Lead', 'Team5Logo.png', 0, 'I am new');
 
 --
 -- Indexes for dumped tables
@@ -631,7 +715,8 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `product_image` (`product_image`(255));
 
 --
 -- Indexes for table `reports`
@@ -649,7 +734,8 @@ ALTER TABLE `slides`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -671,25 +757,25 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `meetings`
 --
 ALTER TABLE `meetings`
-  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
 
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `slides`
@@ -701,7 +787,7 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

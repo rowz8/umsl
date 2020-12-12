@@ -49,3 +49,4 @@
 <!--  ***********CART TOTALS*************--> 
         
 <?php include(TEMPLATE_FRONT .  "/footer.php");  ?>
+

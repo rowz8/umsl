@@ -91,6 +91,10 @@ DELIMETER;
 
     <br>
 
+    <br>
+
+    
+
 
 <!--
  <div class="form-group">
@@ -125,3 +129,48 @@ DELIMETER;
 
     
 </form>
+
+
+</div>
+</div>
+
+<h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Edit Order Status </strong>
+                <ol>
+                <li>At the Edit Order Status page you can find information regarding the order.</li>
+                <img src="../../resources/uploads/edit_order_status.png" alt="" width="80%">
+                <li>At the bottom of the page it displays the order # <span><img src="../../resources/uploads/order_num.png" alt="" width="9%"></span> you are editing </li>
+                <li>A list of order status is displayed only one option can be selected at the time with no specific order
+                <ol>
+                <li>Approved</li>
+                <li>Processing</li>
+                <li>Completed</li>
+                <li>Cancelled</li>
+                </ol>
+                </li>
+                <li>The order can be updated by clicking the <span><img src="../../resources/uploads/update_btn.png" alt="" width="35%"></span> button.</li>
+                <li>The order can be deleted by clicking the <span><img src="../../resources/uploads/delete_btn.png" alt="" width="35%"></span> button.</li>
+                </ol>              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>

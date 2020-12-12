@@ -83,3 +83,40 @@
   </div>    
 </form>
 
+<h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Add Users </strong>
+                <ol>
+                <li> This page will allow you to add new users to the website.</li>
+                <img src="../../resources/uploads/add_user_page.png" alt="" width="100%">
+                <li>To add a new User fill out the username, email, first and last name, and the password fields.</li>
+                <li>Select the role the user will have under the website.</li>
+                <li>Select whether this user will be put on the team page by clicking YES or NO.</li>
+                <li>Enter a brief description to display at the Meet the Team Page</li>
+                <li>To add a photo, under USER PHOTO click on CHOOSE FILE button and upload it from your computer.</li>
+                <li>To add a user click the Add User <span><img src="../../resources/uploads/add_user_page_btn.png" alt="" width="9%"></span> button </li>
+                <li>To delete a user click the Delete an User <span><img src="../../resources/uploads/delete_btn.png" alt="" width="9%"></span> button </li>
+                </ol>              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+</div>

@@ -76,7 +76,6 @@
             </table>
             
                 <a class="btn btn-success btn-block" style="font-size:11pt;" href="checkout.php">Checkout</a>
-           
                      </div>       
                         </li>
                     </ul>

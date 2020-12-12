@@ -155,7 +155,7 @@ function process_transaction(){
             
         
         // inserts report on database
-        $insert_report = query("INSERT INTO reports (product_id, order_id, product_title, product_location, product_number, product_price, product_quantity, order_building, order_name, order_status) VALUES('{$id}', '{$last_id}', '{$product_title}', '{$product_location}', '{$product_number}', '{$product_price}','{$value}', '{$order_building}' ,'{$order_name}','{$status}')");
+        $insert_report = query("INSERT INTO reports (product_id, order_id, product_title, product_location, product_number, product_price, product_quantity, order_building, order_name) VALUES('{$id}', '{$last_id}', '{$product_title}', '{$product_location}', '{$product_number}', '{$product_price}','{$value}', '{$order_building}' ,'{$order_name}')");
         confirm($insert_report);   
          }
         $total += $sub;
@@ -199,9 +199,9 @@ function cart_nav(){
                             <td> &#36; {$row['product_price']}</td>
                             <td>{$value}</td>
                             <td> &#36; {$sub}</td>
-                            <td><a class = "btn btn-warning btn-sm" href = "../resources/cart.php?remove={$row['product_id']}"><span class ="glyphicon glyphicon-minus"></span></a>  <a class = "btn btn-success btn-sm" href = "../resources/cart.php?add={$row['product_id']}"><span class ="glyphicon glyphicon-plus"></span></a>  <a class = "btn btn-danger btn-sm" href = "../resources/cart.php?delete={$row['product_id']}"><span class ="glyphicon glyphicon-remove"></span></a> </td>
-                                
+                            <td><a class = "btn btn-warning btn-sm" href = "../resources/cart.php?remove={$row['product_id']}"><span class ="glyphicon glyphicon-minus"></span></a>  <a class = "btn btn-success btn-sm" href = "../resources/cart.php?add={$row['product_id']}"><span class ="glyphicon glyphicon-plus"></span></a>  <a class = "btn btn-danger btn-sm" href = "../resources/cart.php?delete={$row['product_id']}"><span class ="glyphicon glyphicon-remove"></span></a> </td>            
                     </tr>
+
                    
 DELIMETER;
     echo $product;

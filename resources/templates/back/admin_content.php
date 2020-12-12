@@ -208,6 +208,89 @@
 
 
 </div>
-    
-
 <!-- /.row -->
+
+    <h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Shop </strong>
+                <ol>
+                <li> The <strong> Shop  </strong> button located at the top left of your screen just above the administer toolbar will redirect you to the Custodial Center. The functionality of this webpage will be described in further detail in the <strong> Team Lead </strong> section of this document. </li>
+                
+                </ol>
+
+                  <li> <strong> Statistical Overview </strong>
+                    <ol>
+                      <li>New Orders will navigate to the ALL ORDERS page.
+                      <ol>
+                      <li>(Discussed in the Orders section.)</li>
+                      </ol>
+                      </li>
+
+                       <li>Products will navigate to the ALL PRODUCTS page.
+                      <ol>
+                      <li>(Discussed in the Orders section.)</li>
+                      </ol>
+                      </li>
+                      
+                      <li>Categories will navigate to the PRODUCT CATEGORIES page.</li>
+                    </ol>
+                  </li>
+
+
+                  <li> <strong> Panels </strong>
+                    <ol>
+                      <li>There are three panels displayed on the Dashboard page.
+                      <ol>
+                      <li>Transactions Panel Processing Orders gives an overview of the transactions being processed.</li>
+                      <li>(Click VIEW ALL TRANSACTION to get more details)</li>
+                      </ol>
+                      </li>
+
+                       <li>The  Transactions Panel Approved Orders gives an overview of the approved transactions.
+                      <ol>
+                      <li>(Click VIEW ALL TRANSACTION to get more details)</li>
+                      </ol>
+                      </li>
+                      
+                      <li>Transactions Panel Completed Orders will display completed orders.
+                      <ol>
+                      <li>(Click VIEW ALL TRANSACTION to get more details)</li>
+                      </ol>
+                      </li>
+                    </ol>
+                  </li>
+
+                  <li> <strong> Side Navigation </strong>
+                    <ol>
+                      <li>On your left you will find the side navigation for the administrator. </li>
+                      <img src="../../resources/uploads/side_nav_back.png" alt="">
+
+                     <li>Each tab will navigate to a specific page. For more details click on a tab </li>
+                    </ol>
+                  </li>
+
+
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>

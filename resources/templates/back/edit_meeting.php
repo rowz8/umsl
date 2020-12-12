@@ -106,3 +106,40 @@ DELIMETER;
 
 }
 ?>
+
+</div>
+
+
+<h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Edit a Meeting </strong>
+                <ol>
+                <li> This page will allow you to Edit a meeting</li>
+                <img src="../../resources/uploads/edit_meetings.png" alt="" width="100%">
+                <li>All meeting’s fields are all required in order to edit a meeting. </li>
+                <li>To Update a Meeting click the <span><img src="../../resources/uploads/update_btn.png" alt="" width="10%"></span> button </li>
+                <li>To Delete a Meeting click the <span><img src="../../resources/uploads/delete_btn.png" alt="" width="10%"></span> button </li>
+                </ol>              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+</div>

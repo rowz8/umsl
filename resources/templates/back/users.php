@@ -39,3 +39,37 @@
     </div>
 
 </div>
+
+    <h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Users </strong>
+                <ol>
+                <li> This page will show a list of all users.</li>
+                <img src="../../resources/uploads/users_page.png" alt="" width="100%">
+                <li>To add a new User click the <span><img src="../../resources/uploads/add_user.png" alt="" width="10%"></span> button </li>
+               
+                <li>To Edit an User click the edit <span><img src="../../resources/uploads/edit_user.png" alt="" width="9%"></span> button </li>
+                </ol>              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+</div>

@@ -96,3 +96,38 @@
     
 </form>
 
+<h6 class="text-center">Help     <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+        <span class ="glyphicon glyphicon-info-sign"></span>
+        </button>
+    </h6>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Guide</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <li> <strong> Add Product </strong>
+                <ol>
+                <li>The Add Product page allows you to enter new inventory.</li>
+                <img src="../../resources/uploads/add_product.png" alt="" width="80%">
+                <li>All the fields are required in order to add a product.</li>
+                <li>To upload a picture of the product, under the Product image section click on CHOOSE FILE. Then navigate to the file on your computer.</li>
+                <li>To select a category use the scroll to choose one. If a new category needs to be included please see Categories on the side navigation tab</li>
+
+                <li>The product location has a placeholder that displays the next location available in  the warehouse</li>
+                <li>In order to publish the product click on the </li><span>
+                <img src="../../resources/uploads/publish_btn.png" alt="" width="35%"> button </span>          
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+        </div>
