@@ -125,6 +125,18 @@ if(!isset($_SESSION['username'])) {
             if(isset($_GET['in_stock_id'])) {
                 include(TEMPLATE_BACK . "/in_stock.php");  
             }
+
+            if(isset($_GET['search_orders'])) {
+                include(TEMPLATE_BACK . "/orders_search.php");  
+            } 
+
+            if(isset($_GET['search_reports'])) {
+                include(TEMPLATE_BACK . "/reports_search.php");  
+            } 
+
+             if(isset($_GET['search_products'])) {
+                include(TEMPLATE_BACK . "/products_search.php");  
+            }
             ?>
 
                     <!-- displays directory -->

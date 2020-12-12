@@ -2,6 +2,17 @@
              <div class="row">
 
     <h1 style = "color: #9a1e35" class="page-header"> All Products</h1>
+
+    <div id="myOverlay" class="overlay">
+  
+            
+                <form action="index.php?products" method="GET" style="margin:auto;max-width:300px;" >
+                <input type="text" id="search" placeholder="Search.." name="search_products">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+</div>
+<hr>
     
     <h4 class ="text-center" style = "color: #ebab04" ><?php display_message(); ?></h4>
     

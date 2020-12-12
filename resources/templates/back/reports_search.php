@@ -1,11 +1,11 @@
 
+<div class="col-md-12">
 <div class="row">
-    
-<h1 style = "color: #9a1e35" class="page-header"> All Reports</h1>
+<h1 style = "color: #9a1e35" class="page-header"> All Reports </h1>
 <div id="myOverlay" class="overlay">
+  
 
-
-                <form action="index.php?reports" method="GET" style="margin:auto;max-width:300px;" >
+                <form action="index.php?reports_search" method="GET" style="margin:auto;max-width:300px;" >
                 <input type="text" id="search" placeholder="Search.." name="search_reports">
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -13,36 +13,36 @@
 </div>
 <hr>
 <h4 class ="text-center" style = "color: #ebab04" ><?php display_message(); ?></h4>
-</div>
 
 <div class="row">
 <table class="table table-hover">
     <thead>
 
       <tr>
-           <th>Report ID</th>
-           <th>Product ID</th>
-           <th>Order ID</th>
-           <!-- <th>Product Title</th>
-           <th>Location</th>
-           <th>MFG Number</th>
-           <th>Product Price</th>
-           <th>Product Quantity</th> -->
+           <th>Order id</th>
+           <th>Date</th>
+           <th>Amount</th>
+           <!-- <th>Transaction</th> -->
+            <th>Status</th>
+          <!-- <th>Currency</th> -->
+           <th>Name</th>
            <th>Building</th>
            <!-- <th>View Order</th> -->
            <!-- <th>Delete</th> -->
-           
+         
       </tr>
     </thead>
     <tbody>
-       
-        <?php display_reports(); ?>
+    
+    <?php display_search_reports(); ?>
+        
 
     </tbody>
 </table>
 </div>
 
-<h6 class="text-center">Help     <!-- Button trigger modal -->
+
+  <h6 class="text-center">Help     <!-- Button trigger modal -->
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
         <span class ="glyphicon glyphicon-info-sign"></span>
         </button>
@@ -59,12 +59,13 @@
                 </button>
             </div>
             <div class="modal-body">
-            <li> <strong> Reports </strong>
+            <li> <strong> All Orders </strong>
                 <ol>
-                <li>This page will show a report each product that is ordered. It will display the Product ID, Order ID, name of the Building.</li>
-                <img src="../../resources/uploads/reports.png" alt="" width="100%">
-                <li>If you click the <img src="../../resources/uploads/report_id.png" alt="" width="9%"" alt=""> button where the Report ID number is located more information can be viewed regarding that order id.</li>
-                </ol>            
+                <li> All orders will be shown along with the date, amount of orders, status, name for the person who ordered, and the name of the buildings.</li>
+                <img src="../../resources/uploads/orders.png" alt="" width="100%">
+                <li>To view a specific order, click on <span> <img src="../../resources/uploads/order_id.png" alt="" width="50p%"> </span>the blue box with a number in it under <strong> ID </strong>. </li>
+                <li>The <strong> ORDER DETAILS </strong> will appear. This page includes the Order ID number, building, name of person who ordered it. Product name, location ID, MFG number, and product quantity.</li>
+                </ol>  
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

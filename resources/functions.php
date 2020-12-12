@@ -802,6 +802,47 @@ DELIMETER;
     
 }
 
+function display_search_orders(){
+    if(isset($_GET['search_orders'])){
+    
+    $search = escape_string($_GET['search_orders']);
+
+    $query = query("SELECT * FROM orders WHERE order_name OR order_building OR order_id LIKE '%$search%' ");
+    confirm($query);
+    
+    if(mysqli_num_rows($query) == 0){
+        set_message("Order not found");
+        redirect("index.php?orders");
+        
+    } else{
+        
+            while($row = fetch_array($query)) {
+                
+        $order_date = escape_string($row['order_date']);
+        $date = date_create($order_date);
+        $order_date = date_format($date, 'm/d/Y G:i:A');
+        $order_name = ucwords($row['order_name']);
+
+        $orders = <<<DELIMETER
+            <tr>
+            <td><a class="btn btn-info" href="index.php?order_id={$row['order_id']}">{$row['order_id']}</td>
+            <td>$order_date</td>
+            <td>&#36; {$row['order_amount']}</td>
+           <!-- <td>{$row['order_transaction']}</td> -->
+           <td>{$row['order_status']}</td>
+           <!--  <td>{$row['order_currency']}</td>  -->
+            <td>{$order_name}</td>
+            <td>{$row['order_building']}</a></td>
+           
+            
+            </tr>
+DELIMETER;
+    echo $orders;
+            }          
+        }
+    } 
+}
+
 // displays the reports in admin  
 function display_reports(){
     $query = query("SELECT * FROM reports WHERE order_id = order_id");
@@ -814,16 +855,51 @@ function display_reports(){
             <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}&order_id={$row['order_id']}">{$row['report_id']}</td>            
             <td>{$row['product_id']}</td>
             <td>{$row['order_id']}</td>
-           <!--  <td>{$row['product_title']}</td> -->
-            <!-- <td>{$row['product_location']}</td> -->
-            <!-- <td>{$row['product_number']}</td> -->
-            <!-- <td>&#36; {$row['product_price']}</td> -->
-            <!-- <td>{$row['product_quantity']}</td> -->
+          <!-- <td>{$row['product_title']}</td> -->
+          <!--  <td>{$row['product_location']}</td> -->
+          <!--  <td>{$row['product_number']}</td> -->
+          <!--  <td>&#36; {$row['product_price']}</td> -->
+          <!--  <td>{$row['product_quantity']}</td> -->
             <td>{$row['order_building']}</a></td>
             </tr>
 DELIMETER;
     echo $reports;
     }
+}
+
+function display_search_reports(){
+    if(isset($_GET['search_reports'])){
+    
+    $search = escape_string($_GET['search_reports']);
+
+    $query = query("SELECT * FROM reports WHERE order_name OR order_building OR product_title LIKE '%$search%' ");
+    confirm($query);
+    
+    if(mysqli_num_rows($query) == 0){
+        set_message("Report not found");
+        redirect("index.php?reports");
+        
+    } else{
+        
+            while($row = fetch_array($query)) {
+        
+        $reports = <<<DELIMETER
+             <tr>
+            <td><a class="btn btn-info" href="index.php?report_id={$row['report_id']}&order_id={$row['order_id']}">{$row['report_id']}</td>            
+            <td>{$row['product_id']}</td>
+            <td>{$row['order_id']}</td>
+            <td>{$row['product_title']}</td>
+            <td>{$row['product_location']}</td>
+            <td>{$row['product_number']}</td>
+            <td>&#36; {$row['product_price']}</td>
+            <td>{$row['product_quantity']}</td>
+            <td>{$row['order_building']}</a></td>
+            </tr>
+DELIMETER;
+    echo $reports;
+            }          
+        }
+    } 
 }
 
 // function that displays report details
@@ -895,6 +971,48 @@ DELIMETER;
         echo $product;
     }
      
+}
+
+
+function display_search_products(){
+    if(isset($_GET['search_products'])){
+    
+    $search = escape_string($_GET['search_products']);
+
+    $query = query("SELECT * FROM products WHERE product_title LIKE '%$search%' ");
+    confirm($query);
+    
+    if(mysqli_num_rows($query) == 0){
+        set_message("Product not found");
+        redirect("index.php?products");
+        
+    } else{
+        
+            while($row = fetch_array($query)) {
+                $category = show_product_category_title($row['product_category_id']); 
+        $product_image = display_image($row['product_image']);
+        $product = <<<DELIMETER
+       
+              <tr>
+                <td><a class = "btn btn-danger" href = "index.php?edit_product&id={$row['product_id']}">{$row['product_id']}<a></td>
+                <td>{$row['product_title']}<br>
+                <img width='50' src="../../resources/{$product_image}" alt="">
+                </td>
+                <td>{$category}</td>
+                <td>&#36; {$row['product_price']}</td>
+                <td>{$row['product_quantity']}</td>
+                <td>CUST{$row['product_location']}</td>
+                <td>{$row['product_number']}</td>
+                
+            </tr>
+                
+           
+DELIMETER;
+   
+        echo $product;
+            }          
+        }
+    } 
 }
 
 // deletes products in admin
