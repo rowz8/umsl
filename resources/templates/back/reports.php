@@ -35,7 +35,7 @@
       </tr>
     </thead>
     <tbody>
-       
+       <?php display_search_reports(); ?>
         <?php display_reports(); ?>
 
     </tbody>

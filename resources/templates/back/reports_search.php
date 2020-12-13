@@ -19,14 +19,16 @@
     <thead>
 
       <tr>
-           <th>Order id</th>
-           <th>Date</th>
-           <th>Amount</th>
-           <!-- <th>Transaction</th> -->
-            <th>Status</th>
-          <!-- <th>Currency</th> -->
-           <th>Name</th>
+           <th>Report ID</th>
+           <th>Product ID</th>
+           <th>Order ID</th>
+           <th>Product Title</th>
+           <th>Location</th>
+           <th>MFG Number</th>
+           <th>Product Price</th>
+           <th>Product Quantity</th> 
            <th>Building</th>
+           <th>Name</th>
            <!-- <th>View Order</th> -->
            <!-- <th>Delete</th> -->
          

@@ -5,7 +5,7 @@
 <div id="myOverlay" class="overlay">
   
 
-                <form action="index.php?orders_search" method="GET" style="margin:auto;max-width:300px;" >
+                <form action="index.php?orders" method="GET" style="margin:auto;max-width:300px;" >
                 <input type="text" id="search" placeholder="Search.." name="search_orders">
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>

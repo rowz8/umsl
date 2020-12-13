@@ -34,6 +34,7 @@
         </thead>
         <tbody>
               <div class="row">
+              <?php display_search_products(); ?>
         <?php get_products_in_admin(); ?>
         </div>
         </tbody> 

@@ -33,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-    
+         <?php display_search_orders(); ?>
         <?php display_orders(); ?>
         
 

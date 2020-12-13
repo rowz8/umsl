@@ -807,7 +807,7 @@ function display_search_orders(){
     
     $search = escape_string($_GET['search_orders']);
 
-    $query = query("SELECT * FROM orders WHERE order_name OR order_building OR order_id LIKE '%$search%' ");
+    $query = query("SELECT * FROM orders WHERE order_name LIKE '%$search%' OR order_building LIKE '%$search%' OR order_id LIKE '%$search%' ");
     confirm($query);
     
     if(mysqli_num_rows($query) == 0){
@@ -872,7 +872,7 @@ function display_search_reports(){
     
     $search = escape_string($_GET['search_reports']);
 
-    $query = query("SELECT * FROM reports WHERE order_name OR order_building OR product_title LIKE '%$search%' ");
+    $query = query("SELECT * FROM reports WHERE order_name LIKE '%$search%' OR order_building LIKE '%$search%' OR product_title LIKE '%$search%' ");
     confirm($query);
     
     if(mysqli_num_rows($query) == 0){
@@ -894,6 +894,7 @@ function display_search_reports(){
             <td>&#36; {$row['product_price']}</td>
             <td>{$row['product_quantity']}</td>
             <td>{$row['order_building']}</a></td>
+            <td>{$row['order_name']}</a></td>
             </tr>
 DELIMETER;
     echo $reports;
