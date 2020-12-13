@@ -61,12 +61,11 @@
                 </button>
             </div>
             <div class="modal-body">
-            <li> <strong> All Orders </strong>
+            <li> <strong> Reports </strong>
                 <ol>
-                <li> All orders will be shown along with the date, amount of orders, status, name for the person who ordered, and the name of the buildings.</li>
-                <img src="../../resources/uploads/orders.png" alt="" width="100%">
-                <li>To view a specific order, click on <span> <img src="../../resources/uploads/order_id.png" alt="" width="50p%"> </span>the blue box with a number in it under <strong> ID </strong>. </li>
-                <li>The <strong> ORDER DETAILS </strong> will appear. This page includes the Order ID number, building, name of person who ordered it. Product name, location ID, MFG number, and product quantity.</li>
+                <li>This page will show a report each product that is ordered. It will display the Product ID, Order ID, name of the Building.</li>
+                <img src="../../resources/uploads/reports.png" alt="" width="100%">
+                <li>If you click the <img src="../../resources/uploads/report_id.png" alt="" width="9%"" alt=""> button where the Report ID number is located more information can be viewed regarding that order id.</li>
                 </ol>  
 
                 <li> <strong> Search Reports </strong>

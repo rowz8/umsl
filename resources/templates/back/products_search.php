@@ -56,13 +56,12 @@
                 </button>
             </div>
             <div class="modal-body">
-            <li> <strong> All Orders </strong>
+           <li> <strong> View Products </strong>
                 <ol>
-                <li> All orders will be shown along with the date, amount of orders, status, name for the person who ordered, and the name of the buildings.</li>
-                <img src="../../resources/uploads/orders.png" alt="" width="100%">
-                <li>To view a specific order, click on <span> <img src="../../resources/uploads/order_id.png" alt="" width="50p%"> </span>the blue box with a number in it under <strong> ID </strong>. </li>
-                <li>The <strong> ORDER DETAILS </strong> will appear. This page includes the Order ID number, building, name of person who ordered it. Product name, location ID, MFG number, and product quantity.</li>
-                </ol>  
+                <li>This page will  display all the products regardless if they are in stock or out of stock</li>
+                <img src="../../resources/uploads/products.png" alt="" width="100%">
+                <li>If you click the <img src="../../resources/uploads/product_btn.png" alt="" width="9%"" alt=""> button where the Product ID number is located more information can be viewed regarding that product id.</li>
+                </ol>   
 
                 <li> <strong> Search Products </strong>
                 <ol>
@@ -72,7 +71,7 @@
                 <li>To return to the full list, select the magnifying lense <span><img src="../../resources/uploads/lense.png" alt="" width="9%"></span> next to the search bar.</li>
                 
                 </ol>  
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
