@@ -68,6 +68,16 @@
                 <li>To view a specific order, click on <span> <img src="../../resources/uploads/order_id.png" alt="" width="50p%"> </span>the blue box with a number in it under <strong> ID </strong>. </li>
                 <li>The <strong> ORDER DETAILS </strong> will appear. This page includes the Order ID number, building, name of person who ordered it. Product name, location ID, MFG number, and product quantity.</li>
                 </ol>  
+
+                <li> <strong> Search Reports </strong>
+                <ol>
+                <li> To begin your search, select the Search bar located at the top of page.</li>
+                <img src="../../resources/uploads/search_bar.png" alt="" width="50%">
+                <li>Reports can be sorted by <strong> ORDER ID,  BUILDING NAME, </strong> or <strong>ORDER NAME</strong></li>
+                <li>To return to the full list, select the magnifying lense <span><img src="../../resources/uploads/lense.png" alt="" width="9%"></span> next to the search bar.</li>
+                
+                </ol>  
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

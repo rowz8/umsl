@@ -72,7 +72,17 @@
                 <li>This page will  display all the products regardless if they are in stock or out of stock</li>
                 <img src="../../resources/uploads/products.png" alt="" width="100%">
                 <li>If you click the <img src="../../resources/uploads/product_btn.png" alt="" width="9%"" alt=""> button where the Product ID number is located more information can be viewed regarding that product id.</li>
-                </ol>            
+                </ol>   
+
+                <li> <strong> Search Products </strong>
+                <ol>
+                <li> To begin your search, select the Search bar located at the top of page.</li>
+                <img src="../../resources/uploads/search_bar.png" alt="" width="50%">
+                <li>All products can be sorted by the <strong> PRODUCT NAME </strong> </li>
+                <li>To return to the full list, select the magnifying lense <span><img src="../../resources/uploads/lense.png" alt="" width="9%"></span> next to the search bar.</li>
+                
+                </ol>  
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

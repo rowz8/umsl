@@ -235,6 +235,7 @@
 
                   <li> <strong> Statistical Overview </strong>
                     <ol>
+                    <li>This page offers an overview of new orders, products, and product categories. It also views the orders being processed, approved orders, and complete orders.</li>
                       <li>New Orders will navigate to the ALL ORDERS page.
                       <ol>
                       <li>(Discussed in the Orders section.)</li>
@@ -243,7 +244,7 @@
 
                        <li>Products will navigate to the ALL PRODUCTS page.
                       <ol>
-                      <li>(Discussed in the Orders section.)</li>
+                      <li>(Discussed in the Products section.)</li>
                       </ol>
                       </li>
                       

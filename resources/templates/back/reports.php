@@ -64,7 +64,17 @@
                 <li>This page will show a report each product that is ordered. It will display the Product ID, Order ID, name of the Building.</li>
                 <img src="../../resources/uploads/reports.png" alt="" width="100%">
                 <li>If you click the <img src="../../resources/uploads/report_id.png" alt="" width="9%"" alt=""> button where the Report ID number is located more information can be viewed regarding that order id.</li>
-                </ol>            
+                </ol>  
+
+                <li> <strong> Search Reports </strong>
+                <ol>
+                <li> To begin your search, select the Search bar located at the top of page.</li>
+                <img src="../../resources/uploads/search_bar.png" alt="" width="50%">
+                <li>Reports can be sorted by <strong> ORDER ID,  BUILDING NAME, </strong> or <strong>ORDER NAME</strong></li>
+                <li>To return to the full list, select the magnifying lense <span><img src="../../resources/uploads/lense.png" alt="" width="9%"></span> next to the search bar.</li>
+                
+                </ol>  
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
